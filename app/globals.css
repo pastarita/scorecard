@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Traditional Golf Scorecard Color Palette */
+  --scorecard-beige: #f5f0e8;
+  --scorecard-cream: #faf8f3;
+  --scorecard-olive: #556b2f;
+  --scorecard-olive-dark: #3d4a21;
+  --scorecard-green-light: #d4e8d4;
+  --scorecard-green-header: #c8e0c8;
+  --scorecard-border: #8b956d;
+  
+  /* Terrain Colors (for SVG holes) */
+  --terrain-fairway: #6b9d5b;
+  --terrain-green: #4a7c2c;
+  --terrain-rough: #8b956d;
+  --terrain-water: #87ceeb;
+  --terrain-bunker: #d2b48c;
+  --terrain-tee: #f0f8f0;
+  
+  /* Text Colors */
+  --text-primary: var(--scorecard-olive-dark);
+  --text-secondary: #6b7a4a;
+  --text-muted: #9aa589;
+  
+  /* Status Colors */
+  --status-complete: #4a7c2c;
+  --status-in-progress: #5a8c3c;
+  --status-not-started: #c0c0c0;
+  
+  --background: var(--scorecard-beige);
+  --foreground: var(--scorecard-olive-dark);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+  
+  /* Scorecard-specific colors */
+  --color-scorecard-beige: var(--scorecard-beige);
+  --color-scorecard-cream: var(--scorecard-cream);
+  --color-scorecard-olive: var(--scorecard-olive);
+  --color-scorecard-olive-dark: var(--scorecard-olive-dark);
+  --color-scorecard-green-light: var(--scorecard-green-light);
+  --color-scorecard-green-header: var(--scorecard-green-header);
+  --color-scorecard-border: var(--scorecard-border);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1a1a;
+    --foreground: #e0e0e0;
+    /* Keep scorecard colors for dark mode too */
+    --scorecard-beige: #2a2a24;
+    --scorecard-cream: #1f1f1a;
+    --scorecard-olive: #7a9562;
+    --scorecard-olive-dark: #9fb786;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--scorecard-beige);
+  color: var(--scorecard-olive-dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Serif font for titles (matching traditional golf scorecard) */
+.scorecard-title {
+  font-family: var(--font-playfair), 'Playfair Display', 'Georgia', serif;
+  color: var(--scorecard-olive-dark);
+  font-weight: 700;
+}
+
+.scorecard-font-serif {
+  font-family: var(--font-playfair), 'Playfair Display', 'Georgia', serif;
+}
+
+/* Traditional scorecard styling */
+.scorecard-container {
+  background: var(--scorecard-cream);
+  border: 2px solid var(--scorecard-border);
+  border-radius: 4px;
+}
+
+.scorecard-header {
+  background: linear-gradient(to bottom, var(--scorecard-green-header), var(--scorecard-green-light));
+  border-bottom: 2px solid var(--scorecard-border);
+}
+
+.scorecard-table-header {
+  background: var(--scorecard-green-header);
+  color: var(--scorecard-olive-dark);
+  font-weight: 600;
+}
+
+.scorecard-total-row {
+  background: var(--scorecard-green-light);
+  font-weight: 600;
+}
+
+/* Handicap boxes */
+.handicap-box {
+  display: inline-block;
+  width: 24px;
+  height: 20px;
+  border: 1px solid var(--scorecard-border);
+  background: white;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  margin: 0 2px;
+}
+
+/* Traditional golf scorecard typography */
+.scorecard-font-serif {
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.scorecard-font-mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* SVG hole visualization styles */
+.hole-svg-container {
+  background: white;
+  border: 1px solid var(--scorecard-border);
+  border-radius: 2px;
+}
+
+/* Tab navigation styling */
+.tab-navigation {
+  background: var(--scorecard-cream);
+  border-bottom: 2px solid var(--scorecard-border);
+}
+
+.tab-button {
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab-button-active {
+  border-bottom-color: var(--scorecard-olive);
+  background: var(--scorecard-green-light);
+  color: var(--scorecard-olive-dark);
+  font-weight: 600;
+}
+
+.tab-button-inactive {
+  color: var(--text-secondary);
+}
+
+.tab-button-inactive:hover {
+  color: var(--scorecard-olive-dark);
+  background: var(--scorecard-beige);
+  border-bottom-color: var(--scorecard-border);
+}
+
+/* Header styling */
+.scorecard-page-header {
+  background: linear-gradient(to bottom, var(--scorecard-green-header), var(--scorecard-green-light));
+  border-bottom: 2px solid var(--scorecard-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styling */
+.scorecard-page-footer {
+  background: var(--scorecard-green-light);
+  border-top: 2px solid var(--scorecard-border);
 }

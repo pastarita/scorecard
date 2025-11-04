@@ -1,12 +1,17 @@
 {
-  "name": "scorecard",
+  "name": "hyperdimensional-golf-scorecard",
   "version": "0.1.0",
   "private": true,
+  "description": "Development tracking through golf metaphors and category theory",
+  "author": "Patrick Astarita",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "react": "19.2.0",
@@ -21,6 +26,11 @@
     "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "16.0.1"
-  }
+    "eslint-config-next": "16.0.1",
+    "vitest": "^1.0.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.1.0"
+  },
+  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad"
 }
