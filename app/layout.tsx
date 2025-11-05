@@ -31,15 +31,8 @@ export const metadata: Metadata = {
     "LLM",
     "prompt engineering"
   ],
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" }
-    ],
-    apple: [
-      { url: "/favicon.svg", type: "image/svg+xml" }
-    ]
-  }
+  // Next.js 16 App Router automatically handles app/icon.svg
+  // It will generate favicon.ico, apple-icon.png, etc. automatically
 };
 
 export default function RootLayout({

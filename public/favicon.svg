@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="pubGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#4a7c3d;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#2d4a26;stop-opacity:1" />
     </linearGradient>
-    <radialGradient id="ballGrad" cx="50%" cy="50%">
+    <radialGradient id="pubBallGrad" cx="50%" cy="50%">
       <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
       <stop offset="70%" style="stop-color:#e0e0e0;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#4a7c3d;stop-opacity:0.3" />
@@ -12,10 +12,10 @@
   </defs>
   
   <!-- Green background -->
-  <rect width="100" height="100" rx="15" fill="url(#greenGrad)"/>
+  <rect width="100" height="100" rx="15" fill="url(#pubGreenGrad)"/>
   
   <!-- Golf ball -->
-  <circle cx="50" cy="50" r="25" fill="url(#ballGrad)"/>
+  <circle cx="50" cy="50" r="25" fill="url(#pubBallGrad)"/>
   
   <!-- Golf ball dimples -->
   <circle cx="45" cy="45" r="2" fill="#4a7c3d" opacity="0.3"/>
