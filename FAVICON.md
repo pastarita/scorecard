@@ -74,3 +74,4 @@ If the favicon doesn't appear:
 - Both files use unique gradient IDs to avoid conflicts if both are loaded
 - The metadata in `app/layout.tsx` doesn't need explicit icon configuration when using `app/icon.svg`
 
+
