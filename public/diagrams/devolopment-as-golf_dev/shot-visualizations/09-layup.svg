@@ -1,0 +1,48 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fairwayGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a7c3d"/>
+      <stop offset="100%" style="stop-color:#6b9d5b"/>
+    </linearGradient>
+    <linearGradient id="approachGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#6ba950"/>
+      <stop offset="100%" style="stop-color:#8bc970"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feGaussianBlur stdDeviation="2"/>
+      <feOffset dx="1" dy="1"/>
+    </filter>
+  </defs>
+  
+  <!-- Fairway -->
+  <path d="M 120 450 Q 110 330, 140 210 Q 155 130, 185 50 L 215 50 Q 245 130, 260 210 Q 290 330, 280 450 Z" 
+        fill="url(#fairwayGrad)" stroke="#3a4a2d" stroke-width="2"/>
+  
+  <!-- Approach -->
+  <path d="M 140 250 Q 135 190, 155 130 Q 165 95, 185 65 L 215 65 Q 235 95, 245 130 Q 265 190, 260 250 Z" 
+        fill="url(#approachGrad)" stroke="#4a5a3d" stroke-width="1.5"/>
+  
+  <!-- Hazard near green (water) -->
+  <ellipse cx="200" cy="100" rx="50" ry="40" fill="#4a90e2" opacity="0.4" stroke="#2196f3" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="200" y="105" font-size="11" font-family="Arial, sans-serif" text-anchor="middle" fill="#1565c0" font-weight="bold">
+    HAZARD
+  </text>
+  
+  <!-- Green -->
+  <ellipse cx="200" cy="55" rx="22" ry="10" fill="#7bc96b" stroke="#5a6a4d"/>
+  <circle cx="200" cy="55" r="4" fill="#0a0a0a"/>
+  
+  <!-- Conservative layup short of hazard -->
+  <path d="M 200 380 Q 195 310, 198 240" 
+        stroke="#ff9800" stroke-width="4" stroke-dasharray="10,5" fill="none" filter="url(#shadow)"/>
+  <circle cx="200" cy="380" r="6" fill="#ff9800" stroke="#fff" stroke-width="2"/>
+  <circle cx="198" cy="240" r="7" fill="#ff9800" stroke="#fff" stroke-width="2"/>
+  
+  <!-- "X" marking risky direct shot -->
+  <path d="M 190 150 L 210 170 M 210 150 L 190 170" stroke="#c41e3a" stroke-width="3" opacity="0.6"/>
+  
+  <text x="200" y="490" font-size="18" font-family="Arial, sans-serif" text-anchor="middle" fill="#ff9800" font-weight="bold">
+    LAYUP
+  </text>
+</svg>
+

@@ -1,0 +1,226 @@
+{
+  "diagrams": [
+    {
+      "id": "hyperdimensional-golf-perspective",
+      "title": "Hyperdimensional Golf Perspective",
+      "description": "Perspective view showing the golf course as a navigational framework through high-dimensional embedding space. Displays the journey from tee to green with shot trajectories, terrain zones (rough, fairway, approach, green), and mathematical annotations describing the semantic transformation process.",
+      "category": "conceptual",
+      "path": "/diagrams/hyperdimensional-golf-perspective.svg",
+      "tags": ["perspective", "course", "trajectory", "mathematics", "category-theory"]
+    },
+    {
+      "id": "ontological-mapping-diagram",
+      "title": "Ontological Mapping Diagram",
+      "description": "Three-domain mapping showing the relationship between Golf Elements (intuitive spatial metaphor), Mathematical Reality (formal semantic structure), and LLM Development (practical implementation). Illustrates how golf terminology maps to mathematical concepts and development practices.",
+      "category": "ontological",
+      "path": "/diagrams/ontological-mapping-diagram.svg",
+      "tags": ["mapping", "ontology", "three-domain", "golf", "mathematics", "llm"]
+    },
+    {
+      "id": "ontological-perspective-integrated",
+      "title": "Ontological Perspective Integrated",
+      "description": "Integrated view combining the golf course perspective with the three-domain ontology. Shows how terrain zones correspond to confidence levels and how shot types map to prompt strategies across the golf-math-llm domains.",
+      "category": "integrated",
+      "path": "/diagrams/ontological-perspective-integrated.svg",
+      "tags": ["integrated", "perspective", "ontology", "terrain"]
+    },
+    {
+      "id": "development-as-golf",
+      "title": "Development as Golf",
+      "description": "Core visualization of the development-as-golf metaphor. Shows the iterative journey through possibility space with a perspective-transformed golf course, shot trajectories, and course elements. Demonstrates how each prompt iteration is like a shot toward the goal.",
+      "category": "core",
+      "path": "/diagrams/devolopment-as-golf_dev/files/development-as-golf.svg",
+      "tags": ["core", "metaphor", "course", "iterative", "possibility-space"]
+    },
+    {
+      "id": "development-golf-perspective",
+      "title": "Development Golf Perspective",
+      "description": "Perspective view of the development golf course, showing the path from initial prompt to goal achievement. Visualizes the terrain variance and how different shot types navigate through confidence landscapes.",
+      "category": "perspective",
+      "path": "/diagrams/devolopment-as-golf_dev/files/development-golf-perspective.svg",
+      "tags": ["perspective", "course", "terrain", "confidence"]
+    },
+    {
+      "id": "golf-four-archetypes",
+      "title": "Golf Four Archetypes",
+      "description": "Visualization of the four prompting archetypes in golf terminology: Precision (Par 3), Convergent (Par 4), Explorer (Par 5+), and Creative (Par 6+). Shows how different task types correspond to different golf hole difficulties.",
+      "category": "archetypes",
+      "path": "/diagrams/devolopment-as-golf_dev/files/golf-four-archetypes.svg",
+      "tags": ["archetypes", "task-types", "par", "difficulty"]
+    },
+    {
+      "id": "golf-philosophy-essay",
+      "title": "Golf Philosophy Essay",
+      "description": "Philosophical exploration of the golf metaphor in development. Illustrates key concepts and principles underlying the development-as-golf framework.",
+      "category": "philosophy",
+      "path": "/diagrams/devolopment-as-golf_dev/files/golf-philosophy-essay.svg",
+      "tags": ["philosophy", "essay", "concepts", "principles"]
+    },
+    {
+      "id": "golf-philosophy-expanded",
+      "title": "Golf Philosophy Expanded",
+      "description": "Expanded version of the golf philosophy visualization with additional depth and detail. Explores extended concepts and deeper connections in the golf-development metaphor.",
+      "category": "philosophy",
+      "path": "/diagrams/devolopment-as-golf_dev/files/golf-philosophy-expanded.svg",
+      "tags": ["philosophy", "expanded", "detailed", "concepts"]
+    },
+    {
+      "id": "hyperdimensional-golf-abstract",
+      "title": "Hyperdimensional Golf Abstract",
+      "description": "Abstract representation of hyperdimensional vector space golf concepts. Shows geometric and mathematical abstractions of the golf metaphor in high-dimensional space.",
+      "category": "abstract",
+      "path": "/diagrams/devolopment-as-golf_dev/files/hyperdimensional-golf-abstract.svg",
+      "tags": ["abstract", "mathematical", "geometric", "vector-space"]
+    },
+    {
+      "id": "ontological-graph",
+      "title": "Ontological Graph",
+      "description": "Graph-based visualization of the ontological relationships in the golf-development framework. Shows connections and mappings between concepts.",
+      "category": "ontological",
+      "path": "/diagrams/devolopment-as-golf_dev/files/ontological-graph.svg",
+      "tags": ["graph", "ontology", "relationships", "connections"]
+    },
+    {
+      "id": "visual-identity-showcase",
+      "title": "Visual Identity Showcase",
+      "description": "Showcase of visual identity elements for the hyperdimensional golf framework. Displays logos, icons, and branding elements.",
+      "category": "identity",
+      "path": "/diagrams/devolopment-as-golf_dev/files/visual-identity-showcase.svg",
+      "tags": ["identity", "branding", "logo", "visual"]
+    },
+    {
+      "id": "vector-golfer-logo",
+      "title": "Vector Golfer Logo",
+      "description": "Vector-based logo featuring a golfer in the context of hyperdimensional space. Represents the core visual identity of the project.",
+      "category": "identity",
+      "path": "/diagrams/devolopment-as-golf_dev/files/vector-golfer-logo.svg",
+      "tags": ["logo", "golfer", "vector", "identity"]
+    },
+    {
+      "id": "vector-golf-icon",
+      "title": "Vector Golf Icon",
+      "description": "Icon representation of the golf metaphor, suitable for use in interfaces and branding. Simplified visual symbol.",
+      "category": "identity",
+      "path": "/diagrams/devolopment-as-golf_dev/files/vector-golf-icon.svg",
+      "tags": ["icon", "symbol", "simple", "vector"]
+    },
+    {
+      "id": "index",
+      "title": "Index",
+      "description": "Index or overview diagram showing the structure and organization of the golf-development framework concepts.",
+      "category": "index",
+      "path": "/diagrams/devolopment-as-golf_dev/files/INDEX.svg",
+      "tags": ["index", "overview", "structure"]
+    },
+    {
+      "id": "extended-index",
+      "title": "Extended Index",
+      "description": "Extended version of the index with additional detail and comprehensive coverage of all framework elements.",
+      "category": "index",
+      "path": "/diagrams/devolopment-as-golf_dev/files/EXTENDED-INDEX.svg",
+      "tags": ["index", "extended", "comprehensive"]
+    },
+    {
+      "id": "shot-putter",
+      "title": "Putter Shot Visualization",
+      "description": "Visualization of a putter shot - the final precision shot on the green. Represents small, precise refinements with minimal variance. Used for final convergence near the goal.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/01-putter.svg",
+      "tags": ["putter", "shot", "precision", "green", "final"]
+    },
+    {
+      "id": "shot-driver",
+      "title": "Driver Shot Visualization",
+      "description": "Visualization of a driver shot - the longest distance shot from the rough. Represents broad exploration with high variance, used early in the development process when confidence is low.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/02-driver.svg",
+      "tags": ["driver", "shot", "exploration", "rough", "long-distance"]
+    },
+    {
+      "id": "shot-iron",
+      "title": "Iron Shot Visualization",
+      "description": "Visualization of an iron shot - medium distance shot from the fairway. Represents iterative refinement with moderate variance, used when adding constraints and narrowing the path.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/03-iron.svg",
+      "tags": ["iron", "shot", "refinement", "fairway", "medium-distance"]
+    },
+    {
+      "id": "shot-wedge",
+      "title": "Wedge Shot Visualization",
+      "description": "Visualization of a wedge shot - short distance, high precision shot in the approach zone. Represents detailed refinement with low variance, used when near the goal.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/04-wedge.svg",
+      "tags": ["wedge", "shot", "approach", "precision", "short-distance"]
+    },
+    {
+      "id": "shot-recovery",
+      "title": "Recovery Shot Visualization",
+      "description": "Visualization of a recovery shot - used to get back on track from problematic positions. Represents corrective actions when the development trajectory has veered off course.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/05-recovery.svg",
+      "tags": ["recovery", "shot", "correction", "problem-solving"]
+    },
+    {
+      "id": "shot-chip",
+      "title": "Chip Shot Visualization",
+      "description": "Visualization of a chip shot - short, controlled shot typically used around the green. Represents fine adjustments and precise corrections in the final approach.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/06-chip.svg",
+      "tags": ["chip", "shot", "controlled", "fine-adjustment"]
+    },
+    {
+      "id": "shot-curve",
+      "title": "Curve Shot Visualization",
+      "description": "Visualization of a curve shot - a shot that intentionally curves to navigate obstacles. Represents creative problem-solving approaches that work around constraints.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/07-curve.svg",
+      "tags": ["curve", "shot", "creative", "obstacle-navigation"]
+    },
+    {
+      "id": "shot-drop",
+      "title": "Drop Shot Visualization",
+      "description": "Visualization of a drop shot - used when the ball is in an unplayable position. Represents restarting from a checkpoint or intermediate representation to avoid semantic drift.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/08-drop.svg",
+      "tags": ["drop", "shot", "checkpoint", "restart", "ir"]
+    },
+    {
+      "id": "shot-layup",
+      "title": "Layup Shot Visualization",
+      "description": "Visualization of a layup shot - a conservative shot that sets up for a better position. Represents strategic intermediate steps that position for future refinements.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/09-layup.svg",
+      "tags": ["layup", "shot", "strategic", "positioning"]
+    },
+    {
+      "id": "shot-punch",
+      "title": "Punch Shot Visualization",
+      "description": "Visualization of a punch shot - a low, controlled shot used to avoid obstacles. Represents constrained approaches that work within limitations.",
+      "category": "shot-type",
+      "path": "/diagrams/devolopment-as-golf_dev/shot-visualizations/10-punch.svg",
+      "tags": ["punch", "shot", "controlled", "constrained"]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-01-27",
+    "description": "Manifest of all SVG diagrams in the Hyperdimensional Vector Space Golf project",
+    "categories": [
+      "conceptual",
+      "ontological",
+      "integrated",
+      "core",
+      "perspective",
+      "archetypes",
+      "philosophy",
+      "abstract",
+      "identity",
+      "index",
+      "shot-type"
+    ]
+  }
+}
+
+
+
+

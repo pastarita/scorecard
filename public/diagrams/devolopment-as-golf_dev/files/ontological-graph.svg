@@ -1,0 +1,447 @@
+<svg viewBox="0 0 1600 1400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#48dbfb"/>
+    </marker>
+    
+    <marker id="arrowCat" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ff6b6b"/>
+    </marker>
+    
+    <marker id="arrowOpt" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1dd1a1"/>
+    </marker>
+    
+    <marker id="arrowGraph" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#feca57"/>
+    </marker>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="nodeShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="1600" height="1400" fill="#0a0e27"/>
+  
+  <!-- Grid -->
+  <g opacity="0.05">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#667eea" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="1600" height="1400" fill="url(#grid)"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="800" y="50" font-family="'Courier New', monospace" font-size="32" font-weight="bold" 
+        text-anchor="middle" fill="url(#headerGrad)" filter="url(#glow)">
+    ONTOLOGICAL GRAPH: Mathematical Domains Connected
+  </text>
+  <text x="800" y="80" font-family="Arial, sans-serif" font-size="14" 
+        text-anchor="middle" fill="#a8b2d1">
+    Higher-Order Structure Mapping Development-as-Golf to Open Problems
+  </text>
+  
+  <!-- Central Node: Development-as-Golf Framework -->
+  <g id="central" transform="translate(800, 450)">
+    <circle cx="0" cy="0" r="100" fill="#667eea" opacity="0.2" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="90" fill="#0a0e27" stroke="#667eea" stroke-width="3"/>
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#667eea">
+      DEVELOPMENT
+    </text>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#667eea">
+      AS
+    </text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#667eea">
+      GOLF
+    </text>
+    <text x="0" y="55" font-family="'Courier New', monospace" font-size="11" 
+          text-anchor="middle" fill="#48dbfb">
+      (S, d, T, Γ)
+    </text>
+  </g>
+  
+  <!-- Layer 1: Direct Mathematical Structures -->
+  
+  <!-- Semantic Space Node -->
+  <g id="semantic" transform="translate(400, 250)">
+    <circle cx="0" cy="0" r="70" fill="#48dbfb" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="65" fill="#0a0e27" stroke="#48dbfb" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#48dbfb">
+      Semantic Space
+    </text>
+    <text x="0" y="15" font-family="'Courier New', monospace" font-size="10" 
+          text-anchor="middle" fill="#4facfe">
+      S ⊆ ℝⁿ
+    </text>
+    <text x="0" y="32" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      High-D embeddings
+    </text>
+  </g>
+  
+  <!-- Golf Course Node -->
+  <g id="golf" transform="translate(1200, 250)">
+    <circle cx="0" cy="0" r="70" fill="#1dd1a1" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="65" fill="#0a0e27" stroke="#1dd1a1" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1dd1a1">
+      Golf Course
+    </text>
+    <text x="0" y="15" font-family="'Courier New', monospace" font-size="10" 
+          text-anchor="middle" fill="#10ac84">
+      ℝ²
+    </text>
+    <text x="0" y="32" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      2D visualization
+    </text>
+  </g>
+  
+  <!-- Graph Theory Node -->
+  <g id="graph" transform="translate(400, 650)">
+    <circle cx="0" cy="0" r="70" fill="#feca57" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="65" fill="#0a0e27" stroke="#feca57" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#feca57">
+      Graph Theory
+    </text>
+    <text x="0" y="15" font-family="'Courier New', monospace" font-size="10" 
+          text-anchor="middle" fill="#feca57">
+      G = (V, E)
+    </text>
+    <text x="0" y="32" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Discrete structure
+    </text>
+  </g>
+  
+  <!-- Manifold Optimization Node -->
+  <g id="optimization" transform="translate(1200, 650)">
+    <circle cx="0" cy="0" r="70" fill="#ff6b6b" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="65" fill="#0a0e27" stroke="#ff6b6b" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#ff6b6b">
+      Optimization
+    </text>
+    <text x="0" y="15" font-family="'Courier New', monospace" font-size="10" 
+          text-anchor="middle" fill="#ff6b6b">
+      (M, g)
+    </text>
+    <text x="0" y="32" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Riemannian manifolds
+    </text>
+  </g>
+  
+  <!-- Layer 2: Abstract Mathematics -->
+  
+  <!-- Category Theory Node -->
+  <g id="category" transform="translate(800, 150)">
+    <circle cx="0" cy="0" r="80" fill="#f093fb" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="75" fill="#0a0e27" stroke="#f093fb" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#f093fb">
+      Category Theory
+    </text>
+    <text x="0" y="15" font-family="'Courier New', monospace" font-size="10" 
+          text-anchor="middle" fill="#f093fb">
+      𝒮ℯ𝓂, ℊℴ𝓁𝒻
+    </text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Functors &amp; natural
+    </text>
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      transformations
+    </text>
+  </g>
+  
+  <!-- Information Geometry Node -->
+  <g id="info_geom" transform="translate(600, 450)">
+    <circle cx="0" cy="0" r="65" fill="#764ba2" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="60" fill="#0a0e27" stroke="#764ba2" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" 
+          text-anchor="middle" fill="#764ba2">
+      Information
+    </text>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="13" font-weight="bold" 
+          text-anchor="middle" fill="#764ba2">
+      Geometry
+    </text>
+    <text x="0" y="30" font-family="'Courier New', monospace" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Fisher metric
+    </text>
+  </g>
+  
+  <!-- Topology Node -->
+  <g id="topology" transform="translate(1000, 450)">
+    <circle cx="0" cy="0" r="65" fill="#ee5a6f" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="60" fill="#0a0e27" stroke="#ee5a6f" stroke-width="2.5"/>
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="13" font-weight="bold" 
+          text-anchor="middle" fill="#ee5a6f">
+      Topology
+    </text>
+    <text x="0" y="20" font-family="'Courier New', monospace" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Morse theory
+    </text>
+    <text x="0" y="33" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Critical points
+    </text>
+  </g>
+  
+  <!-- Layer 3: Applications -->
+  
+  <!-- ML Theory Node -->
+  <g id="ml_theory" transform="translate(250, 450)">
+    <circle cx="0" cy="0" r="70" fill="#48dbfb" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="65" fill="#0a0e27" stroke="#48dbfb" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#48dbfb">
+      ML Theory
+    </text>
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Learning dynamics
+    </text>
+    <text x="0" y="28" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Convergence rates
+    </text>
+  </g>
+  
+  <!-- Alignment Research Node -->
+  <g id="alignment" transform="translate(250, 850)">
+    <circle cx="0" cy="0" r="70" fill="#c44569" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="65" fill="#0a0e27" stroke="#c44569" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#c44569">
+      Alignment
+    </text>
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Goal specification
+    </text>
+    <text x="0" y="28" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Safety bounds
+    </text>
+  </g>
+  
+  <!-- NAS Node -->
+  <g id="nas" transform="translate(600, 850)">
+    <circle cx="0" cy="0" r="65" fill="#00d2d3" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="60" fill="#0a0e27" stroke="#00d2d3" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" 
+          text-anchor="middle" fill="#00d2d3">
+      Neural Arch
+    </text>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="13" font-weight="bold" 
+          text-anchor="middle" fill="#00d2d3">
+      Search
+    </text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Architecture space
+    </text>
+  </g>
+  
+  <!-- Interpretability Node -->
+  <g id="interpret" transform="translate(1000, 850)">
+    <circle cx="0" cy="0" r="65" fill="#f8b500" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="60" fill="#0a0e27" stroke="#f8b500" stroke-width="2.5"/>
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="13" font-weight="bold" 
+          text-anchor="middle" fill="#f8b500">
+      Interpretability
+    </text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Trajectory analysis
+    </text>
+  </g>
+  
+  <!-- Software Engineering Node -->
+  <g id="software" transform="translate(1350, 450)">
+    <circle cx="0" cy="0" r="70" fill="#0fb9b1" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="65" fill="#0a0e27" stroke="#0fb9b1" stroke-width="2.5"/>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#0fb9b1">
+      Software Eng
+    </text>
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Development
+    </text>
+    <text x="0" y="28" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      practices
+    </text>
+  </g>
+  
+  <!-- Combinatorics Node -->
+  <g id="combinatorics" transform="translate(800, 750)">
+    <circle cx="0" cy="0" r="65" fill="#ffbe76" opacity="0.15" filter="url(#nodeShadow)"/>
+    <circle cx="0" cy="0" r="60" fill="#0a0e27" stroke="#ffbe76" stroke-width="2.5"/>
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="13" font-weight="bold" 
+          text-anchor="middle" fill="#ffbe76">
+      Combinatorics
+    </text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Shot sequences
+    </text>
+    <text x="0" y="33" font-family="Arial, sans-serif" font-size="9" 
+          text-anchor="middle" fill="#a8b2d1">
+      Valid orderings
+    </text>
+  </g>
+  
+  <!-- EDGES (Functors and Mappings) -->
+  
+  <!-- Central to Layer 1 -->
+  <line x1="720" y1="390" x2="450" y2="300" stroke="#48dbfb" stroke-width="2" marker-end="url(#arrow)" opacity="0.7"/>
+  <text x="585" y="335" font-family="'Courier New', monospace" font-size="9" fill="#48dbfb">F_embed</text>
+  
+  <line x1="880" y1="390" x2="1150" y2="300" stroke="#1dd1a1" stroke-width="2" marker-end="url(#arrow)" opacity="0.7"/>
+  <text x="1015" y="335" font-family="'Courier New', monospace" font-size="9" fill="#1dd1a1">F_proj</text>
+  
+  <line x1="730" y1="520" x2="450" y2="600" stroke="#feca57" stroke-width="2" marker-end="url(#arrow)" opacity="0.7"/>
+  <text x="590" y="555" font-family="'Courier New', monospace" font-size="9" fill="#feca57">F_graph</text>
+  
+  <line x1="870" y1="520" x2="1150" y2="600" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrow)" opacity="0.7"/>
+  <text x="1010" y="555" font-family="'Courier New', monospace" font-size="9" fill="#ff6b6b">F_opt</text>
+  
+  <!-- Category Theory connections -->
+  <line x1="800" y1="230" x2="800" y2="350" stroke="#f093fb" stroke-width="2" marker-end="url(#arrowCat)" opacity="0.6" stroke-dasharray="5,5"/>
+  <text x="810" y="290" font-family="'Courier New', monospace" font-size="9" fill="#f093fb">Universal</text>
+  
+  <line x1="750" y1="190" x2="450" y2="270" stroke="#f093fb" stroke-width="2" marker-end="url(#arrowCat)" opacity="0.5" stroke-dasharray="5,5"/>
+  <line x1="850" y1="190" x2="1150" y2="270" stroke="#f093fb" stroke-width="2" marker-end="url(#arrowCat)" opacity="0.5" stroke-dasharray="5,5"/>
+  
+  <!-- Information Geometry connections -->
+  <line x1="640" y1="430" x2="720" y2="420" stroke="#764ba2" stroke-width="1.5" opacity="0.5"/>
+  <line x1="560" y1="430" x2="450" y2="300" stroke="#764ba2" stroke-width="1.5" opacity="0.5" stroke-dasharray="3,3"/>
+  
+  <!-- Topology connections -->
+  <line x1="960" y1="430" x2="880" y2="420" stroke="#ee5a6f" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1040" y1="490" x2="1150" y2="600" stroke="#ee5a6f" stroke-width="1.5" opacity="0.5" stroke-dasharray="3,3"/>
+  
+  <!-- Applications from Semantic Space -->
+  <line x1="350" y1="290" x2="280" y2="400" stroke="#48dbfb" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+  <line x1="370" y1="310" x2="280" y2="800" stroke="#c44569" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+  
+  <!-- Golf to Software Engineering -->
+  <line x1="1250" y1="280" x2="1320" y2="400" stroke="#1dd1a1" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+  
+  <!-- Graph Theory to Combinatorics -->
+  <line x1="450" y1="700" x2="750" y2="740" stroke="#feca57" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+  
+  <!-- Optimization to NAS and Interpretability -->
+  <line x1="1150" y1="700" x2="640" y2="820" stroke="#ff6b6b" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+  <line x1="1180" y1="710" x2="1030" y2="820" stroke="#ff6b6b" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+  
+  <!-- Central to Combinatorics -->
+  <line x1="800" y1="550" x2="800" y2="690" stroke="#ffbe76" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+  
+  <!-- Legend -->
+  <g id="legend" transform="translate(50, 1100)">
+    <rect x="0" y="0" width="1500" height="250" rx="10" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+    
+    <text x="750" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#667eea">
+      Ontological Mappings &amp; Functors
+    </text>
+    
+    <g transform="translate(30, 60)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#48dbfb">
+        Primary Functors:
+      </text>
+      <text x="0" y="22" font-family="'Courier New', monospace" font-size="10" fill="#a8b2d1">
+        <tspan font-weight="bold">F_embed:</tspan> Golf → Semantic Space (embedding prompts/responses in ℝⁿ)
+      </text>
+      <text x="0" y="40" font-family="'Courier New', monospace" font-size="10" fill="#a8b2d1">
+        <tspan font-weight="bold">F_proj:</tspan> Semantic → Golf (dimensional reduction ℝⁿ → ℝ² via PCA/t-SNE)
+      </text>
+      <text x="0" y="58" font-family="'Courier New', monospace" font-size="10" fill="#a8b2d1">
+        <tspan font-weight="bold">F_graph:</tspan> Semantic → Graph Theory (discretize continuous space)
+      </text>
+      <text x="0" y="76" font-family="'Courier New', monospace" font-size="10" fill="#a8b2d1">
+        <tspan font-weight="bold">F_opt:</tspan> Semantic → Optimization (view as manifold optimization problem)
+      </text>
+    </g>
+    
+    <g transform="translate(30, 160)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f093fb">
+        Higher-Order Structure:
+      </text>
+      <text x="0" y="22" font-family="Arial, sans-serif" font-size="10" fill="#a8b2d1">
+        • <tspan font-weight="bold">Category Theory</tspan> provides universal constructions applying to all domains
+      </text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="10" fill="#a8b2d1">
+        • <tspan font-weight="bold">Information Geometry</tspan> measures semantic distances using Fisher metrics
+      </text>
+      <text x="0" y="58" font-family="Arial, sans-serif" font-size="10" fill="#a8b2d1">
+        • <tspan font-weight="bold">Topology</tspan> characterizes hazards and critical points (out-of-bounds regions)
+      </text>
+    </g>
+    
+    <g transform="translate(800, 60)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1dd1a1">
+        Open Problems Addressed:
+      </text>
+      <text x="0" y="22" font-family="Arial, sans-serif" font-size="10" fill="#a8b2d1">
+        ✓ <tspan font-weight="bold">Alignment:</tspan> Formal convergence to goals
+      </text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="10" fill="#a8b2d1">
+        ✓ <tspan font-weight="bold">NAS:</tspan> Golf-guided architecture search
+      </text>
+      <text x="0" y="58" font-family="Arial, sans-serif" font-size="10" fill="#a8b2d1">
+        ✓ <tspan font-weight="bold">Interpretability:</tspan> Trajectory analysis
+      </text>
+      <text x="0" y="76" font-family="Arial, sans-serif" font-size="10" fill="#a8b2d1">
+        ✓ <tspan font-weight="bold">Optimization:</tspan> Geodesic shot selection
+      </text>
+      <text x="0" y="94" font-family="Arial, sans-serif" font-size="10" fill="#a8b2d1">
+        ✓ <tspan font-weight="bold">Combinatorics:</tspan> Valid shot sequences
+      </text>
+    </g>
+  </g>
+  
+  <!-- Bottom note -->
+  <text x="800" y="1380" font-family="'Courier New', monospace" font-size="11" text-anchor="middle" 
+        fill="#667eea" opacity="0.7">
+    All paths commute (up to natural isomorphism) — Coherence Theorem 9.1
+  </text>
+</svg>

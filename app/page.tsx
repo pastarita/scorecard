@@ -146,6 +146,17 @@ export default function Home() {
         )}
       </main>
 
+      {/* Diagrams Link */}
+      <div className="max-w-7xl mx-auto px-4 pb-4">
+        <a
+          href="/diagrams"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-sm font-medium"
+        >
+          <span>📐</span>
+          <span>View All Diagrams</span>
+        </a>
+      </div>
+
       {/* Footer - Traditional Golf Scorecard Style */}
       <footer className="scorecard-page-footer mt-12">
         <div className="max-w-7xl mx-auto px-6 py-6">

@@ -1,0 +1,47 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="roughGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d4a26"/>
+      <stop offset="100%" style="stop-color:#4a6c3d"/>
+    </linearGradient>
+    <linearGradient id="fairwayGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a7c3d"/>
+      <stop offset="100%" style="stop-color:#6b9d5b"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feGaussianBlur stdDeviation="2"/>
+      <feOffset dx="1" dy="1"/>
+    </filter>
+  </defs>
+  
+  <!-- Rough -->
+  <path d="M 100 450 Q 80 350, 120 250 Q 140 150, 180 50 L 220 50 Q 260 150, 280 250 Q 320 350, 300 450 Z" 
+        fill="url(#roughGrad)" stroke="#2a3a22" stroke-width="2"/>
+  
+  <!-- Fairway -->
+  <path d="M 120 430 Q 110 340, 140 250 Q 155 165, 185 75 L 215 75 Q 245 165, 260 250 Q 290 340, 280 430 Z" 
+        fill="url(#fairwayGrad)" stroke="#3a4a2d" stroke-width="1.5"/>
+  
+  <!-- Green -->
+  <ellipse cx="200" cy="60" rx="25" ry="12" fill="#7bc96b" stroke="#5a6a4d"/>
+  <circle cx="200" cy="60" r="4" fill="#0a0a0a"/>
+  
+  <!-- Tee -->
+  <rect x="185" y="435" width="30" height="20" rx="2" fill="#7bc96b" stroke="#5a8a4d" stroke-width="1.5"/>
+  
+  <!-- Long driver shot -->
+  <path d="M 200 430 Q 150 350, 140 250 Q 138 200, 145 150" 
+        stroke="#ff4444" stroke-width="4" stroke-dasharray="10,5" fill="none" filter="url(#shadow)"/>
+  <circle cx="200" cy="430" r="6" fill="#c41e3a" stroke="#fff" stroke-width="2"/>
+  <circle cx="145" cy="150" r="7" fill="#ff4444" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Distance markers -->
+  <circle cx="175" cy="360" r="2" fill="#ff4444" opacity="0.5"/>
+  <circle cx="160" cy="300" r="2" fill="#ff4444" opacity="0.5"/>
+  <circle cx="148" cy="220" r="2" fill="#ff4444" opacity="0.5"/>
+  
+  <text x="200" y="490" font-size="18" font-family="Arial, sans-serif" text-anchor="middle" fill="#c41e3a" font-weight="bold">
+    DRIVER
+  </text>
+</svg>
+

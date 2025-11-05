@@ -1,0 +1,413 @@
+<svg viewBox="0 0 1600 1400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for depth and undulation -->
+    <linearGradient id="roughGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d4a26;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3a5c2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a6c3d;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="fairwayGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a7c3d;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5a8c4d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6b9d5b;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="approachGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#6ba950;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7bb960;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8bc970;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="greenGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#7bc96b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8bd97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9be98b;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <!-- Shadow for depth -->
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Arc path markers -->
+    <marker id="shotDot" markerWidth="8" markerHeight="8" refX="4" refY="4">
+      <circle cx="4" cy="4" r="3" fill="#ff6b35" opacity="0.6"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="800" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    DEVELOPMENT-AS-GOLF: Perspective View
+  </text>
+  <text x="800" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+    Navigating the Confidence Landscape of High-Dimensional Embedding Space
+  </text>
+  
+  <!-- Main Course - Hole Type: "The Convergent Path" -->
+  <g id="hole1" transform="translate(100, 100)">
+    <!-- Rough Layer - Low confidence, exploratory space -->
+    <!-- Undulating path with perspective, wide at bottom (near), narrow at top (far) -->
+    <path d="M 250 1100 
+             Q 200 1000, 220 900 
+             Q 180 800, 210 700
+             Q 190 600, 220 500
+             Q 210 400, 240 300
+             Q 250 200, 270 100
+             L 330 100
+             Q 350 200, 340 300
+             Q 370 400, 360 500
+             Q 390 600, 370 700
+             Q 400 800, 380 900
+             Q 420 1000, 400 1100
+             Z" 
+          fill="url(#roughGrad)" 
+          stroke="#2a3a22" 
+          stroke-width="3"
+          opacity="0.95"/>
+    
+    <!-- Terrain undulation lines in rough (showing uncertainty) -->
+    <path d="M 240 950 Q 280 945, 320 950" stroke="#1a2a12" stroke-width="1.5" opacity="0.4" fill="none"/>
+    <path d="M 235 850 Q 280 855, 325 850" stroke="#1a2a12" stroke-width="1.5" opacity="0.4" fill="none"/>
+    <path d="M 230 750 Q 280 745, 330 750" stroke="#1a2a12" stroke-width="1.5" opacity="0.4" fill="none"/>
+    <path d="M 225 650 Q 280 655, 335 650" stroke="#1a2a12" stroke-width="1.5" opacity="0.4" fill="none"/>
+    
+    <!-- Fairway Layer - Moderate confidence, main development path -->
+    <path d="M 260 1050
+             Q 240 950, 250 850
+             Q 230 750, 245 650
+             Q 235 550, 250 450
+             Q 245 350, 260 250
+             Q 265 175, 275 125
+             L 325 125
+             Q 335 175, 330 250
+             Q 345 350, 340 450
+             Q 355 550, 345 650
+             Q 360 750, 350 850
+             Q 370 950, 360 1050
+             Z"
+          fill="url(#fairwayGrad)"
+          stroke="#3a4a2d"
+          stroke-width="2"
+          opacity="0.95"/>
+    
+    <!-- Smoother terrain in fairway (more stable) -->
+    <path d="M 265 900 Q 300 902, 335 900" stroke="#2a3a1d" stroke-width="1.2" opacity="0.3" fill="none"/>
+    <path d="M 260 700 Q 300 698, 340 700" stroke="#2a3a1d" stroke-width="1.2" opacity="0.3" fill="none"/>
+    <path d="M 255 500 Q 300 502, 345 500" stroke="#2a3a1d" stroke-width="1.2" opacity="0.3" fill="none"/>
+    
+    <!-- Approach Layer - High confidence, refined space -->
+    <path d="M 270 850
+             Q 260 750, 268 650
+             Q 262 550, 270 450
+             Q 268 350, 275 250
+             Q 278 200, 282 150
+             L 318 150
+             Q 322 200, 325 250
+             Q 332 350, 330 450
+             Q 338 550, 332 650
+             Q 340 750, 330 850
+             Z"
+          fill="url(#approachGrad)"
+          stroke="#4a5a3d"
+          stroke-width="1.5"
+          opacity="0.95"/>
+    
+    <!-- Very smooth terrain in approach (high stability) -->
+    <path d="M 275 700 Q 300 701, 325 700" stroke="#3a4a2d" stroke-width="1" opacity="0.25" fill="none"/>
+    <path d="M 273 500 Q 300 499, 327 500" stroke="#3a4a2d" stroke-width="1" opacity="0.25" fill="none"/>
+    
+    <!-- Green Layer - Maximum confidence, goal convergence zone -->
+    <ellipse cx="300" cy="120" rx="35" ry="18" 
+             fill="url(#greenGrad)" 
+             stroke="#5a6a4d" 
+             stroke-width="1.5"
+             opacity="0.98"/>
+    
+    <!-- The Hole -->
+    <circle cx="300" cy="120" r="6" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Flag -->
+    <line x1="300" y1="120" x2="300" y2="85" stroke="#c41e3a" stroke-width="2.5"/>
+    <path d="M 300 85 L 320 95 L 300 102 Z" fill="#c41e3a"/>
+    
+    <!-- Tee Box at bottom -->
+    <rect x="285" y="1080" width="30" height="25" rx="3" 
+          fill="#7bc96b" 
+          stroke="#5a8a4d" 
+          stroke-width="2"/>
+    
+    <!-- Shot Trajectories with 3D Arcs in Perspective -->
+    
+    <!-- Shot 1: Initial exploration - veers into rough, low confidence -->
+    <path d="M 300 1070
+             Q 260 980, 240 890
+             Q 235 850, 238 810
+             C 240 770, 245 730, 250 690"
+          stroke="#ff4444" 
+          stroke-width="3.5" 
+          stroke-dasharray="10,5"
+          fill="none"
+          opacity="0.75"
+          filter="url(#shadow)"/>
+    <circle cx="250" cy="690" r="8" fill="#ff4444" stroke="#fff" stroke-width="2"/>
+    <circle cx="280" cy="920" r="3" fill="#ff4444" opacity="0.5"/>
+    <circle cx="255" cy="840" r="3" fill="#ff4444" opacity="0.5"/>
+    <circle cx="245" cy="760" r="3" fill="#ff4444" opacity="0.5"/>
+    
+    <text x="210" y="685" font-family="monospace" font-size="10" fill="#ff4444" font-weight="bold">Shot 1</text>
+    <text x="195" y="700" font-family="Arial, sans-serif" font-size="8" fill="#666">Low specificity</text>
+    <text x="195" y="710" font-family="Arial, sans-serif" font-size="8" fill="#666">Broad context</text>
+    
+    <!-- Shot 2: Correction back to fairway, building confidence -->
+    <path d="M 250 690
+             Q 270 630, 285 570
+             Q 295 530, 300 490
+             C 305 450, 308 410, 310 370"
+          stroke="#ff8833"
+          stroke-width="3.5"
+          stroke-dasharray="10,5"
+          fill="none"
+          opacity="0.75"
+          filter="url(#shadow)"/>
+    <circle cx="310" cy="370" r="8" fill="#ff8833" stroke="#fff" stroke-width="2"/>
+    <circle cx="275" cy="600" r="3" fill="#ff8833" opacity="0.5"/>
+    <circle cx="290" cy="520" r="3" fill="#ff8833" opacity="0.5"/>
+    <circle cx="302" cy="440" r="3" fill="#ff8833" opacity="0.5"/>
+    
+    <text x="325" y="368" font-family="monospace" font-size="10" fill="#ff8833" font-weight="bold">Shot 2</text>
+    <text x="325" y="381" font-family="Arial, sans-serif" font-size="8" fill="#666">Add constraints</text>
+    
+    <!-- Shot 3: Into approach zone, high confidence -->
+    <path d="M 310 370
+             Q 305 320, 300 270
+             Q 298 240, 297 210
+             C 296 185, 296 160, 296 135"
+          stroke="#ffbb44"
+          stroke-width="3.5"
+          stroke-dasharray="10,5"
+          fill="none"
+          opacity="0.75"
+          filter="url(#shadow)"/>
+    <circle cx="296" cy="135" r="8" fill="#ffbb44" stroke="#fff" stroke-width="2"/>
+    <circle cx="305" cy="310" r="3" fill="#ffbb44" opacity="0.5"/>
+    <circle cx="300" cy="250" r="3" fill="#ffbb44" opacity="0.5"/>
+    <circle cx="297" cy="190" r="3" fill="#ffbb44" opacity="0.5"/>
+    
+    <text x="310" y="133" font-family="monospace" font-size="10" fill="#cc9933" font-weight="bold">Shot 3</text>
+    <text x="310" y="146" font-family="Arial, sans-serif" font-size="8" fill="#666">Refined context</text>
+    
+    <!-- Shot 4: Final putt, convergence -->
+    <path d="M 296 135
+             Q 298 128, 300 121"
+          stroke="#66dd66"
+          stroke-width="3.5"
+          stroke-dasharray="8,4"
+          fill="none"
+          opacity="0.8"
+          filter="url(#shadow)"/>
+    <circle cx="300" cy="121" r="7" fill="#66dd66" stroke="#fff" stroke-width="2"/>
+    
+    <text x="250" y="115" font-family="monospace" font-size="10" fill="#44aa44" font-weight="bold">Shot 4: Converged</text>
+    
+    <!-- Labels for zones -->
+    <text x="160" y="800" font-family="Arial, sans-serif" font-size="11" fill="#3a5c2d" font-weight="bold" 
+          transform="rotate(-75, 160, 800)">ROUGH: Exploratory</text>
+    
+    <text x="185" y="700" font-family="Arial, sans-serif" font-size="11" fill="#4a7c3d" font-weight="bold"
+          transform="rotate(-75, 185, 700)">FAIRWAY: Progressive</text>
+    
+    <text x="210" y="500" font-family="Arial, sans-serif" font-size="11" fill="#6ba950" font-weight="bold"
+          transform="rotate(-75, 210, 500)">APPROACH: Refined</text>
+    
+    <text x="235" y="180" font-family="Arial, sans-serif" font-size="11" fill="#7bc96b" font-weight="bold"
+          transform="rotate(-75, 235, 180)">GREEN: Goal</text>
+    
+    <!-- Tee label -->
+    <text x="300" y="1120" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1a1a1a" font-weight="bold">
+      TEE: Initial Prompt
+    </text>
+    <text x="300" y="1135" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#555" font-style="italic">
+      "Create a visualization..."
+    </text>
+  </g>
+  
+  <!-- Confidence/Cogency Landscape Legend -->
+  <g id="legend" transform="translate(850, 150)">
+    <rect x="0" y="0" width="680" height="520" rx="10" fill="#f5f5f5" stroke="#666" stroke-width="2"/>
+    
+    <text x="340" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#1a1a1a" font-weight="bold">
+      Terrain as Embedding Space Topology
+    </text>
+    
+    <!-- Layer descriptions -->
+    <text x="20" y="65" font-family="Arial, sans-serif" font-size="13" fill="#1a1a1a" font-weight="bold">
+      Layered Zones (Distance from Goal)
+    </text>
+    
+    <rect x="30" y="80" width="40" height="25" fill="url(#roughGrad)" stroke="#2a3a22" stroke-width="1.5"/>
+    <text x="80" y="97" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      <tspan font-weight="bold">ROUGH</tspan> - Broad, underspecified prompts
+    </text>
+    <text x="80" y="110" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      High uncertainty, many possible interpretations
+    </text>
+    
+    <rect x="30" y="125" width="40" height="25" fill="url(#fairwayGrad)" stroke="#3a4a2d" stroke-width="1.5"/>
+    <text x="80" y="142" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      <tspan font-weight="bold">FAIRWAY</tspan> - Contextual refinement
+    </text>
+    <text x="80" y="155" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      Moderate specificity, narrowing possibility space
+    </text>
+    
+    <rect x="30" y="170" width="40" height="25" fill="url(#approachGrad)" stroke="#4a5a3d" stroke-width="1.5"/>
+    <text x="80" y="187" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      <tspan font-weight="bold">APPROACH</tspan> - High-confidence region
+    </text>
+    <text x="80" y="200" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      Well-constrained, clear requirements
+    </text>
+    
+    <rect x="30" y="215" width="40" height="25" fill="url(#greenGrad)" stroke="#5a6a4d" stroke-width="1.5"/>
+    <text x="80" y="232" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      <tspan font-weight="bold">GREEN</tspan> - Goal convergence zone
+    </text>
+    <text x="80" y="245" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      Maximum specificity, precise objective alignment
+    </text>
+    
+    <!-- Terrain undulation meaning -->
+    <line x="20" y="270" x2="660" y2="270" stroke="#ccc" stroke-width="1"/>
+    
+    <text x="20" y="295" font-family="Arial, sans-serif" font-size="13" fill="#1a1a1a" font-weight="bold">
+      Undulation as Confidence Landscape
+    </text>
+    
+    <path d="M 40 320 Q 80 310, 120 320 Q 160 330, 200 320" 
+          stroke="#ff6b35" stroke-width="3" fill="none"/>
+    <text x="220" y="325" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+      <tspan font-weight="bold">Rough terrain</tspan> = Low cogency/stability
+    </text>
+    <text x="220" y="340" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      Volatile embedding regions, unstable interpretations
+    </text>
+    
+    <path d="M 40 365 Q 100 363, 160 365 Q 220 367, 280 365" 
+          stroke="#66dd66" stroke-width="3" fill="none"/>
+    <text x="300" y="370" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+      <tspan font-weight="bold">Smooth terrain</tspan> = High cogency/stability
+    </text>
+    <text x="300" y="385" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      Stable semantic regions, consistent outputs
+    </text>
+    
+    <!-- Shot arc interpretation -->
+    <line x="20" y="405" x2="660" y2="405" stroke="#ccc" stroke-width="1"/>
+    
+    <text x="20" y="430" font-family="Arial, sans-serif" font-size="13" fill="#1a1a1a" font-weight="bold">
+      Shot Trajectories in High-D Space
+    </text>
+    
+    <text x="30" y="455" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+      Each <tspan font-weight="bold">arc</tspan> represents a prompt traversing the vector embedding space.
+    </text>
+    <text x="30" y="470" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      • Arc length ≈ semantic distance covered
+    </text>
+    <text x="30" y="483" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      • Trajectory shape ≈ how context evolves iteration-to-iteration
+    </text>
+    <text x="30" y="496" font-family="Arial, sans-serif" font-size="9" fill="#555">
+      • Landing zone ≈ confidence level achieved at that stage
+    </text>
+  </g>
+  
+  <!-- Second Hole Type Example: "The Dogleg" -->
+  <g id="hole2" transform="translate(850, 700)">
+    <text x="200" y="-30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1a1a1a" font-weight="bold">
+      Alternate Hole Type: "The Dogleg"
+    </text>
+    <text x="200" y="-12" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#666">
+      (Complex prompts requiring intermediate clarification)
+    </text>
+    
+    <!-- Rough with bend -->
+    <path d="M 100 600
+             Q 80 500, 120 400
+             Q 180 320, 280 300
+             Q 340 290, 380 250
+             L 420 250
+             Q 460 290, 400 300
+             Q 300 320, 240 400
+             Q 200 500, 220 600
+             Z"
+          fill="url(#roughGrad)"
+          stroke="#2a3a22"
+          stroke-width="2"
+          opacity="0.9"/>
+    
+    <!-- Fairway with dogleg -->
+    <path d="M 120 580
+             Q 110 500, 140 420
+             Q 190 350, 280 330
+             Q 340 320, 370 280
+             L 410 280
+             Q 440 320, 380 330
+             Q 290 350, 240 420
+             Q 210 500, 200 580
+             Z"
+          fill="url(#fairwayGrad)"
+          stroke="#3a4a2d"
+          stroke-width="1.5"
+          opacity="0.9"/>
+    
+    <!-- Green -->
+    <ellipse cx="395" cy="265" rx="28" ry="15"
+             fill="url(#greenGrad)"
+             stroke="#5a6a4d"
+             stroke-width="1.5"/>
+    <circle cx="395" cy="265" r="5" fill="#0a0a0a"/>
+    <line x1="395" y1="265" x2="395" y2="245" stroke="#c41e3a" stroke-width="2"/>
+    <path d="M 395 245 L 410 252 L 395 258 Z" fill="#c41e3a"/>
+    
+    <!-- Tee -->
+    <rect x="145" y="585" width="25" height="20" rx="2" fill="#7bc96b" stroke="#5a8a4d" stroke-width="1.5"/>
+    
+    <!-- Dogleg shot path -->
+    <path d="M 157 580 Q 140 480, 165 400 Q 210 340, 290 325"
+          stroke="#ff6b35" stroke-width="2.5" stroke-dasharray="8,4" fill="none" opacity="0.7"/>
+    <circle cx="290" cy="325" r="6" fill="#ff6b35" stroke="#fff" stroke-width="1.5"/>
+    
+    <path d="M 290 325 Q 330 310, 370 285"
+          stroke="#66dd66" stroke-width="2.5" stroke-dasharray="8,4" fill="none" opacity="0.7"/>
+    <circle cx="370" cy="285" r="6" fill="#66dd66" stroke="#fff" stroke-width="1.5"/>
+    
+    <path d="M 370 285 Q 385 275, 395 267"
+          stroke="#44aa44" stroke-width="2.5" stroke-dasharray="6,3" fill="none" opacity="0.8"/>
+    
+    <text x="250" y="315" font-family="Arial, sans-serif" font-size="9" fill="#ff6b35" font-weight="bold">1: Clarification</text>
+    <text x="340" y="270" font-family="Arial, sans-serif" font-size="9" fill="#66dd66" font-weight="bold">2: Redirect</text>
+    <text x="320" y="240" font-family="Arial, sans-serif" font-size="9" fill="#44aa44" font-weight="bold">3: Goal</text>
+  </g>
+  
+  <!-- Bottom Philosophy Text -->
+  <rect x="100" y="1260" width="1400" height="110" rx="8" fill="#e8f5e9" stroke="#66bb6a" stroke-width="2"/>
+  <text x="800" y="1290" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#2e7d32" font-weight="bold">
+    The Parametric Philosophy: Holes as Prompt Archetypes
+  </text>
+  <text x="800" y="1315" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1b5e20">
+    <tspan x="800">Different "hole types" represent distinct prompting challenges in the high-dimensional semantic landscape.</tspan>
+    <tspan x="800" dy="16">The undulating terrain maps confidence topography: smooth regions indicate stable, well-defined conceptual zones,</tspan>
+    <tspan x="800" dy="16">while rough terrain signals uncertain, ambiguous regions of the embedding space. Each shot arc traces a path through</tspan>
+    <tspan x="800" dy="16">this topology, with convergence occurring as prompt specificity increases and semantic distance to the goal decreases.</tspan>
+  </text>
+</svg>

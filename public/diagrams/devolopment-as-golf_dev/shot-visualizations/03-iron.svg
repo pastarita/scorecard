@@ -1,0 +1,44 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fairwayGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a7c3d"/>
+      <stop offset="100%" style="stop-color:#6b9d5b"/>
+    </linearGradient>
+    <linearGradient id="approachGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#6ba950"/>
+      <stop offset="100%" style="stop-color:#8bc970"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feGaussianBlur stdDeviation="2"/>
+      <feOffset dx="1" dy="1"/>
+    </filter>
+  </defs>
+  
+  <!-- Fairway -->
+  <path d="M 120 450 Q 110 330, 140 210 Q 155 130, 185 50 L 215 50 Q 245 130, 260 210 Q 290 330, 280 450 Z" 
+        fill="url(#fairwayGrad)" stroke="#3a4a2d" stroke-width="2"/>
+  
+  <!-- Approach -->
+  <path d="M 140 300 Q 135 230, 155 160 Q 165 110, 185 70 L 215 70 Q 235 110, 245 160 Q 265 230, 260 300 Z" 
+        fill="url(#approachGrad)" stroke="#4a5a3d" stroke-width="1.5"/>
+  
+  <!-- Green -->
+  <ellipse cx="200" cy="60" rx="25" ry="12" fill="#7bc96b" stroke="#5a6a4d"/>
+  <circle cx="200" cy="60" r="4" fill="#0a0a0a"/>
+  
+  <!-- Medium iron shot from fairway -->
+  <path d="M 180 380 Q 165 300, 170 220 Q 173 180, 178 140" 
+        stroke="#ff8833" stroke-width="4" stroke-dasharray="10,5" fill="none" filter="url(#shadow)"/>
+  <circle cx="180" cy="380" r="6" fill="#ff8833" stroke="#fff" stroke-width="2"/>
+  <circle cx="178" cy="140" r="7" fill="#ff8833" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Distance markers -->
+  <circle cx="172" cy="320" r="2" fill="#ff8833" opacity="0.5"/>
+  <circle cx="169" cy="260" r="2" fill="#ff8833" opacity="0.5"/>
+  <circle cx="175" cy="190" r="2" fill="#ff8833" opacity="0.5"/>
+  
+  <text x="200" y="490" font-size="18" font-family="Arial, sans-serif" text-anchor="middle" fill="#ff8833" font-weight="bold">
+    IRON
+  </text>
+</svg>
+

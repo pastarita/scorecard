@@ -37,15 +37,17 @@ export function ConfidenceHeatmap({ data }: ConfidenceHeatmapProps) {
       {/* Heatmap grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
         {holeConfidences.map((holeData, idx) => {
+          const holeNumber = holeData?.hole ?? data.course.holes[idx].number;
+          
           if (!holeData) {
             return (
               <div
-                key={idx}
+                key={`hole-${holeNumber}`}
                 className="aspect-square rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700 flex items-center justify-center"
               >
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-400">
-                    {data.course.holes[idx].number}
+                    {holeNumber}
                   </div>
                   <div className="text-xs text-gray-400 mt-1">Not started</div>
                 </div>
@@ -58,7 +60,7 @@ export function ConfidenceHeatmap({ data }: ConfidenceHeatmapProps) {
 
           return (
             <div
-              key={holeData.hole}
+              key={`hole-${holeData.hole}`}
               className="aspect-square rounded-lg flex flex-col items-center justify-center p-3 cursor-pointer transition-transform hover:scale-105"
               style={{
                 backgroundColor: terrainConfig.color,

@@ -1,0 +1,204 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bodyGrad" cx="40%" cy="40%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="ballGrad" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#48dbfb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#667eea;stop-opacity:1" />
+    </radialGradient>
+    
+    <linearGradient id="trailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#feca57;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#1dd1a1;stop-opacity:0.4" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="800" fill="#0a0e27"/>
+  
+  <!-- Circular frame/badge -->
+  <circle cx="400" cy="400" r="360" fill="none" stroke="#667eea" stroke-width="2" opacity="0.3"/>
+  <circle cx="400" cy="400" r="340" fill="none" stroke="#764ba2" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="400" cy="400" r="320" fill="none" stroke="#f093fb" stroke-width="1" opacity="0.3"/>
+  
+  <!-- The Vector Net background -->
+  <g id="vector_net" opacity="0.2">
+    <path d="M 100 400 Q 250 300, 400 400 T 700 400" 
+          stroke="#667eea" stroke-width="1" fill="none"/>
+    <path d="M 100 350 Q 250 280, 400 350 T 700 350" 
+          stroke="#764ba2" stroke-width="1" fill="none"/>
+    <path d="M 100 450 Q 250 520, 400 450 T 700 450" 
+          stroke="#764ba2" stroke-width="1" fill="none"/>
+    <path d="M 100 300 Q 250 240, 400 300 T 700 300" 
+          stroke="#f093fb" stroke-width="0.8" fill="none"/>
+    <path d="M 100 500 Q 250 560, 400 500 T 700 500" 
+          stroke="#f093fb" stroke-width="0.8" fill="none"/>
+    
+    <!-- Vertical lines -->
+    <line x1="200" y1="250" x2="200" y2="550" stroke="#667eea" stroke-width="0.8" opacity="0.4"/>
+    <line x1="300" y1="240" x2="300" y2="560" stroke="#764ba2" stroke-width="0.8" opacity="0.4"/>
+    <line x1="400" y1="250" x2="400" y2="550" stroke="#f093fb" stroke-width="0.8" opacity="0.4"/>
+    <line x1="500" y1="240" x2="500" y2="560" stroke="#764ba2" stroke-width="0.8" opacity="0.4"/>
+    <line x1="600" y1="250" x2="600" y2="550" stroke="#667eea" stroke-width="0.8" opacity="0.4"/>
+  </g>
+  
+  <!-- THE CHARACTER: "VECTOR GOLFER" -->
+  <g id="vector_golfer" transform="translate(400, 420)">
+    
+    <!-- Trajectory trail behind the ball -->
+    <path d="M -180 -50 Q -120 -80, -60 -60 T 30 -40 T 90 -20" 
+          stroke="url(#trailGrad)" 
+          stroke-width="6" 
+          fill="none"
+          opacity="0.6"
+          stroke-linecap="round"
+          filter="url(#softGlow)"/>
+    
+    <!-- Dimensional projection lines -->
+    <line x1="-150" y1="-100" x2="-150" y2="0" stroke="#667eea" stroke-width="1" 
+          opacity="0.3" stroke-dasharray="4,4"/>
+    <line x1="-50" y1="-110" x2="-50" y2="0" stroke="#764ba2" stroke-width="1" 
+          opacity="0.3" stroke-dasharray="4,4"/>
+    <line x1="50" y1="-90" x2="50" y2="0" stroke="#f093fb" stroke-width="1" 
+          opacity="0.3" stroke-dasharray="4,4"/>
+    
+    <!-- The Golf Ball - central element -->
+    <g id="golf_ball" transform="translate(110, -25)">
+      <circle cx="0" cy="0" r="45" fill="url(#ballGrad)" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+      
+      <!-- Dimples pattern suggesting vector components -->
+      <circle cx="-15" cy="-10" r="3" fill="#667eea" opacity="0.4"/>
+      <circle cx="15" cy="-10" r="3" fill="#667eea" opacity="0.4"/>
+      <circle cx="0" cy="8" r="3" fill="#667eea" opacity="0.4"/>
+      <circle cx="-12" cy="12" r="3" fill="#764ba2" opacity="0.4"/>
+      <circle cx="12" cy="12" r="3" fill="#764ba2" opacity="0.4"/>
+      <circle cx="-8" cy="-18" r="3" fill="#f093fb" opacity="0.4"/>
+      <circle cx="8" cy="-18" r="3" fill="#f093fb" opacity="0.4"/>
+      
+      <!-- Vector arrows on ball -->
+      <path d="M -18 0 L 18 0" stroke="#48dbfb" stroke-width="2" opacity="0.6" 
+            marker-end="url(#arrow)"/>
+      <path d="M 0 -18 L 0 18" stroke="#48dbfb" stroke-width="2" opacity="0.6" 
+            marker-end="url(#arrow)"/>
+    </g>
+    
+    <!-- The Golfer Figure - abstract geometric -->
+    <g id="golfer_figure" transform="translate(-120, -20)">
+      <!-- Body - as stacked vectors -->
+      <path d="M 0 30 L 0 0 L 8 -30" 
+            stroke="url(#bodyGrad)" 
+            stroke-width="12" 
+            stroke-linecap="round"
+            fill="none"
+            filter="url(#softGlow)"/>
+      
+      <!-- Head - vector node -->
+      <circle cx="8" cy="-35" r="18" fill="url(#bodyGrad)" filter="url(#glow)"/>
+      <circle cx="8" cy="-35" r="15" fill="#0a0e27" opacity="0.5"/>
+      
+      <!-- Eyes - awareness dots -->
+      <circle cx="3" cy="-38" r="3" fill="#48dbfb" filter="url(#softGlow)"/>
+      <circle cx="13" cy="-38" r="3" fill="#48dbfb" filter="url(#softGlow)"/>
+      
+      <!-- Smile - confidence arc -->
+      <path d="M 2 -30 Q 8 -26, 14 -30" 
+            stroke="#48dbfb" stroke-width="1.5" fill="none" opacity="0.8"/>
+      
+      <!-- Arms - reaching/swinging -->
+      <path d="M 5 -10 L 30 -5" 
+            stroke="url(#bodyGrad)" 
+            stroke-width="8" 
+            stroke-linecap="round"
+            filter="url(#softGlow)"/>
+      <path d="M 30 -5 L 55 8" 
+            stroke="url(#bodyGrad)" 
+            stroke-width="8" 
+            stroke-linecap="round"
+            filter="url(#softGlow)"/>
+      
+      <!-- Club - trajectory vector -->
+      <path d="M 55 8 L 100 15" 
+            stroke="#48dbfb" 
+            stroke-width="6" 
+            stroke-linecap="round"
+            filter="url(#glow)"/>
+      <circle cx="100" cy="15" r="8" fill="#1dd1a1" filter="url(#glow)"/>
+      
+      <!-- Legs - grounded vectors -->
+      <line x1="0" y1="30" x2="-8" y2="50" 
+            stroke="url(#bodyGrad)" stroke-width="8" stroke-linecap="round"/>
+      <line x1="0" y1="30" x2="8" y2="50" 
+            stroke="url(#bodyGrad)" stroke-width="8" stroke-linecap="round"/>
+      
+      <!-- Base - connection to manifold -->
+      <ellipse cx="0" cy="52" rx="15" ry="4" fill="#667eea" opacity="0.6"/>
+    </g>
+    
+    <!-- Shot markers on trajectory -->
+    <circle cx="-150" cy="-55" r="6" fill="#ff6b6b" opacity="0.7" filter="url(#softGlow)"/>
+    <circle cx="-90" cy="-70" r="5" fill="#feca57" opacity="0.7" filter="url(#softGlow)"/>
+    <circle cx="-30" cy="-55" r="5" fill="#48dbfb" opacity="0.7" filter="url(#softGlow)"/>
+    <circle cx="30" cy="-42" r="4" fill="#1dd1a1" opacity="0.8" filter="url(#softGlow)"/>
+    
+  </g>
+  
+  <!-- The Hole/Goal -->
+  <g id="goal" transform="translate(650, 450)">
+    <circle cx="0" cy="0" r="35" fill="#56ab2f" opacity="0.2" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="25" fill="#56ab2f" opacity="0.4" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="18" fill="#56ab2f" opacity="0.7" filter="url(#softGlow)"/>
+    <circle cx="0" cy="0" r="12" fill="#0a0e27"/>
+    
+    <!-- Flag -->
+    <line x1="0" y1="0" x2="0" y2="-50" stroke="#a8e063" stroke-width="3" filter="url(#softGlow)"/>
+    <path d="M 0 -50 L 25 -40 L 0 -34 Z" fill="#a8e063" filter="url(#softGlow)"/>
+  </g>
+  
+  <!-- Brand name around the circle -->
+  <path id="textPath" d="M 400,60 A 340,340 0 1,1 399,60" fill="none"/>
+  <text font-family="'Courier New', monospace" font-size="24" font-weight="bold" 
+        fill="#667eea" letter-spacing="8" filter="url(#softGlow)">
+    <textPath href="#textPath" startOffset="28%">
+      VECTOR·SPACE·GOLF
+    </textPath>
+  </text>
+  
+  <!-- Bottom text -->
+  <text x="400" y="720" font-family="'Courier New', monospace" font-size="14" 
+        text-anchor="middle" fill="#48dbfb" opacity="0.8">
+    ℝⁿ → ℝ²
+  </text>
+  <text x="400" y="745" font-family="Arial, sans-serif" font-size="11" 
+        text-anchor="middle" fill="#a8b2d1" font-style="italic">
+    iterative manifold navigation
+  </text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#48dbfb" opacity="0.6"/>
+    </marker>
+  </defs>
+</svg>

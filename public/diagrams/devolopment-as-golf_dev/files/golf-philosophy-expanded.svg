@@ -1,0 +1,949 @@
+<svg viewBox="0 0 1600 3200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1b5e20;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2e7d32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#43a047;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="recoveryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c62828;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f44336;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1600" height="120" fill="url(#headerGrad)"/>
+  <text x="800" y="50" font-family="Georgia, serif" font-size="42" font-weight="bold" 
+        text-anchor="middle" fill="#fff" filter="url(#glow)">
+    DEVELOPMENT-AS-GOLF: EXPANDED EDITION
+  </text>
+  <text x="800" y="80" font-family="Arial, sans-serif" font-size="16" 
+        text-anchor="middle" fill="#c8e6c9">
+    Extended Archetypes, Recovery Strategies, and Multi-Scale Product Development
+  </text>
+  <text x="800" y="105" font-family="Arial, sans-serif" font-size="13" 
+        text-anchor="middle" fill="#a5d6a7" font-style="italic">
+    From Individual Prompts (Shots) → Features (Holes) → Products (Courses)
+  </text>
+  
+  <!-- Section: Multi-Scale Framework -->
+  <g id="scale_framework" transform="translate(50, 150)">
+    <rect x="0" y="0" width="1500" height="280" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="3"/>
+    
+    <text x="750" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
+          text-anchor="middle" fill="#1b5e20">
+      I. The Multi-Scale Framework: Shots → Holes → Courses
+    </text>
+    
+    <!-- Three scale levels -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="460" height="190" rx="8" fill="#fff" stroke="#66bb6a" stroke-width="2"/>
+      <text x="230" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" 
+            fill="#2e7d32" font-weight="bold">
+        SHOT LEVEL: Individual Prompts
+      </text>
+      <text x="20" y="55" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+        <tspan font-weight="bold">Scale:</tspan> Single iteration (1 prompt/response)
+      </text>
+      <text x="20" y="75" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        The atomic unit of development. Each shot moves
+      </text>
+      <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        through embedding space, landing in a specific
+      </text>
+      <text x="20" y="105" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        confidence region (rough/fairway/approach/green).
+      </text>
+      
+      <rect x="20" y="120" width="420" height="55" rx="4" fill="#f1f8f4" stroke="#81c784" stroke-width="1"/>
+      <text x="30" y="138" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32" font-weight="bold">
+        METRICS:
+      </text>
+      <text x="30" y="152" font-family="Arial, sans-serif" font-size="9" fill="#1a1a1a">
+        • Arc length = semantic distance traveled
+      </text>
+      <text x="30" y="165" font-family="Arial, sans-serif" font-size="9" fill="#1a1a1a">
+        • Landing zone = confidence level achieved
+      </text>
+    </g>
+    
+    <g transform="translate(520, 60)">
+      <rect x="0" y="0" width="460" height="190" rx="8" fill="#fff" stroke="#2196f3" stroke-width="2"/>
+      <text x="230" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" 
+            fill="#0d47a1" font-weight="bold">
+        HOLE LEVEL: Feature Development
+      </text>
+      <text x="20" y="55" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+        <tspan font-weight="bold">Scale:</tspan> Complete feature (3-40+ shots)
+      </text>
+      <text x="20" y="75" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        A sequence of shots from initial concept to feature-
+      </text>
+      <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        complete implementation. Each hole has a par
+      </text>
+      <text x="20" y="105" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        (expected shots) based on complexity archetype.
+      </text>
+      
+      <rect x="20" y="120" width="420" height="55" rx="4" fill="#e3f2fd" stroke="#64b5f6" stroke-width="1"/>
+      <text x="30" y="138" font-family="Arial, sans-serif" font-size="9" fill="#0d47a1" font-weight="bold">
+        METRICS:
+      </text>
+      <text x="30" y="152" font-family="Arial, sans-serif" font-size="9" fill="#1a1a1a">
+        • Total shots = development iterations
+      </text>
+      <text x="30" y="165" font-family="Arial, sans-serif" font-size="9" fill="#1a1a1a">
+        • Score vs par = efficiency measure
+      </text>
+    </g>
+    
+    <g transform="translate(1010, 60)">
+      <rect x="0" y="0" width="460" height="190" rx="8" fill="#fff" stroke="#ff9800" stroke-width="2"/>
+      <text x="230" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" 
+            fill="#e65100" font-weight="bold">
+        COURSE LEVEL: Product Development
+      </text>
+      <text x="20" y="55" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+        <tspan font-weight="bold">Scale:</tspan> Full product (18+ holes, 100+ shots)
+      </text>
+      <text x="20" y="75" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        Multiple features compose a complete product.
+      </text>
+      <text x="20" y="90" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        Each hole (feature) contributes to overall product
+      </text>
+      <text x="20" y="105" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        completeness. Front 9 = MVP, Back 9 = refinement.
+      </text>
+      
+      <rect x="20" y="120" width="420" height="55" rx="4" fill="#fff3e0" stroke="#ffb74d" stroke-width="1"/>
+      <text x="30" y="138" font-family="Arial, sans-serif" font-size="9" fill="#e65100" font-weight="bold">
+        METRICS:
+      </text>
+      <text x="30" y="152" font-family="Arial, sans-serif" font-size="9" fill="#1a1a1a">
+        • Course total = cumulative development effort
+      </text>
+      <text x="30" y="165" font-family="Arial, sans-serif" font-size="9" fill="#1a1a1a">
+        • Handicap = team skill/experience level
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section: Extended Shot Archetypes -->
+  <g id="shot_archetypes" transform="translate(50, 460)">
+    <rect x="0" y="0" width="1500" height="1050" rx="10" fill="#fff9f0" stroke="#f57c00" stroke-width="3"/>
+    
+    <text x="750" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
+          text-anchor="middle" fill="#e65100">
+      II. Extended Shot Archetypes: The Complete Golfer's Toolkit
+    </text>
+    
+    <!-- The Putter -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#66bb6a" stroke="#2e7d32" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">P</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#1b5e20" font-weight="bold">
+        THE PUTTER: Precision Refinement
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> On the green, near goal convergence
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Fine-tuning final details with minimal changes
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Very short (1-5% semantic change)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Very high (95-99%)
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#81c784" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32" font-weight="bold">
+        EXAMPLE PROMPTS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Change the blue to #0066cc"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Add 2px padding to the button"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Fix typo: 'recieve' → 'receive'"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Round to 2 decimals instead of 3"
+      </text>
+    </g>
+    
+    <!-- The Driver -->
+    <g transform="translate(520, 60)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#42a5f5" stroke="#1565c0" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">D</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#0d47a1" font-weight="bold">
+        THE DRIVER: Maximum Distance
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Starting from tee, broad exploration needed
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Cover maximum semantic distance quickly
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Very long (50-80% toward goal)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Low-moderate (40-70%)
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#64b5f6" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#0d47a1" font-weight="bold">
+        EXAMPLE PROMPTS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Create a full e-commerce checkout flow"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Build a data visualization dashboard"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Implement user authentication system"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Generate complete API documentation"
+      </text>
+    </g>
+    
+    <!-- The Curve Shot -->
+    <g transform="translate(1010, 60)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#ab47bc" stroke="#6a1b9a" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">C</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#6a1b9a" font-weight="bold">
+        THE CURVE SHOT: Strategic Shaping
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Need to work around obstacles/constraints
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Intentional trajectory bending for specific outcome
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Medium (30-50% progress)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Moderate (60-80%)
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#ce93d8" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#6a1b9a" font-weight="bold">
+        EXAMPLE PROMPTS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Like X, but with Y approach instead"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Reframe this as [alternative perspective]"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Use functional style, not OOP"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Optimize for mobile-first, desktop secondary"
+      </text>
+    </g>
+    
+    <!-- The Recovery Shot -->
+    <g transform="translate(30, 300)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#ef5350" stroke="#b71c1c" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">R</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#b71c1c" font-weight="bold">
+        THE RECOVERY SHOT: Out-of-Bounds Escape
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Development went off-track, outside target zone
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Get back to playable area (fairway/rough)
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Short-medium (priority: safety)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Low (need to rebuild)
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#ef9a9a" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#b71c1c" font-weight="bold">
+        EXAMPLE SCENARIOS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Feature scope creep beyond original intent
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Model hallucinated incorrect approach
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Implementation became overly complex
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Lost thread of original requirements
+      </text>
+    </g>
+    
+    <!-- The Drop Shot -->
+    <g transform="translate(520, 300)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#fce4ec" stroke="#880e4f" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#ec407a" stroke="#ad1457" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">⟳</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#880e4f" font-weight="bold">
+        THE DROP: Strategic Reversion
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Recovery impossible, need to backtrack
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Return to known-good position (penalty stroke)
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Backward (revert progress)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Reset to previous position's level
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#f48fb1" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#880e4f" font-weight="bold">
+        EXAMPLE ACTIONS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Revert to version from 3 iterations ago"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Discard recent changes, restart approach"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Go back to initial concept, new direction"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Git: `checkout [previous-commit-hash]`
+      </text>
+    </g>
+    
+    <!-- The Wedge -->
+    <g transform="translate(1010, 300)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#fff8e1" stroke="#f57f17" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#fbc02d" stroke="#f57f17" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">W</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#f57f17" font-weight="bold">
+        THE WEDGE: High-Arc Approach
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Near goal, need vertical specificity
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Land softly in precise zone with high control
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Short-medium (20-40% progress)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Moderate-high (70-90%)
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#fff59d" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#f57f17" font-weight="bold">
+        EXAMPLE PROMPTS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Add error handling with try-catch blocks"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Implement input validation for edge cases"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Create fallback UI for loading states"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Add accessibility attributes (ARIA labels)"
+      </text>
+    </g>
+    
+    <!-- The Iron -->
+    <g transform="translate(30, 540)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#26a69a" stroke="#00695c" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">I</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#00695c" font-weight="bold">
+        THE IRON: Controlled Progression
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Mid-fairway, steady incremental progress
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Balanced distance + accuracy
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Medium (30-50% progress)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Moderate (60-80%)
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#80cbc4" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#00695c" font-weight="bold">
+        EXAMPLE PROMPTS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Add these three fields to the form"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Implement sorting by date and name"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Create reusable component for cards"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Connect API endpoint to UI display"
+      </text>
+    </g>
+    
+    <!-- The Mulligan -->
+    <g transform="translate(520, 540)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#ede7f6" stroke="#512da8" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#7e57c2" stroke="#512da8" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">M</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#512da8" font-weight="bold">
+        THE MULLIGAN: Friendly Do-Over
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Early mistake, no penalty desired
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Informal retry without counting stroke
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Same as original attempt
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Varies (learning from first attempt)
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#b39ddb" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#512da8" font-weight="bold">
+        EXAMPLE SCENARIOS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • First prompt was too vague, rephrase
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Realized better approach immediately
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Model misunderstood, clarify right away
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Wait, let me rephrase that differently"
+      </text>
+    </g>
+    
+    <!-- The Chip Shot -->
+    <g transform="translate(1010, 540)">
+      <rect x="0" y="0" width="470" height="220" rx="8" fill="#e0f7fa" stroke="#006064" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#00acc1" stroke="#006064" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">•</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#006064" font-weight="bold">
+        THE CHIP: Green-Edge Finesse
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Just off green, close but not quite there
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Get onto green for final putt
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Very short (5-15% progress)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> High (85-95%)
+      </text>
+      
+      <rect x="20" y="125" width="430" height="80" rx="4" fill="#fff" stroke="#80deea" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#006064" font-weight="bold">
+        EXAMPLE PROMPTS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Align this element vertically"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Add hover state to buttons"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Make responsive for mobile breakpoint"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • "Update documentation strings"
+      </text>
+    </g>
+    
+    <!-- The Layup -->
+    <g transform="translate(30, 780)">
+      <rect x="0" y="0" width="720" height="220" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">L</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#e65100" font-weight="bold">
+        THE LAYUP: Conservative Positioning
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Risk too high to go for green directly, play safe
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Position for optimal next shot, avoid hazards
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Deliberately short of goal
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Moderate-high (strategic choice)
+      </text>
+      
+      <rect x="20" y="125" width="680" height="80" rx="4" fill="#fff" stroke="#ffcc80" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#e65100" font-weight="bold">
+        EXAMPLE SCENARIOS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Complex feature: "First, build basic version without advanced features"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Unclear requirements: "Create simple prototype to validate approach"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Tech uncertainty: "Implement with standard library, optimize later if needed"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Time constrained: "Get MVP working, polish in subsequent iteration"
+      </text>
+    </g>
+    
+    <!-- The Punch Shot -->
+    <g transform="translate(770, 780)">
+      <rect x="0" y="0" width="710" height="220" rx="8" fill="#fbe9e7" stroke="#bf360c" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" fill="#ff5722" stroke="#bf360c" stroke-width="2"/>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">→</text>
+      
+      <text x="60" y="35" font-family="Arial, sans-serif" font-size="15" fill="#bf360c" font-weight="bold">
+        THE PUNCH SHOT: Low-Risk Navigation
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">When:</tspan> Constrained environment, need to stay under obstacles
+      </text>
+      <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Purpose:</tspan> Low trajectory to avoid overhead constraints
+      </text>
+      <text x="20" y="94" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Distance:</tspan> Medium (control over distance)
+      </text>
+      <text x="20" y="111" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        <tspan font-weight="bold">Confidence:</tspan> Moderate (working within limits)
+      </text>
+      
+      <rect x="20" y="125" width="670" height="80" rx="4" fill="#fff" stroke="#ffab91" stroke-width="1"/>
+      <text x="30" y="143" font-family="Arial, sans-serif" font-size="9" fill="#bf360c" font-weight="bold">
+        EXAMPLE SCENARIOS:
+      </text>
+      <text x="30" y="158" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Legacy system constraints: "Work within existing architecture, no major refactor"
+      </text>
+      <text x="30" y="171" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Limited permissions: "Use available APIs, no system-level changes"
+      </text>
+      <text x="30" y="184" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Performance budget: "Optimize within current memory/CPU limits"
+      </text>
+      <text x="30" y="197" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        • Backward compatibility: "Maintain support for older versions"
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section: Out of Bounds &amp; Hazards -->
+  <g id="hazards" transform="translate(50, 1540)">
+    <rect x="0" y="0" width="1500" height="420" rx="10" fill="#ffebee" stroke="#c62828" stroke-width="3"/>
+    
+    <text x="750" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
+          text-anchor="middle" fill="#b71c1c">
+      III. Hazards &amp; Out-of-Bounds: When Development Goes Astray
+    </text>
+    
+    <!-- Out of Bounds -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="720" height="330" rx="8" fill="#fff" stroke="#d32f2f" stroke-width="2"/>
+      
+      <text x="360" y="30" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" 
+            fill="#c62828" font-weight="bold">
+        OUT OF BOUNDS (OB): Beyond the Scope
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+        Definition:
+      </text>
+      <text x="20" y="78" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        Development has drifted so far from original goal that recovery would
+      </text>
+      <text x="20" y="93" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        cost more than restarting. No clear path back to target zone.
+      </text>
+      
+      <text x="20" y="120" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+        Signs You're Out of Bounds:
+      </text>
+      <text x="30" y="140" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        • Original requirements are unrecognizable in current implementation
+      </text>
+      <text x="30" y="155" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        • Feature has 5x the complexity it should have
+      </text>
+      <text x="30" y="170" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        • You've built something impressive but completely wrong
+      </text>
+      <text x="30" y="185" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        • Each new iteration makes things worse, not better
+      </text>
+      <text x="30" y="200" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        • No one (including you) understands what you're building anymore
+      </text>
+      
+      <text x="20" y="227" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+        Recovery Strategy (Penalty Stroke):
+      </text>
+      <rect x="30" y="240" width="660" height="75" rx="4" fill="#ffcdd2" stroke="#ef5350" stroke-width="1"/>
+      <text x="40" y="260" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">
+        1. THE DROP:
+      </text>
+      <text x="40" y="276" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        Revert to last known-good state (e.g., 5-10 iterations ago)
+      </text>
+      <text x="40" y="290" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        Accept penalty: wasted effort, but you're back in playable position
+      </text>
+      <text x="40" y="304" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        Learn: Document what went wrong to avoid repeating
+      </text>
+    </g>
+    
+    <!-- Hazards -->
+    <g transform="translate(770, 60)">
+      <rect x="0" y="0" width="710" height="330" rx="8" fill="#fff" stroke="#f57c00" stroke-width="2"/>
+      
+      <text x="355" y="30" font-family="Arial, sans-serif" font-size="17" text-anchor="middle" 
+            fill="#ef6c00" font-weight="bold">
+        HAZARDS: High-Risk Zones
+      </text>
+      
+      <text x="20" y="60" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+        Water Hazard = Dependency Hell
+      </text>
+      <text x="30" y="78" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        Getting stuck in complex dependency chains, version conflicts,
+      </text>
+      <text x="30" y="93" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        breaking changes. Hard to navigate, easy to get mired.
+      </text>
+      <text x="30" y="110" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        Recovery: Simplify dependencies, use conservative versions
+      </text>
+      
+      <line x="20" y="125" x2="670" y2="125" stroke="#ffcc80" stroke-width="1"/>
+      
+      <text x="20" y="145" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+        Sand Trap = Technical Debt
+      </text>
+      <text x="30" y="163" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        Accumulated quick fixes, workarounds, and shortcuts that slow
+      </text>
+      <text x="30" y="178" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        progress. Requires extra strokes to escape.
+      </text>
+      <text x="30" y="195" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        Recovery: Refactor systematically, don't make it worse
+      </text>
+      
+      <line x="20" y="210" x2="670" y2="210" stroke="#ffcc80" stroke-width="1"/>
+      
+      <text x="20" y="230" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+        Rough = Unclear Requirements
+      </text>
+      <text x="30" y="248" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        Ambiguous goals, vague specifications. Progress is slow and
+      </text>
+      <text x="30" y="263" font-family="Arial, sans-serif" font-size="10" fill="#444">
+        uncertain. Many exploratory shots needed.
+      </text>
+      <text x="30" y="280" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        Recovery: Clarify requirements before proceeding further
+      </text>
+      
+      <line x="20" y="295" x2="670" y2="295" stroke="#ffcc80" stroke-width="1"/>
+      
+      <text x="20" y="315" font-family="Arial, sans-serif" font-size="9" fill="#ef6c00" font-weight="bold">
+        KEY PRINCIPLE: Recognize hazards early, take recovery shot ASAP
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section: The Scorecard -->
+  <g id="scorecard" transform="translate(50, 1990)">
+    <rect x="0" y="0" width="1500" height="350" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="3"/>
+    
+    <text x="750" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
+          text-anchor="middle" fill="#1b5e20">
+      IV. The Development Scorecard: Tracking Product Progress
+    </text>
+    
+    <text x="750" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">
+      An 18-hole course represents a complete product. Track your development journey:
+    </text>
+    
+    <!-- Sample scorecard -->
+    <g transform="translate(150, 90)">
+      <rect x="0" y="0" width="1200" height="230" rx="6" fill="#fff" stroke="#66bb6a" stroke-width="2"/>
+      
+      <!-- Header -->
+      <rect x="0" y="0" width="1200" height="35" rx="6" fill="#4caf50"/>
+      <text x="600" y="23" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#fff" font-weight="bold">
+        PRODUCT DEVELOPMENT SCORECARD: E-Commerce Platform MVP
+      </text>
+      
+      <!-- Column headers -->
+      <rect x="0" y="35" width="1200" height="25" fill="#c8e6c9"/>
+      <text x="60" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20" font-weight="bold">Hole</text>
+      <text x="280" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20" font-weight="bold">Feature</text>
+      <text x="520" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20" font-weight="bold">Archetype</text>
+      <text x="680" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20" font-weight="bold">Par</text>
+      <text x="820" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20" font-weight="bold">Actual</text>
+      <text x="960" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20" font-weight="bold">+/-</text>
+      <text x="1090" y="52" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20" font-weight="bold">Status</text>
+      
+      <!-- Sample rows -->
+      <g transform="translate(0, 60)">
+        <rect x="0" y="0" width="1200" height="20" fill="#f1f8f4"/>
+        <text x="60" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">1</text>
+        <text x="140" y="14" font-family="Arial, sans-serif" font-size="9" fill="#444">Product listing page</text>
+        <text x="520" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">Convergent</text>
+        <text x="680" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">4</text>
+        <text x="820" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">5</text>
+        <text x="960" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#d84315">+1</text>
+        <text x="1090" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#2e7d32">✓</text>
+      </g>
+      
+      <g transform="translate(0, 80)">
+        <rect x="0" y="0" width="1200" height="20" fill="#fff"/>
+        <text x="60" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">2</text>
+        <text x="140" y="14" font-family="Arial, sans-serif" font-size="9" fill="#444">Shopping cart</text>
+        <text x="520" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">Precision</text>
+        <text x="680" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">3</text>
+        <text x="820" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">3</text>
+        <text x="960" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#2e7d32">E</text>
+        <text x="1090" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#2e7d32">✓</text>
+      </g>
+      
+      <g transform="translate(0, 100)">
+        <rect x="0" y="0" width="1200" height="20" fill="#f1f8f4"/>
+        <text x="60" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">3</text>
+        <text x="140" y="14" font-family="Arial, sans-serif" font-size="9" fill="#444">Payment integration</text>
+        <text x="520" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">Explorer</text>
+        <text x="680" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">6</text>
+        <text x="820" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">8</text>
+        <text x="960" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#d84315">+2</text>
+        <text x="1090" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#2e7d32">✓</text>
+      </g>
+      
+      <g transform="translate(0, 120)">
+        <rect x="0" y="0" width="1200" height="20" fill="#fff"/>
+        <text x="60" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">4</text>
+        <text x="140" y="14" font-family="Arial, sans-serif" font-size="9" fill="#444">User authentication</text>
+        <text x="520" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">Convergent</text>
+        <text x="680" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">4</text>
+        <text x="820" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#999">-</text>
+        <text x="960" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#999">-</text>
+        <text x="1090" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#1976d2">In Progress</text>
+      </g>
+      
+      <g transform="translate(0, 140)">
+        <rect x="0" y="0" width="1200" height="20" fill="#f1f8f4"/>
+        <text x="60" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">5</text>
+        <text x="140" y="14" font-family="Arial, sans-serif" font-size="9" fill="#999">Order history page</text>
+        <text x="520" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#999">Precision</text>
+        <text x="680" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#999">3</text>
+        <text x="820" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#999">-</text>
+        <text x="960" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#999">-</text>
+        <text x="1090" y="14" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#666">Not Started</text>
+      </g>
+      
+      <!-- Totals -->
+      <line x="0" y="170" x2="1200" y2="170" stroke="#66bb6a" stroke-width="2"/>
+      <rect x="0" y="170" width="1200" height="25" fill="#c8e6c9"/>
+      <text x="280" y="187" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1b5e20" font-weight="bold">
+        Front 9 (Holes 1-9)
+      </text>
+      <text x="680" y="187" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1b5e20" font-weight="bold">36</text>
+      <text x="820" y="187" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#1b5e20" font-weight="bold">16</text>
+      <text x="960" y="187" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#d84315" font-weight="bold">+3</text>
+      <text x="1090" y="187" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1976d2" font-style="italic">44% Complete</text>
+    </g>
+  </g>
+  
+  <!-- Section: Strategic Insights -->
+  <g id="insights" transform="translate(50, 2370)">
+    <rect x="0" y="0" width="1500" height="280" rx="10" fill="#e1f5fe" stroke="#0288d1" stroke-width="3"/>
+    
+    <text x="750" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
+          text-anchor="middle" fill="#01579b">
+      V. Strategic Insights: Putting It All Together
+    </text>
+    
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="700" height="195" rx="6" fill="#fff" stroke="#29b6f6" stroke-width="2"/>
+      <text x="350" y="25" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#0277bd" font-weight="bold">
+        Course Management Philosophy
+      </text>
+      
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">
+        1. Know Your Par
+      </text>
+      <text x="20" y="66" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        Different features have different difficulty. Set realistic expectations
+      </text>
+      <text x="20" y="79" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        for iteration count based on archetype.
+      </text>
+      
+      <text x="20" y="100" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">
+        2. Play Your Game
+      </text>
+      <text x="20" y="116" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        Don't try hero shots beyond your skill level. Consistent progress
+      </text>
+      <text x="20" y="129" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        beats risky attempts that land out of bounds.
+      </text>
+      
+      <text x="20" y="150" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">
+        3. Course Conditions Matter
+      </text>
+      <text x="20" y="166" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        Model capabilities, token limits, context length—these are the
+      </text>
+      <text x="20" y="179" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        weather conditions of your course. Adjust strategy accordingly.
+      </text>
+    </g>
+    
+    <g transform="translate(770, 60)">
+      <rect x="0" y="0" width="700" height="195" rx="6" fill="#fff" stroke="#29b6f6" stroke-width="2"/>
+      <text x="350" y="25" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" 
+            fill="#0277bd" font-weight="bold">
+        When to Use Each Shot Type
+      </text>
+      
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        <tspan font-weight="bold">Early (Holes 1-6):</tspan> Driver, Iron—cover distance
+      </text>
+      <text x="20" y="65" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        <tspan font-weight="bold">Mid (Holes 7-12):</tspan> Iron, Wedge—refine approach
+      </text>
+      <text x="20" y="80" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        <tspan font-weight="bold">Late (Holes 13-18):</tspan> Chip, Putter—polish details
+      </text>
+      
+      <line x="20" y="95" x2="680" y2="95" stroke="#81d4fa" stroke-width="1"/>
+      
+      <text x="20" y="115" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        <tspan font-weight="bold">In Trouble:</tspan> Recovery, Drop—get back on track
+      </text>
+      <text x="20" y="130" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        <tspan font-weight="bold">High Risk Ahead:</tspan> Layup, Punch—play conservative
+      </text>
+      <text x="20" y="145" font-family="Arial, sans-serif" font-size="9" fill="#444">
+        <tspan font-weight="bold">Around Obstacles:</tspan> Curve, Wedge—strategic shaping
+      </text>
+      
+      <line x="20" y="160" x2="680" y2="160" stroke="#81d4fa" stroke-width="1"/>
+      
+      <text x="350" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" 
+            fill="#0277bd" font-style="italic">
+        Master all shots, deploy strategically
+      </text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <rect x="0" y="2680" width="1600" height="100" fill="url(#headerGrad)"/>
+  <text x="800" y="2720" font-family="Georgia, serif" font-size="18" text-anchor="middle" 
+        fill="#fff" font-weight="bold">
+    "Golf is a game of misses. Development is a journey of iterations."
+  </text>
+  <text x="800" y="2745" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" 
+        fill="#c8e6c9">
+    The goal isn't perfection on the first shot—it's strategic, persistent progress toward the green.
+  </text>
+  <text x="800" y="2770" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" 
+        fill="#a5d6a7" font-style="italic">
+    Development-as-Golf: Expanded Edition © 2025 — Complete Archetype Framework
+  </text>
+  
+  <!-- Decorative course -->
+  <g transform="translate(1450, 2690) scale(0.12)">
+    <path d="M 300 600 Q 280 400, 300 200 L 320 200 Q 340 400, 320 600 Z" 
+          fill="#2d5a2d" stroke="#1a3a1a" stroke-width="6"/>
+    <ellipse cx="310" cy="190" rx="30" ry="15" fill="#66bb6a"/>
+    <circle cx="310" cy="190" r="5" fill="#000"/>
+  </g>
+</svg>

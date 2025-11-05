@@ -1,0 +1,511 @@
+<svg viewBox="0 0 1400 2200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2e7d32;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#43a047;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#66bb6a;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1400" height="100" fill="url(#headerGrad)"/>
+  <text x="700" y="45" font-family="Georgia, serif" font-size="36" font-weight="bold" 
+        text-anchor="middle" fill="#fff" filter="url(#glow)">
+    DEVELOPMENT-AS-GOLF
+  </text>
+  <text x="700" y="75" font-family="Arial, sans-serif" font-size="16" 
+        text-anchor="middle" fill="#e8f5e9">
+    A Metaphorical Framework for Understanding LLM-Assisted Development
+  </text>
+  
+  <!-- Section 1: Core Philosophy -->
+  <g id="section1" transform="translate(50, 130)">
+    <rect x="0" y="0" width="1300" height="220" rx="10" fill="#f1f8f4" stroke="#66bb6a" stroke-width="2"/>
+    
+    <text x="650" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#1b5e20">
+      I. The Core Metaphor
+    </text>
+    
+    <text x="30" y="65" font-family="Arial, sans-serif" font-size="13" fill="#2e7d32" font-weight="bold">
+      The Golf Course = The Possibility Space
+    </text>
+    <text x="30" y="88" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      Just as a golf course is a physical manifestation of challenge and strategy, the "development course" 
+      represents the high-dimensional embedding space through which an LLM navigates when processing prompts.
+    </text>
+    <text x="30" y="108" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      Each region of this space has different properties—some areas are well-defined and stable (the green),
+      others are ambiguous and uncertain (the rough).
+    </text>
+    
+    <text x="30" y="138" font-family="Arial, sans-serif" font-size="13" fill="#2e7d32" font-weight="bold">
+      Each Shot = Each Prompt Iteration
+    </text>
+    <text x="30" y="161" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      Every time you refine or rephrase a prompt, you're taking another "shot" through the possibility space,
+      attempting to land closer to your goal. Like golf, each shot is informed by where you currently are,
+      what you've learned from previous attempts, and your strategic assessment of the remaining distance.
+    </text>
+    
+    <text x="30" y="191" font-family="Arial, sans-serif" font-size="13" fill="#2e7d32" font-weight="bold">
+      The Hole = The Achieved Objective
+    </text>
+    <text x="30" y="214" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      Convergence occurs when prompt specificity and model understanding align perfectly with intent.
+    </text>
+  </g>
+  
+  <!-- Section 2: Terrain Topology Mapping -->
+  <g id="section2" transform="translate(50, 380)">
+    <rect x="0" y="0" width="1300" height="380" rx="10" fill="#fff9f0" stroke="#ff9800" stroke-width="2"/>
+    
+    <text x="650" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#e65100">
+      II. Terrain as Embedding Space Topology
+    </text>
+    
+    <!-- Four layers with detailed descriptions -->
+    
+    <!-- Rough -->
+    <rect x="30" y="60" width="60" height="40" fill="#4a6c3d" stroke="#2a3a22" stroke-width="2" rx="5"/>
+    <text x="110" y="75" font-family="Arial, sans-serif" font-size="14" fill="#1a1a1a" font-weight="bold">
+      ROUGH: The Exploratory Periphery
+    </text>
+    <text x="110" y="95" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      <tspan x="110">• High semantic uncertainty</tspan>
+      <tspan x="110" dy="14">• Broad, underspecified prompts land here</tspan>
+      <tspan x="110" dy="14">• Many possible interpretations exist simultaneously</tspan>
+      <tspan x="110" dy="14">• Terrain undulation: HIGH (15-30 units)</tspan>
+      <tspan x="110" dy="14">• Model confidence: LOW (35-60%)</tspan>
+      <tspan x="110" dy="14">• Example: "Make something with this data"</tspan>
+    </text>
+    
+    <!-- Fairway -->
+    <rect x="30" y="185" width="60" height="40" fill="#6b9d5b" stroke="#3a4a2d" stroke-width="2" rx="5"/>
+    <text x="110" y="200" font-family="Arial, sans-serif" font-size="14" fill="#1a1a1a" font-weight="bold">
+      FAIRWAY: The Progressive Refinement Zone
+    </text>
+    <text x="110" y="220" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      <tspan x="110">• Moderate semantic clarity</tspan>
+      <tspan x="110" dy="14">• Iterative constraints narrow possibilities</tspan>
+      <tspan x="110" dy="14">• Context builds with each iteration</tspan>
+      <tspan x="110" dy="14">• Terrain undulation: MODERATE (5-12 units)</tspan>
+      <tspan x="110" dy="14">• Model confidence: MODERATE (60-80%)</tspan>
+      <tspan x="110" dy="14">• Example: "Create a bar chart showing quarterly revenue"</tspan>
+    </text>
+    
+    <!-- Approach -->
+    <rect x="700" y="60" width="60" height="40" fill="#8bc970" stroke="#4a5a3d" stroke-width="2" rx="5"/>
+    <text x="780" y="75" font-family="Arial, sans-serif" font-size="14" fill="#1a1a1a" font-weight="bold">
+      APPROACH: The High-Confidence Region
+    </text>
+    <text x="780" y="95" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      <tspan x="780">• High semantic precision</tspan>
+      <tspan x="780" dy="14">• Well-constrained requirements</tspan>
+      <tspan x="780" dy="14">• Limited ambiguity remaining</tspan>
+      <tspan x="780" dy="14">• Terrain undulation: LOW (2-6 units)</tspan>
+      <tspan x="780" dy="14">• Model confidence: HIGH (80-95%)</tspan>
+      <tspan x="780" dy="14">• Example: "Blue bars, Q1-Q4 labels, Y-axis $0-100k"</tspan>
+    </text>
+    
+    <!-- Green -->
+    <rect x="700" y="185" width="60" height="40" fill="#9be98b" stroke="#5a6a4d" stroke-width="2" rx="5"/>
+    <text x="780" y="200" font-family="Arial, sans-serif" font-size="14" fill="#1a1a1a" font-weight="bold">
+      GREEN: The Convergence Zone
+    </text>
+    <text x="780" y="220" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      <tspan x="780">• Maximum semantic alignment</tspan>
+      <tspan x="780" dy="14">• Intent fully captured in prompt</tspan>
+      <tspan x="780" dy="14">• Minimal interpretation variance</tspan>
+      <tspan x="780" dy="14">• Terrain undulation: MINIMAL (&lt;2 units)</tspan>
+      <tspan x="780" dy="14">• Model confidence: VERY HIGH (95-99%)</tspan>
+      <tspan x="780" dy="14">• Example: Complete specification with examples</tspan>
+    </text>
+    
+    <!-- Bottom insight -->
+    <rect x="30" y="310" width="1240" height="55" fill="#ffe0b2" stroke="#ef6c00" stroke-width="1.5" rx="5"/>
+    <text x="650" y="332" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#e65100" font-weight="bold">
+      Key Insight: Undulation Represents Confidence Variance
+    </text>
+    <text x="650" y="352" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#3e2723">
+      Rough terrain = volatile, unstable semantic regions where slight prompt changes cause large output variations.
+      Smooth terrain = stable regions where outputs remain consistent despite minor prompt perturbations.
+    </text>
+  </g>
+  
+  <!-- Section 3: Shot Trajectories -->
+  <g id="section3" transform="translate(50, 790)">
+    <rect x="0" y="0" width="1300" height="300" rx="10" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+    
+    <text x="650" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#6a1b9a">
+      III. Shot Trajectories: Navigating High-Dimensional Space
+    </text>
+    
+    <text x="30" y="65" font-family="Arial, sans-serif" font-size="13" fill="#4a148c" font-weight="bold">
+      What Each Arc Represents
+    </text>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      <tspan x="30">When visualized as arcs, each shot through the course represents a</tspan>
+      <tspan x="30" dy="16">traversal through the vector embedding space. The arc's properties map to:</tspan>
+    </text>
+    
+    <rect x="50" y="115" width="580" height="165" fill="#fff" stroke="#9c27b0" stroke-width="1" rx="5"/>
+    <text x="70" y="140" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+      Arc Length (Distance Traveled)
+    </text>
+    <text x="70" y="158" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      Proportional to semantic distance between prompts.
+      Longer arcs = major reformulations, shorter = refinements.
+    </text>
+    
+    <text x="70" y="185" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+      Arc Shape (Trajectory Curvature)
+    </text>
+    <text x="70" y="203" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      Indicates how context evolves. Smooth curves = gradual
+      refinement. Sharp turns = conceptual pivots.
+    </text>
+    
+    <text x="70" y="230" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+      Landing Position (Endpoint Coordinates)
+    </text>
+    <text x="70" y="248" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      Determines which terrain zone you've reached and
+      confidence level achieved at that iteration.
+    </text>
+    
+    <rect x="670" y="115" width="580" height="165" fill="#fff" stroke="#9c27b0" stroke-width="1" rx="5"/>
+    <text x="690" y="140" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+      Perspective Projection
+    </text>
+    <text x="690" y="158" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      The 3D arcs are projected onto the 2D visualization using
+      perspective mathematics, creating natural depth perception.
+    </text>
+    
+    <text x="690" y="185" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+      Sequential Dependency
+    </text>
+    <text x="690" y="203" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      Each shot begins where the last landed—context
+      accumulates through the conversation.
+    </text>
+    
+    <text x="690" y="230" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">
+      Convergence Pattern
+    </text>
+    <text x="690" y="248" font-family="Arial, sans-serif" font-size="10" fill="#555">
+      Shots progressively land in smoother terrain as
+      prompt specificity increases.
+    </text>
+  </g>
+  
+  <!-- Section 4: Strategic Implications -->
+  <g id="section4" transform="translate(50, 1120)">
+    <rect x="0" y="0" width="1300" height="320" rx="10" fill="#e1f5fe" stroke="#0288d1" stroke-width="2"/>
+    
+    <text x="650" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#01579b">
+      IV. Strategic Implications for Prompt Engineering
+    </text>
+    
+    <text x="30" y="65" font-family="Arial, sans-serif" font-size="13" fill="#01579b" font-weight="bold">
+      The Golf Mindset Applied to LLM Interaction
+    </text>
+    
+    <!-- Three columns of strategies -->
+    <g transform="translate(30, 85)">
+      <rect x="0" y="0" width="400" height="205" fill="#fff" stroke="#0288d1" stroke-width="1" rx="5"/>
+      <text x="200" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#01579b" font-weight="bold">
+        Strategy: Course Assessment
+      </text>
+      <text x="15" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Golf:</tspan> Survey terrain, identify hazards,
+      </text>
+      <text x="15" y="65" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        plan route to green
+      </text>
+      <text x="15" y="90" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Prompting:</tspan> Understand task complexity,
+      </text>
+      <text x="15" y="105" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        identify ambiguities, estimate iterations
+      </text>
+      <text x="15" y="120" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        needed for convergence
+      </text>
+      
+      <text x="15" y="145" font-family="Arial, sans-serif" font-size="10" fill="#01579b" font-weight="bold">
+        → Practical Application:
+      </text>
+      <text x="15" y="163" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        Before prompting, ask: Is this a "precision"
+      </text>
+      <text x="15" y="176" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        task (3 shots) or "creative" task (6+ shots)?
+      </text>
+      <text x="15" y="189" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        Adjust your approach and patience accordingly.
+      </text>
+    </g>
+    
+    <g transform="translate(450, 85)">
+      <rect x="0" y="0" width="400" height="205" fill="#fff" stroke="#0288d1" stroke-width="1" rx="5"/>
+      <text x="200" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#01579b" font-weight="bold">
+        Iteration: Shot Selection
+      </text>
+      <text x="15" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Golf:</tspan> Choose club and power based
+      </text>
+      <text x="15" y="65" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        on current position and goal distance
+      </text>
+      <text x="15" y="90" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Prompting:</tspan> Adjust prompt granularity
+      </text>
+      <text x="15" y="105" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        based on current context and remaining
+      </text>
+      <text x="15" y="120" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        semantic distance to goal
+      </text>
+      
+      <text x="15" y="145" font-family="Arial, sans-serif" font-size="10" fill="#01579b" font-weight="bold">
+        → Practical Application:
+      </text>
+      <text x="15" y="163" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        In rough? Use broad, exploratory prompts.
+      </text>
+      <text x="15" y="176" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        On fairway? Add specific constraints.
+      </text>
+      <text x="15" y="189" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        Near green? Provide exact specifications.
+      </text>
+    </g>
+    
+    <g transform="translate(870, 85)">
+      <rect x="0" y="0" width="400" height="205" fill="#fff" stroke="#0288d1" stroke-width="1" rx="5"/>
+      <text x="200" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#01579b" font-weight="bold">
+        Adaptation: Course Correction
+      </text>
+      <text x="15" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Golf:</tspan> Analyze previous shot result,
+      </text>
+      <text x="15" y="65" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        adjust strategy if needed
+      </text>
+      <text x="15" y="90" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Prompting:</tspan> Evaluate model output,
+      </text>
+      <text x="15" y="105" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        identify misalignments, reformulate
+      </text>
+      <text x="15" y="120" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        to correct trajectory
+      </text>
+      
+      <text x="15" y="145" font-family="Arial, sans-serif" font-size="10" fill="#01579b" font-weight="bold">
+        → Practical Application:
+      </text>
+      <text x="15" y="163" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        If output misses target, don't start over—
+      </text>
+      <text x="15" y="176" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        use it as context for next refinement.
+      </text>
+      <text x="15" y="189" font-family="Arial, sans-serif" font-size="9" fill="#555">
+        Each "bad" shot teaches you about the space.
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section 5: The Four Archetypes -->
+  <g id="section5" transform="translate(50, 1470)">
+    <rect x="0" y="0" width="1300" height="280" rx="10" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+    
+    <text x="650" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#e65100">
+      V. The Four Prompting Archetypes
+    </text>
+    
+    <text x="30" y="60" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      Different "hole types" represent distinct categories of prompting challenges:
+    </text>
+    
+    <!-- Four archetypes in grid -->
+    <g transform="translate(30, 80)">
+      <rect x="0" y="0" width="310" height="165" fill="#4a7c3d22" stroke="#4a7c3d" stroke-width="2" rx="5"/>
+      <text x="155" y="25" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#2d5a2d" font-weight="bold">
+        The Convergent Path
+      </text>
+      <text x="15" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Difficulty:</tspan> Medium
+      </text>
+      <text x="15" y="68" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Shots:</tspan> 4
+      </text>
+      <text x="15" y="86" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Scenario:</tspan> Well-defined goal
+      </text>
+      <text x="15" y="104" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        Clear objective, direct path. Add
+      </text>
+      <text x="15" y="119" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        constraints progressively to reach goal.
+      </text>
+      <text x="15" y="142" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        Example: "Create bar chart with
+      </text>
+      <text x="15" y="155" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        revenue by quarter"
+      </text>
+    </g>
+    
+    <g transform="translate(360, 80)">
+      <rect x="0" y="0" width="310" height="165" fill="#c6282822" stroke="#c62828" stroke-width="2" rx="5"/>
+      <text x="155" y="25" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#b71c1c" font-weight="bold">
+        The Explorer
+      </text>
+      <text x="15" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Difficulty:</tspan> Hard
+      </text>
+      <text x="15" y="68" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Shots:</tspan> 5-6
+      </text>
+      <text x="15" y="86" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Scenario:</tspan> Ambiguous goal
+      </text>
+      <text x="15" y="104" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        Requires discovery phase. Early shots
+      </text>
+      <text x="15" y="119" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        explore possibilities before narrowing.
+      </text>
+      <text x="15" y="142" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        Example: "Make something interesting
+      </text>
+      <text x="15" y="155" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        with this dataset"
+      </text>
+    </g>
+    
+    <g transform="translate(690, 80)">
+      <rect x="0" y="0" width="290" height="165" fill="#1976d222" stroke="#1976d2" stroke-width="2" rx="5"/>
+      <text x="145" y="25" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#0d47a1" font-weight="bold">
+        The Precision Shot
+      </text>
+      <text x="15" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Difficulty:</tspan> Easy
+      </text>
+      <text x="15" y="68" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Shots:</tspan> 3
+      </text>
+      <text x="15" y="86" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Scenario:</tspan> Highly constrained
+      </text>
+      <text x="15" y="104" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        Narrow solution space. Detailed
+      </text>
+      <text x="15" y="119" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        requirements lead quickly to goal.
+      </text>
+      <text x="15" y="142" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        Example: "Extract col B, calculate
+      </text>
+      <text x="15" y="155" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        mean, format to 2 decimals"
+      </text>
+    </g>
+    
+    <g transform="translate(1000, 80)">
+      <rect x="0" y="0" width="270" height="165" fill="#7b1fa222" stroke="#7b1fa2" stroke-width="2" rx="5"/>
+      <text x="135" y="25" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#4a148c" font-weight="bold">
+        The Creative
+      </text>
+      <text x="15" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Difficulty:</tspan> Hard
+      </text>
+      <text x="15" y="68" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Shots:</tspan> 6+
+      </text>
+      <text x="15" y="86" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a">
+        <tspan font-weight="bold">Scenario:</tspan> Open-ended
+      </text>
+      <text x="15" y="104" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        Abstract concept with subjective
+      </text>
+      <text x="15" y="119" font-family="Arial, sans-serif" font-size="10" fill="#555">
+        goals. Many iterations to align.
+      </text>
+      <text x="15" y="142" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        Example: "Design a logo evoking
+      </text>
+      <text x="15" y="155" font-family="Arial, sans-serif" font-size="9" fill="#666" font-style="italic">
+        trust and innovation"
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section 6: Higher Dimensional Mapping -->
+  <g id="section6" transform="translate(50, 1780)">
+    <rect x="0" y="0" width="1300" height="180" rx="10" fill="#fce4ec" stroke="#c2185b" stroke-width="2"/>
+    
+    <text x="650" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#880e4f">
+      VI. From 2D Visualization to N-Dimensional Reality
+    </text>
+    
+    <text x="30" y="65" font-family="Arial, sans-serif" font-size="12" fill="#880e4f" font-weight="bold">
+      The Dimensional Reduction
+    </text>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      The golf course visualization is a 2D projection of the actual high-dimensional vector space where LLMs operate.
+    </text>
+    <text x="30" y="104" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      While the true embedding space might have 4096+ dimensions, we collapse it into an intuitive 2D topology that
+    </text>
+    <text x="30" y="121" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      preserves the essential relationships: distance from goal, terrain confidence, and trajectory paths.
+    </text>
+    
+    <text x="30" y="151" font-family="Arial, sans-serif" font-size="12" fill="#880e4f" font-weight="bold">
+      The Metaphorical Power
+    </text>
+    <text x="30" y="171" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">
+      By mapping abstract AI concepts to familiar golf mechanics, we gain intuitive understanding of how to navigate
+      complexity, when to be patient, and how progress emerges through iteration.
+    </text>
+  </g>
+  
+  <!-- Footer -->
+  <rect x="0" y="1990" width="1400" height="80" fill="url(#headerGrad)"/>
+  <text x="700" y="2025" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#fff" font-weight="bold">
+    "Like golf, development is not about perfection on the first try—
+  </text>
+  <text x="700" y="2045" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#fff" font-weight="bold">
+    it's about strategic iteration toward a goal through uncertain terrain."
+  </text>
+  <text x="700" y="2070" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#c8e6c9" font-style="italic">
+    Development-as-Golf © 2025 — A Framework for LLM-Assisted Creation
+  </text>
+  
+  <!-- Small course illustration in bottom right -->
+  <g transform="translate(1100, 2000) scale(0.15)">
+    <path d="M 300 600 Q 280 400, 300 200 L 320 200 Q 340 400, 320 600 Z" 
+          fill="#4a7c3d" stroke="#2a3a22" stroke-width="4"/>
+    <ellipse cx="310" cy="190" rx="25" ry="12" fill="#8bd97b"/>
+    <circle cx="310" cy="190" r="4" fill="#000"/>
+    <line x1="310" y1="190" x2="310" y2="165" stroke="#c41e3a" stroke-width="3"/>
+  </g>
+</svg>

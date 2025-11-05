@@ -1,0 +1,703 @@
+<svg viewBox="0 0 1800 1400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="golfGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a7c3d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d4a26;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="mathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d5a7c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a3a5a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="llmGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3d5a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a1a3a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="connectionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a7c3d;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#3d5a7c;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#7c3d5a;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="900" y="35" font-family="Arial" font-size="32" font-weight="bold" 
+        text-anchor="middle" fill="#1a1a1a">
+    Hyperdimensional Vector Space Golf
+  </text>
+  <text x="900" y="62" font-family="Arial" font-size="14" 
+        text-anchor="middle" fill="#666">
+    Three-Domain Ontological Mapping: Golf Metaphor → Mathematical Reality → LLM Development
+  </text>
+  
+  <!-- Three Column Headers -->
+  <g id="columnHeaders">
+    <!-- Golf Column -->
+    <rect x="50" y="90" width="480" height="60" rx="8" 
+          fill="url(#golfGrad)" stroke="#2d4a26" stroke-width="2" filter="url(#shadow)"/>
+    <text x="290" y="118" font-family="Arial" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#ffffff">
+      Golf Element
+    </text>
+    <text x="290" y="138" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#e0f0e0" font-style="italic">
+      Intuitive Spatial Metaphor
+    </text>
+    
+    <!-- Math Column -->
+    <rect x="570" y="90" width="480" height="60" rx="8" 
+          fill="url(#mathGrad)" stroke="#1a3a5a" stroke-width="2" filter="url(#shadow)"/>
+    <text x="810" y="118" font-family="Arial" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#ffffff">
+      Mathematical Reality
+    </text>
+    <text x="810" y="138" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#d0e0f0" font-style="italic">
+      Formal Semantic Structure
+    </text>
+    
+    <!-- LLM Column -->
+    <rect x="1090" y="90" width="480" height="60" rx="8" 
+          fill="url(#llmGrad)" stroke="#4a1a3a" stroke-width="2" filter="url(#shadow)"/>
+    <text x="1330" y="118" font-family="Arial" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#ffffff">
+      LLM Development
+    </text>
+    <text x="1330" y="138" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#f0d0e0" font-style="italic">
+      Practical Implementation
+    </text>
+  </g>
+  
+  <!-- Mapping Rows -->
+  
+  <!-- Row 1: The Course -->
+  <g id="row1" transform="translate(0, 180)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#e8f5e8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      The Course
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      The entire playing field
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      18 holes, varied terrain
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#e0e8f5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Semantic embedding space ℝⁿ
+    </text>
+    <text x="810" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      High-dimensional vector manifold
+    </text>
+    <text x="810" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      n ∈ {768, 1024, 4096}
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#f5e0e8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      All possible outputs
+    </text>
+    <text x="1330" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Complete solution space
+    </text>
+    <text x="1330" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Model's possibility landscape
+    </text>
+    
+    <!-- Connection arrows -->
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" 
+          marker-end="url(#arrowhead)" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" 
+          marker-end="url(#arrowhead)" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 2: The Rough -->
+  <g id="row2" transform="translate(0, 270)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#d8e5d8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      The Rough
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Unkempt, high-variance area
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Undulation: 15-30
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#d0d8e5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="20" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Flattened embedding space
+    </text>
+    <text x="810" y="38" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      All potentialities
+    </text>
+    <text x="810" y="53" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      T⁻¹([0, 0.6]) = low confidence
+    </text>
+    <text x="810" y="65" font-family="Arial" font-size="9" 
+          text-anchor="middle" fill="#888">
+      Var[T(σ)] &gt; threshold
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#e5d0d8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="20" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Underspecified prompts
+    </text>
+    <text x="1330" y="38" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Broad exploration
+    </text>
+    <text x="1330" y="53" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      "Make something..."
+    </text>
+    <text x="1330" y="65" font-family="Arial" font-size="9" 
+          text-anchor="middle" fill="#888">
+      Library of Babel zone
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 3: The Fairway -->
+  <g id="row3" transform="translate(0, 360)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#c8d5c8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      The Fairway
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Maintained path, moderate variance
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Undulation: 5-12
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#c0c8d5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="20" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Manifold of plausible paths
+    </text>
+    <text x="810" y="38" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      Constrained subspace
+    </text>
+    <text x="810" y="53" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Geodesic approximation region
+    </text>
+    <text x="810" y="65" font-family="Arial" font-size="9" 
+          text-anchor="middle" fill="#888">
+      Confidence ∈ [0.6, 0.8]
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#d5c0c8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="20" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Iterative refinement zone
+    </text>
+    <text x="1330" y="38" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Progressive constraint addition
+    </text>
+    <text x="1330" y="53" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      "Create a React component with..."
+    </text>
+    <text x="1330" y="65" font-family="Arial" font-size="9" 
+          text-anchor="middle" fill="#888">
+      Semantic densification
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 4: The Green -->
+  <g id="row4" transform="translate(0, 450)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#b8c5b8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      The Green
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Smooth putting surface
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Undulation: &lt;2
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#b0b8c5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="20" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      High-confidence target region
+    </text>
+    <text x="810" y="38" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      Near-goal manifold neighborhood
+    </text>
+    <text x="810" y="53" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      d(σ, g) &lt; δ
+    </text>
+    <text x="810" y="65" font-family="Arial" font-size="9" 
+          text-anchor="middle" fill="#888">
+      Confidence &gt; 0.95
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#c5b0b8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="20" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Near-convergence
+    </text>
+    <text x="1330" y="38" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Final polish phase
+    </text>
+    <text x="1330" y="53" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      "Adjust font to 14px, add padding..."
+    </text>
+    <text x="1330" y="65" font-family="Arial" font-size="9" 
+          text-anchor="middle" fill="#888">
+      Minimal variance remaining
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 5: The Hole -->
+  <g id="row5" transform="translate(0, 540)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#a8b5a8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <circle cx="290" cy="35" r="15" fill="#1a1a1a" stroke="#4a7c3d" stroke-width="2"/>
+    <text x="290" y="63" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Target destination
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#a0a8b5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      ε-ball around goal g
+    </text>
+    <text x="810" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      G_ε = {σ ∈ S : d(σ, g) &lt; ε}
+    </text>
+    <text x="810" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Convergence threshold
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#b5a0a8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Acceptable solution
+    </text>
+    <text x="1330" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      User intent satisfied
+    </text>
+    <text x="1330" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      "This is what I wanted"
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Separator -->
+  <line x1="50" y1="640" x2="1770" y2="640" stroke="#ccc" stroke-width="2" stroke-dasharray="10,5"/>
+  
+  <!-- Row 6: A Shot -->
+  <g id="row6" transform="translate(0, 670)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#e8f5e8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      A Shot
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      One stroke with selected club
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Driver, iron, wedge, putter
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#e0e8f5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Transformation σ → σ'
+    </text>
+    <text x="810" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      Morphism in category 𝒮ℯ𝓂
+    </text>
+    <text x="810" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      f: S → S with type τ ∈ T
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#f5e0e8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Single prompt → response
+    </text>
+    <text x="1330" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      One iteration cycle
+    </text>
+    <text x="1330" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      User input + model output
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 7: Trajectory -->
+  <g id="row7" transform="translate(0, 760)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#d8e5d8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      Trajectory
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Sequence of shots to hole
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Arc from tee to green
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#d0d8e5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Path through space
+    </text>
+    <text x="810" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      Γ = (σ₀, σ₁, σ₂, ..., σₖ)
+    </text>
+    <text x="810" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Length L[Γ] = Σᵢ d(σᵢ, σᵢ₊₁)
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#e5d0d8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Sequence of prompts/responses
+    </text>
+    <text x="1330" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Full conversation thread
+    </text>
+    <text x="1330" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Context accumulation
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 8: Par -->
+  <g id="row8" transform="translate(0, 850)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#c8d5c8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      Par
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Expected shots for hole
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      3, 4, 5, or 6+
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#c0c8d5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Expected number of shots
+    </text>
+    <text x="810" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      Difficulty measure par ∈ ℕ
+    </text>
+    <text x="810" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Geodesic length estimate
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#d5c0c8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Reasonable iteration count
+    </text>
+    <text x="1330" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Expected refinement cycles
+    </text>
+    <text x="1330" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Task complexity metric
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 9: Terrain Undulation -->
+  <g id="row9" transform="translate(0, 940)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#b8c5b8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      Terrain Undulation
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Surface variance/roughness
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Bumps and contours
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#b0b8c5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Confidence variance
+    </text>
+    <text x="810" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      Var[T(σ)] over local region
+    </text>
+    <text x="810" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Semantic stability measure
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#c5b0b8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Semantic stability
+    </text>
+    <text x="1330" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Output consistency
+    </text>
+    <text x="1330" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Small prompt changes → large variations
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 10: Distances -->
+  <g id="row10" transform="translate(0, 1030)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#a8b5a8" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      Distances
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Yardage measurements
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Spatial separation
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#a0a8b5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Metric d(σ, σ')
+    </text>
+    <text x="810" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      Semantic distance function
+    </text>
+    <text x="810" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      d: S × S → ℝ₊
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#b5a0a8" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Cosine similarity, semantic distance
+    </text>
+    <text x="1330" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Embedding vector distance
+    </text>
+    <text x="1330" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      How "far" from goal?
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Row 11: Club Selection -->
+  <g id="row11" transform="translate(0, 1120)">
+    <rect x="50" y="0" width="480" height="70" rx="6" 
+          fill="#98a598" stroke="#4a7c3d" stroke-width="1.5"/>
+    <text x="290" y="25" font-family="Arial" font-size="16" font-weight="bold" 
+          text-anchor="middle" fill="#2d4a26">
+      Club Selection
+    </text>
+    <text x="290" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#3a5c2d">
+      Choosing the right tool
+    </text>
+    <text x="290" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Driver vs. putter strategy
+    </text>
+    
+    <rect x="570" y="0" width="480" height="70" rx="6" 
+          fill="#9098a5" stroke="#3d5a7c" stroke-width="1.5"/>
+    <text x="810" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1a3a5a">
+      Shot type archetype
+    </text>
+    <text x="810" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#2a4a6a">
+      Natural transformation η_τ
+    </text>
+    <text x="810" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      τ ∈ T = {driver, iron, wedge, putter}
+    </text>
+    
+    <rect x="1090" y="0" width="480" height="70" rx="6" 
+          fill="#a59098" stroke="#7c3d5a" stroke-width="1.5"/>
+    <text x="1330" y="25" font-family="Arial" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#4a1a3a">
+      Prompt strategy/constraints
+    </text>
+    <text x="1330" y="45" font-family="Arial" font-size="11" 
+          text-anchor="middle" fill="#6a2a4a">
+      Broad vs. narrow approach
+    </text>
+    <text x="1330" y="60" font-family="Arial" font-size="10" 
+          text-anchor="middle" fill="#666" font-style="italic">
+      Exploratory vs. precise refinement
+    </text>
+    
+    <path d="M 530 35 L 570 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+    <path d="M 1050 35 L 1090 35" stroke="url(#connectionGrad)" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Bottom Philosophy -->
+  <rect x="50" y="1230" width="1720" height="130" rx="10" 
+        fill="#f0f8f0" stroke="#4a7c3d" stroke-width="3" filter="url(#shadow)"/>
+  
+  <text x="900" y="1265" font-family="Arial" font-size="18" font-weight="bold" 
+        text-anchor="middle" fill="#2d4a26">
+    The Three-Domain Ontology
+  </text>
+  
+  <text x="900" y="1290" font-family="Arial" font-size="12" 
+        text-anchor="middle" fill="#3a5c2d">
+    <tspan x="900">Golf provides the <tspan font-weight="bold">intuitive spatial metaphor</tspan> that makes high-dimensional navigation comprehensible.</tspan>
+    <tspan x="900" dy="20">Mathematics provides the <tspan font-weight="bold">formal semantic structure</tspan> that ensures theoretical soundness and compositionality.</tspan>
+    <tspan x="900" dy="20">LLM Development provides the <tspan font-weight="bold">practical implementation context</tspan> where theory meets iterative reality.</tspan>
+  </text>
+  
+  <text x="900" y="1340" font-family="Arial" font-size="11" font-style="italic" 
+        text-anchor="middle" fill="#666">
+    This triple mapping enables developers to apply category-theoretic optimization strategies using golf's endemic ontology.
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" opacity="0.7"/>
+    </marker>
+  </defs>
+</svg>
+
+
