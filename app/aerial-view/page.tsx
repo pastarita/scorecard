@@ -101,6 +101,13 @@ export default function AerialViewPage() {
               <span>💻</span>
               <span>IDE Extension</span>
             </Link>
+            <Link
+              href="/intro"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>🎥</span>
+              <span>Intro Video</span>
+            </Link>
             <DocumentationButton />
           </nav>
         </div>

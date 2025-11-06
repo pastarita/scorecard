@@ -126,6 +126,13 @@ export default function Home() {
               <span>📐</span>
               <span>Diagrams</span>
             </a>
+            <a
+              href="/intro"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>🎥</span>
+              <span>Intro Video</span>
+            </a>
             <DocumentationButton />
           </nav>
         </div>
