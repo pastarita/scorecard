@@ -160,3 +160,4 @@ An extension settings panel. Title: "Hyperdimensional Golf Settings" at top. Sec
 **Next**: See [02-semantic-space-visualizations.md](./02-semantic-space-visualizations.md) for semantic space and LLM interaction prompts
 
 
+

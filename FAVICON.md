@@ -75,3 +75,4 @@ If the favicon doesn't appear:
 - The metadata in `app/layout.tsx` doesn't need explicit icon configuration when using `app/icon.svg`
 
 
+

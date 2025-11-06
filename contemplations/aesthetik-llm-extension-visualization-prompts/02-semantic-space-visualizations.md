@@ -126,3 +126,4 @@ A visualization showing the mapping between prompt intensity and semantic clamp 
 **Next**: See [03-theme-skinning-system.md](./03-theme-skinning-system.md) for theme variation prompts
 
 
+
