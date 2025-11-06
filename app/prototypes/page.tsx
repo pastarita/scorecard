@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { DocumentationButton } from "@/components/DocumentationButton";
 import { SAMPLE_SCORECARD } from "@/lib/sample-data";
 
 /**
@@ -31,6 +32,24 @@ export default function PrototypesPage() {
         "Fog/weather visualization",
         "Resizable panels",
         "Front 9 / Back 9 segmentation"
+      ]
+    },
+    {
+      id: "aerial-view",
+      name: "Aerial Shot",
+      description: "Isometric perspective transformation engine for 3D axonometric golf course visualization",
+      route: "/aerial-view",
+      status: "active",
+      branch: "prototypes/aerial-shot",
+      contemplation: null,
+      features: [
+        "Isometric/axonometric projection engine",
+        "Normalized branch architecture",
+        "3D arc trajectory generation",
+        "Zone-based depth visualization",
+        "Transformation language system",
+        "Parallel view rendering",
+        "Interactive transformation controls"
       ]
     },
     {
@@ -287,6 +306,14 @@ export default function PrototypesPage() {
               <span>📐</span>
               <span>Diagrams</span>
             </Link>
+            <Link
+              href="/aerial-view"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>✈️</span>
+              <span>Aerial Shot</span>
+            </Link>
+            <DocumentationButton />
           </nav>
         </div>
       </header>

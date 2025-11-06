@@ -1,7 +1,6 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useScorecardLayout } from "../hooks/useScorecardLayout";
 
 interface ResponsiveHoleGridProps {
   children: ReactNode;
@@ -9,29 +8,27 @@ interface ResponsiveHoleGridProps {
 }
 
 /**
- * ResponsiveHoleGrid - Grid container that adapts column count to breakpoints
+ * ResponsiveHoleGrid - Grid container that never wraps holes to new line
  * 
- * Purpose: Provides responsive grid layout for hole plan views
+ * Purpose: Provides grid layout for hole plan views that always stays in single row
  * Semantic Domain: responsive/containers
  * 
- * Breakpoints:
- * - Mobile (< 640px): 3 columns
- * - Tablet (640px - 1024px): 5 columns
- * - Desktop (> 1024px): 9 columns
- * 
- * Ensures proper height propagation for proportional resizing
+ * Features:
+ * - Always 9 columns (never wraps)
+ * - Horizontal scroll if needed on smaller screens
+ * - Ensures proper height propagation for proportional resizing
+ * - All holes stay in a single row regardless of screen size
  */
 export function ResponsiveHoleGrid({ children, className = "" }: ResponsiveHoleGridProps) {
-  const { gridCols } = useScorecardLayout();
-
   return (
     <div
-      className={`grid gap-2 h-full overflow-hidden ${className}`}
+      className={`grid gap-2 h-full overflow-x-auto ${className}`}
       style={{
-        gridTemplateColumns: `repeat(${gridCols}, 1fr)`,
+        gridTemplateColumns: `repeat(9, minmax(0, 1fr))`,
         gridTemplateRows: "1fr",
         height: "100%",
         minHeight: 0,
+        gridAutoFlow: "column",
       }}
     >
       {children}

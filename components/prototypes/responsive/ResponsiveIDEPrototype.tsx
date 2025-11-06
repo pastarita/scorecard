@@ -107,6 +107,7 @@ export function ResponsiveIDEPrototype({ data }: ResponsiveIDEPrototypeProps) {
     }));
   }, []);
 
+
   useEffect(() => {
     if (isResizing.type === "sidebar") {
       const handleMouseMove = (e: MouseEvent) => handleSidebarResize(e);

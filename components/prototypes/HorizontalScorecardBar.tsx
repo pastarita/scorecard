@@ -6,6 +6,8 @@ import { STATUS_CONFIG, TERRAIN_CONFIG, SHOT_TYPE_CONFIG } from "@/types/scoreca
 import { calculateTotals } from "@/types/scorecard";
 import { generateHoleLayout } from "@/lib/holeGenerator";
 import { HoleFrame } from "./HoleFrame";
+import { FoggedHoleFrame } from "./fog/FoggedHoleFrame";
+import { HoleColumn } from "./HoleColumn";
 import { useResizeObserver } from "./hooks/useResizeObserver";
 
 interface HorizontalScorecardBarProps {
@@ -42,8 +44,8 @@ export function HolePlanView({ hole, isActive, onHover }: HolePlanViewProps) {
       className="relative w-full h-full cursor-pointer group overflow-hidden"
       onMouseEnter={onHover}
     >
-      {/* Hole Frame - Reusable component from root implementation */}
-      <HoleFrame isActive={isActive}>
+      {/* Hole Frame with Fog Overlay - Represents uncertainty/clarity */}
+      <FoggedHoleFrame hole={hole} isActive={isActive} isEditable={true}>
         {/* SVG Golf Hole Plan View - Rotated 90 degrees counterclockwise */}
         {/* This SVG expands vertically to fill available height proportionally */}
         {/* Frame size: {frameSize.width}x{frameSize.height} */}
@@ -237,11 +239,11 @@ export function HolePlanView({ hole, isActive, onHover }: HolePlanViewProps) {
 
         {/* Shot Count Badge */}
         {hasShots && (
-          <div className="absolute top-1 right-1 text-xs font-medium text-[#3d4a21] bg-[#c8e0c8]/90 px-1 rounded">
+          <div className="absolute top-1 right-1 text-xs font-medium text-[#3d4a21] bg-[#c8e0c8]/90 px-1 rounded z-10">
             {hole.shots.length} shot{hole.shots.length !== 1 ? "s" : ""}
           </div>
         )}
-      </HoleFrame>
+      </FoggedHoleFrame>
 
       {/* Hover Tooltip */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block z-50">
@@ -416,50 +418,35 @@ export function HorizontalScorecardBar({ data }: HorizontalScorecardBarProps) {
             {/* This container wraps the hole graphics and is vertically responsive */}
             {/* Removed min-h clamp to allow proportional resizing */}
             {/* Grid container must fill available height to allow HoleFrames to expand */}
+            {/* Uses HoleColumn abstraction to align holes with summary boxes */}
+            {/* Each HoleColumn contains both hole frame and summary box for perfect alignment */}
+            {/* Never wraps - always 9 columns in a single row with horizontal scroll if needed */}
             <div 
-              className="flex-1 grid grid-cols-9 gap-2 overflow-hidden"
+              className="flex-1 grid grid-cols-9 gap-2 overflow-x-auto"
               style={{ 
                 gridTemplateRows: '1fr',
                 height: '100%',
-                minHeight: 0
+                minHeight: 0,
+                gridAutoFlow: 'column',
+                gridAutoColumns: 'minmax(0, 1fr)'
               }}
             >
               {currentHoles.map((hole) => (
-                <div 
-                  key={hole.number} 
-                  className="h-full w-full flex overflow-hidden"
-                  style={{ minHeight: 0 }}
-                >
-                  <HolePlanView
-                    hole={hole}
-                    isActive={hoveredHole === hole.number}
-                    onHover={() => setHoveredHole(hole.number)}
-                  />
-                </div>
+                <HoleColumn
+                  key={hole.number}
+                  hole={hole}
+                  holeView={
+                    <HolePlanView
+                      hole={hole}
+                      isActive={hoveredHole === hole.number}
+                      onHover={() => setHoveredHole(hole.number)}
+                    />
+                  }
+                  isActive={hoveredHole === hole.number}
+                  onHover={() => setHoveredHole(hole.number)}
+                />
               ))}
             </div>
-          </div>
-
-          {/* Summary Boxes Below Holes */}
-          <div className="mt-2 grid grid-cols-9 gap-2 flex-shrink-0">
-            {currentHoles.map((hole) => {
-              const statusConfig = STATUS_CONFIG[hole.status];
-              return (
-                <div
-                  key={hole.number}
-                  className="h-8 bg-white border border-[#8b956d] rounded flex items-center justify-center text-xs font-medium text-[#556b2f] hover:bg-[#f0f8f0] transition-colors cursor-pointer"
-                  onMouseEnter={() => setHoveredHole(hole.number)}
-                  onMouseLeave={() => setHoveredHole(null)}
-                >
-                  <span style={{ color: statusConfig.color }}>
-                    {statusConfig.symbol}
-                  </span>
-                  <span className="ml-1 text-[#3d4a21]">
-                    {hole.name.split(" ")[0]}
-                  </span>
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>

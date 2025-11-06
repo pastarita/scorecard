@@ -15,6 +15,7 @@ import { SAMPLE_SCORECARD } from "@/lib/sample-data";
  * - Stacked header on mobile
  * - Mobile-friendly layout
  * - Proper height propagation
+ * - Fog/weather visualization
  */
 export default function IDEExtensionPrototypePage() {
   return (

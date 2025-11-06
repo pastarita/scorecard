@@ -9,7 +9,7 @@ import { ResponsiveHeader } from "./ResponsiveHeader";
 import { ResponsiveLadder } from "./ResponsiveLadder";
 import { ResponsiveHoleGrid } from "./ResponsiveHoleGrid";
 import { HolePlanView } from "../HorizontalScorecardBar";
-import { HoleFrame } from "../HoleFrame";
+import { HoleColumn } from "../HoleColumn";
 
 interface ResponsiveScorecardBarProps {
   data: ScorecardData;
@@ -124,47 +124,24 @@ export function ResponsiveScorecardBar({ data }: ResponsiveScorecardBarProps) {
           />
         )}
 
-        {/* Responsive Hole Grid */}
+        {/* Responsive Hole Grid - Uses HoleColumn abstraction for alignment */}
         <ResponsiveHoleGrid className="flex-1">
           {currentHoles.map((hole) => (
-            <div
+            <HoleColumn
               key={hole.number}
-              className="h-full w-full flex overflow-hidden"
-              style={{ minHeight: 0 }}
-            >
-              <HolePlanView
-                hole={hole}
-                isActive={hoveredHole === hole.number}
-                onHover={() => setHoveredHole(hole.number)}
-              />
-            </div>
+              hole={hole}
+              holeView={
+                <HolePlanView
+                  hole={hole}
+                  isActive={hoveredHole === hole.number}
+                  onHover={() => setHoveredHole(hole.number)}
+                />
+              }
+              isActive={hoveredHole === hole.number}
+              onHover={() => setHoveredHole(hole.number)}
+            />
           ))}
         </ResponsiveHoleGrid>
-      </div>
-
-      {/* Summary Boxes Below Holes - Responsive */}
-      <div className="mt-2 grid gap-2 flex-shrink-0" style={{ gridTemplateColumns: `repeat(${layout.summaryGridCols}, 1fr)` }}>
-        {currentHoles.map((hole) => {
-          const statusConfig = STATUS_CONFIG[hole.status];
-          return (
-            <div
-              key={hole.number}
-              className="bg-white border border-[#8b956d] rounded p-2 text-center"
-            >
-              <div className="text-xs font-semibold text-[#3d4a21] mb-1">
-                Hole {hole.number}
-              </div>
-              <div className="text-xs text-[#556b2f]">{hole.name}</div>
-              <div
-                className="text-lg mt-1"
-                style={{ color: statusConfig.color }}
-                title={statusConfig.description}
-              >
-                {statusConfig.symbol}
-              </div>
-            </div>
-          );
-        })}
       </div>
     </div>
   );
