@@ -35,6 +35,23 @@ export default function PrototypesPage() {
       ]
     },
     {
+      id: "aerial-engine",
+      name: "Aerial Engine",
+      description: "CSS and SVG motif exploration for aerial shot visualization",
+      route: "/aerial-engine",
+      status: "active",
+      branch: "prototypes/aerial-engine",
+      contemplation: null,
+      features: [
+        "Shared geometry pipeline foundation",
+        "SVG projection vs CSS motif comparison",
+        "Debuggable bounding box overlays",
+        "Layered CSS terrain rendering",
+        "Confidence-responsive arc styling",
+        "Perspective transformation vocabulary integration",
+      ]
+    },
+    {
       id: "aerial-view",
       name: "Aerial Shot",
       description: "Isometric perspective transformation engine for 3D axonometric golf course visualization",
@@ -305,6 +322,13 @@ export default function PrototypesPage() {
             >
               <span>📐</span>
               <span>Diagrams</span>
+            </Link>
+            <Link
+              href="/aerial-engine"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>🧪</span>
+              <span>Aerial Engine</span>
             </Link>
             <Link
               href="/aerial-view"
