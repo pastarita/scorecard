@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { DocumentationProvider } from "@/components/DocumentationProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,7 +46,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} antialiased`}
       >
-        {children}
+        <DocumentationProvider>
+          {children}
+        </DocumentationProvider>
       </body>
     </html>
   );

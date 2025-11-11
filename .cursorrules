@@ -1,0 +1,77 @@
+# Cursor Rules - Hyperdimensional Vector Space Golf
+
+## Branch Organization Convention
+
+This project uses a standardized branch naming convention for organizing development work:
+
+### Branch Types
+
+1. **Contemplations** (`contemplations/[name]`)
+   - High-level architectural thinking and planning
+   - Design documents and conceptual exploration
+   - Use for initial feature exploration
+
+2. **Studies** (`studies/[name]`)
+   - Deep dives into specific implementations
+   - Variable studies and research
+   - Performance analysis and technical deep dives
+
+3. **Prototypes** (`prototypes/[name]`)
+   - Working implementations and experimental features
+   - Functional prototypes and proof of concepts
+   - User-facing features
+
+### When Creating New Work
+
+- **Planning/Design**: Create `contemplations/[feature-name]` branch
+- **Research/Analysis**: Create `studies/[study-name]` branch
+- **Implementation**: Create `prototypes/[prototype-name]` branch
+
+### Code Organization
+
+- Prototypes live in `/app/prototypes` and `/components/prototypes`
+- Follow the branch convention when organizing new features
+- Reference branch names in commit messages: `[contemplation]`, `[study]`, `[prototype]`
+
+### Documentation
+
+- See `BRANCH-CONVENTION.md` for full details
+- Update documentation when convention evolves
+- Keep branch names consistent across the project
+
+---
+
+## Project-Specific Rules
+
+### Component Structure
+- Use semantic domain naming: `components/prototypes/[domain]/[component]`
+- Extract reusable components to appropriate directories
+- Document component purpose and semantic domain in comments
+
+### Styling
+- Use TailwindCSS with scorecard theme colors
+- Follow existing scorecard aesthetic (`#556b2f`, `#8b956d`, etc.)
+- Maintain responsive design patterns
+
+### TypeScript
+- Use strict typing
+- Define types in `/types` directory
+- Export interfaces for component props
+
+### React/Next.js
+- Use "use client" for interactive components
+- Prefer server components when possible
+- Handle SSR/hydration carefully (see fog visualization for examples)
+
+---
+
+## AI Assistant Guidelines
+
+When working on this project:
+
+1. **Respect Branch Convention**: Understand which branch type you're working on
+2. **Follow Semantic Domains**: Use domain-driven component organization
+3. **Maintain Aesthetic**: Keep scorecard visual style consistent
+4. **Document Changes**: Update relevant documentation
+5. **Test Responsively**: Consider mobile, tablet, and desktop views
+

@@ -10,6 +10,7 @@ import { ProgressTimeline } from "@/components/experiments/ProgressTimeline";
 import { HoleDetails } from "@/components/experiments/HoleDetails";
 import { ManifoldProjection } from "@/components/experiments/ManifoldProjection";
 import { InsightsDashboard } from "@/components/experiments/InsightsDashboard";
+import { DocumentationButton } from "@/components/DocumentationButton";
 import { SAMPLE_SCORECARD } from "@/lib/sample-data";
 
 const TABS: Tab[] = [
@@ -101,6 +102,39 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
+          {/* Navigation Links */}
+          <nav className="mt-4 flex items-center gap-4 border-t border-[#8b956d] pt-3">
+            <a
+              href="/prototypes"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>🧪</span>
+              <span>Prototypes</span>
+            </a>
+            <a
+              href="/ide-ext"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>💻</span>
+              <span>IDE Extension</span>
+            </a>
+            <a
+              href="/diagrams"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>📐</span>
+              <span>Diagrams</span>
+            </a>
+            <a
+              href="/intro"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>🎥</span>
+              <span>Intro Video</span>
+            </a>
+            <DocumentationButton />
+          </nav>
         </div>
 
         {/* Tabs - Traditional Golf Scorecard Style */}
