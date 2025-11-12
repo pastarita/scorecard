@@ -96,12 +96,14 @@ export function descriptorToConfig(
   let config: PerspectiveConfig;
   
   // Start with preset based on viewType
-  if (descriptor.viewType === 'custom' && descriptor.customConfig) {
+  if (descriptor.viewType === 'custom') {
+    // For custom viewType, use isometric as base and merge customConfig if provided
     config = {
       ...createPerspectivePreset('isometric'),
-      ...descriptor.customConfig,
+      ...(descriptor.customConfig || {}),
     };
   } else {
+    // For other viewTypes, use the preset directly
     config = createPerspectivePreset(descriptor.viewType);
   }
   

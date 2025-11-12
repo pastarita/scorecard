@@ -170,3 +170,126 @@ body {
   background: var(--scorecard-green-light);
   border-top: 2px solid var(--scorecard-border);
 }
+
+.doc-content {
+  color: var(--scorecard-olive-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.doc-content h1,
+.doc-content h2,
+.doc-content h3,
+.doc-content h4,
+.doc-content h5,
+.doc-content h6 {
+  font-family: var(--font-playfair), 'Playfair Display', 'Georgia', serif;
+  color: var(--scorecard-olive);
+  margin: 0;
+}
+
+.doc-content h1 {
+  font-size: 2rem;
+}
+
+.doc-content h2 {
+  font-size: 1.6rem;
+}
+
+.doc-content h3 {
+  font-size: 1.25rem;
+}
+
+.doc-content p {
+  margin: 0;
+}
+
+.doc-content ul {
+  list-style: none;
+  padding-left: 1.25rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.doc-content li::before {
+  content: "⛳";
+  margin-right: 0.5rem;
+  color: var(--scorecard-olive);
+}
+
+.doc-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.doc-content th,
+.doc-content td {
+  border: 1px solid var(--scorecard-border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  background: white;
+}
+
+.doc-content thead th {
+  background: var(--scorecard-green-header);
+  color: var(--scorecard-olive-dark);
+}
+
+.doc-content code {
+  background: rgba(85, 107, 47, 0.1);
+  color: var(--scorecard-olive-dark);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.doc-content pre {
+  background: #0f1a11;
+  color: #e6f2e6;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.85rem;
+}
+
+.doc-content hr {
+  border: none;
+  border-top: 1px solid var(--scorecard-border);
+  margin: 0;
+}
+
+.doc-content figure {
+  margin: 0;
+  background: white;
+  border: 1px solid var(--scorecard-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.doc-content figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.doc-content figure figcaption {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: var(--scorecard-cream);
+}
+
+.doc-image-inline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+

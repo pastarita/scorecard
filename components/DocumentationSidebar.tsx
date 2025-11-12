@@ -8,6 +8,10 @@ interface DocumentationSidebarProps {
   onClose: () => void;
   selectedPath?: string;
   onSelect?: (section: DocumentationSection) => void;
+  selectedSection?: DocumentationSection | null;
+  contentHtml?: string;
+  isLoadingContent?: boolean;
+  error?: string | null;
 }
 
 export function DocumentationSidebar({
@@ -15,6 +19,10 @@ export function DocumentationSidebar({
   onClose,
   selectedPath,
   onSelect,
+  selectedSection,
+  contentHtml,
+  isLoadingContent = false,
+  error = null,
 }: DocumentationSidebarProps) {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
     new Set(["getting-started", "concepts"])
@@ -77,6 +85,10 @@ export function DocumentationSidebar({
 
   if (!isOpen) return null;
 
+  const activeTitle = selectedSection?.title ?? "Documentation";
+  const hasContent = !!contentHtml;
+  const showComingSoon = !isLoadingContent && !error && !hasContent && selectedSection;
+
   return (
     <>
       {/* Overlay */}
@@ -87,34 +99,66 @@ export function DocumentationSidebar({
       
       {/* Sidebar */}
       <aside
-        className={`fixed right-0 top-0 h-full w-80 bg-white border-l-2 border-[#8b956d] z-50 shadow-xl transition-transform duration-300 ${
+        className={`fixed right-0 top-0 h-full w-[min(100%,900px)] bg-white border-l-2 border-[#8b956d] z-50 shadow-xl transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Header */}
-        <div className="p-4 border-b-2 border-[#8b956d] bg-[#faf8f3]">
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-lg font-bold text-[#556b2f] scorecard-font-serif flex items-center gap-2">
-              <span>📚</span>
-              <span>Documentation</span>
-            </h2>
-            <button
-              onClick={onClose}
-              className="p-1 rounded hover:bg-[#f0f8f0] transition-colors text-[#6b7a4a]"
-              aria-label="Close documentation"
-            >
-              <span className="text-xl">×</span>
-            </button>
+        <div className="flex h-full flex-col">
+          {/* Header */}
+          <div className="p-4 border-b-2 border-[#8b956d] bg-[#faf8f3]">
+            <div className="flex items-center justify-between mb-2">
+              <h2 className="text-lg font-bold text-[#556b2f] scorecard-font-serif flex items-center gap-2">
+                <span>📚</span>
+                <span>{activeTitle}</span>
+              </h2>
+              <button
+                onClick={onClose}
+                className="p-1 rounded hover:bg-[#f0f8f0] transition-colors text-[#6b7a4a]"
+                aria-label="Close documentation"
+              >
+                <span className="text-xl">×</span>
+              </button>
+            </div>
+            <p className="text-xs text-[#6b7a4a] scorecard-font-mono">
+              Press <kbd className="px-1.5 py-0.5 bg-white border border-[#8b956d] rounded text-xs">⌘K</kbd> to search
+            </p>
           </div>
-          <p className="text-xs text-[#6b7a4a] scorecard-font-mono">
-            Press <kbd className="px-1.5 py-0.5 bg-white border border-[#8b956d] rounded text-xs">⌘K</kbd> to search
-          </p>
-        </div>
 
-        {/* Navigation */}
-        <nav className="overflow-y-auto h-[calc(100vh-80px)] p-2">
-          {DOCUMENTATION_STRUCTURE.map((section) => renderSection(section))}
-        </nav>
+          <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
+            {/* Navigation */}
+            <nav className="max-h-[40vh] overflow-y-auto border-b border-[#e5ead9] p-2 lg:max-h-none lg:w-72 lg:border-b-0 lg:border-r">
+              {DOCUMENTATION_STRUCTURE.map((section) => renderSection(section))}
+            </nav>
+
+            {/* Content */}
+            <section className="flex-1 overflow-y-auto bg-[#fdfcf7] px-4 py-5">
+              {isLoadingContent && (
+                <div className="text-sm text-[#6b7a4a] scorecard-font-mono">
+                  Loading documentation…
+                </div>
+              )}
+
+              {error && (
+                <div className="rounded border border-red-300 bg-red-50 p-4 text-sm text-red-700">
+                  {error}
+                </div>
+              )}
+
+              {showComingSoon && (
+                <div className="rounded border border-[#8b956d] bg-white p-4 text-sm text-[#3d4a21]">
+                  Documentation coming soon for this section.
+                </div>
+              )}
+
+              {hasContent && !isLoadingContent && !error && (
+                <article
+                  className="doc-content"
+                  dangerouslySetInnerHTML={{ __html: contentHtml! }}
+                />
+              )}
+            </section>
+          </div>
+        </div>
       </aside>
     </>
   );

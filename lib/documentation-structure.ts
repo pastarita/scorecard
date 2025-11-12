@@ -77,6 +77,7 @@ export const DOCUMENTATION_STRUCTURE: DocumentationSection[] = [
         description: "Driver, Iron, Wedge, Putter, Recovery",
         path: "/docs/concepts/shot-types",
         tags: ["shots", "types"],
+        content: "/docs/concepts/shot-types.md",
         component: "@/types/scorecard.ts",
       },
       {

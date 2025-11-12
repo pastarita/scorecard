@@ -1,6 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState, type RefObject } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type MutableRefObject,
+} from "react";
 
 interface UseResizeObserverOptions {
   onResize?: (size: { width: number; height: number }) => void;
@@ -21,8 +26,8 @@ interface UseResizeObserverOptions {
  */
 export function useResizeObserver<T extends HTMLElement = HTMLDivElement>(
   options?: UseResizeObserverOptions
-): [RefObject<T>, { width: number; height: number }] {
-  const elementRef = useRef<T>(null);
+): [MutableRefObject<T | null>, { width: number; height: number }] {
+  const elementRef = useRef<T | null>(null);
   const [size, setSize] = useState<{ width: number; height: number }>({
     width: 0,
     height: 0,

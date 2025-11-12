@@ -237,7 +237,7 @@ export function transformPoints(
  * Create a perspective configuration preset
  */
 export function createPerspectivePreset(
-  preset: 'isometric' | 'trimetric-diagonal' | 'bird-eye' | 'side-view'
+  preset: 'isometric' | 'trimetric' | 'trimetric-diagonal' | 'bird-eye' | 'side-view'
 ): PerspectiveConfig {
   switch (preset) {
     case 'isometric':
@@ -247,6 +247,7 @@ export function createPerspectivePreset(
         zAngle: -45,
         mode: 'isometric',
       };
+    case 'trimetric':
     case 'trimetric-diagonal':
       return {
         ...DEFAULT_PERSPECTIVE,
