@@ -19,6 +19,21 @@ export default function PrototypesPage() {
   // Active prototypes (currently implemented)
   const activePrototypes = [
     {
+      id: "shot-selection",
+      name: "Shot Selection Interface",
+      description: "Layered reduction of club selection motif with configurable SVG chords",
+      route: "/shot-selection",
+      status: "active",
+      branch: "prototypes/shot-selection-interface",
+      contemplation: "contemplations/semantic-motifs",
+      features: [
+        "Backdrop → container → typography → motif layering",
+        "Config-driven club specifications and chord geometry",
+        "Selectable club deck with SVG arc visualization",
+        "Scorecard theme palette alignment",
+      ],
+    },
+    {
       id: "ide-ext",
       name: "IDE Extension",
       description: "Responsive IDE prototype with breakpoint handling, fog visualization, and scorecard integration",
