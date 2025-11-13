@@ -144,3 +144,4 @@ The shot playbook is the canonical reference for aligning prompting technique wi
 - Reference the same SVG assets in demo components to maintain visual parity between documentation and live tooling.
 
 
+
