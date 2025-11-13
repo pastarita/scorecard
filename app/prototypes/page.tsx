@@ -83,6 +83,23 @@ export default function PrototypesPage() {
         "Export functionality",
         "Diagram navigation"
       ]
+    },
+    {
+      id: "golf-philosophy-slides",
+      name: "Golf Philosophy Slides",
+      description: "Full-screen slide presentation of the 10 shot archetypes with keyboard navigation, visualizations, and detailed prompt examples",
+      route: "/golf-philosophy-slides",
+      status: "active",
+      branch: "prototypes/golf-philosophy-slides",
+      contemplation: null,
+      features: [
+        "10 shot type slides with full-screen viewer",
+        "Keyboard navigation (arrow keys, Home, End)",
+        "Shot visualizations and artifact definitions",
+        "Example prompts and heuristic definitions",
+        "Quick reference metrics",
+        "Scorecard aesthetic styling"
+      ]
     }
   ];
 
@@ -343,6 +360,13 @@ export default function PrototypesPage() {
             >
               <span>🎥</span>
               <span>Intro Video</span>
+            </Link>
+            <Link
+              href="/golf-philosophy-slides"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#556b2f] text-white rounded hover:bg-[#3d4a21] transition-colors text-xs font-medium scorecard-font-serif"
+            >
+              <span>⛳</span>
+              <span>Golf Philosophy Slides</span>
             </Link>
             <DocumentationButton />
           </nav>

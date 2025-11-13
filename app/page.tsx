@@ -162,13 +162,6 @@ export default function LandingPage() {
                 <span>🧪</span>
                 <span>Review Prototypes</span>
               </Link>
-              <Link
-                href="/agents"
-                className="inline-flex items-center gap-2 rounded-full border border-dashed border-[#8b956d] px-5 py-2.5 text-sm font-medium text-[#4b5b28] hover:bg-[#8b956d]/20 transition-colors"
-              >
-                <span>🤖</span>
-                <span>Agent Protocols</span>
-              </Link>
             </div>
           </div>
           <div className="lg:w-2/5 flex justify-center">
@@ -361,9 +354,6 @@ export default function LandingPage() {
           <div className="flex flex-wrap gap-4 text-sm text-[#4b5b28]">
             <Link href="/docs" className="hover:text-[#2d3b16]">
               Documentation
-            </Link>
-            <Link href="/agents" className="hover:text-[#2d3b16]">
-              Agent Protocols
             </Link>
             <Link href="/contact" className="hover:text-[#2d3b16]">
               Contact Builder
