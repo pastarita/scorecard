@@ -1,0 +1,966 @@
+# Optiforge-Dash Implementation Scorecard
+
+**Hyperdimensional Vector Space Golf Scorekeeping System**
+
+**Version**: 1.0  
+**Date**: November 2025  
+**Par**: 72 (4 shots per hole average)  
+**Target**: Complete implementation in 18 holes
+
+---
+
+## Course Overview
+
+This implementation plan structures the development of Optiforge-Dash as an 18-hole golf course, where each hole represents a feature-complete development segment. The course is divided into two nines:
+
+- **Front Nine (Holes 1-9)**: Core MVP - Releasable product with bulk of core scope
+- **Back Nine (Holes 10-18)**: Advanced features - Polish, optimization, and extended capabilities
+
+### Shot Progression System
+
+Each hole contains 3-5 shots that progress in semantic specificity:
+
+1. **Drive** (Shot 1): Broad scope, low semantic clamping - Establishes foundation and architecture
+2. **Approach** (Shot 2-3): Medium scope, moderate semantic clamping - Builds core functionality
+3. **Chip** (Shot 4): Narrow scope, high semantic clamping - Refines and integrates
+4. **Putt** (Shot 5): Minimal scope, maximum semantic clamping - Finishes with precision and quality
+
+### Scoring System
+
+- **Par**: Expected number of shots to complete hole
+- **Birdie**: Completed in fewer shots than par
+- **Eagle**: Exceptional efficiency
+- **Bogey**: Required additional shots
+- **Quality Check**: Each hole must pass acceptance criteria before proceeding
+
+---
+
+## Front Nine: Core MVP (Holes 1-9)
+
+**Target**: Releasable product after Hole 9 with core functionality complete
+
+---
+
+## Hole 1: Foundation & Project Setup
+**Par**: 4  
+**Difficulty**: Easy  
+**Yardage**: Foundation infrastructure
+
+### Objective
+Establish the foundational architecture, project structure, and development environment for Optiforge-Dash.
+
+### Acceptance Criteria
+- ✅ Next.js 16 project initialized with TypeScript
+- ✅ Tailwind CSS v4 configured
+- ✅ Project structure matches architecture
+- ✅ Development environment functional
+- ✅ Basic routing and layout in place
+
+---
+
+### Shot 1: Drive - Project Initialization
+**Semantic Clamping**: Low (Broad architectural decisions)
+
+**Prompt**:
+```
+Initialize a Next.js 16 project with TypeScript for Optiforge-Dash. Configure the project with:
+- App Router architecture
+- TypeScript 5+ with strict mode
+- Tailwind CSS v4 with PostCSS
+- Biome for linting and formatting
+- Project structure: app/, components/, services/, types/, utils/
+- Environment variable setup (.env.local template)
+- Basic next.config.ts with standalone output
+- package.json with all required dependencies
+
+Ensure the project follows Next.js 16 best practices and is ready for server-side API routes and client components.
+```
+
+---
+
+### Shot 2: Approach - Core Layout & Routing
+**Semantic Clamping**: Medium (Specific component structure)
+
+**Prompt**:
+```
+Create the root layout (app/layout.tsx) and main page (app/page.tsx) for Optiforge-Dash with:
+- Root layout with metadata, font configuration, and global styles
+- Main dashboard page with sidebar + main content area structure
+- Type definitions for ViewMode ('workspace' | 'overview') and artifact data structures
+- Basic state management using React useState for selectedArtifact and viewMode
+- Responsive layout using Tailwind CSS with dark mode support
+- Header component with application title and navigation
+
+The layout should support the dashboard's sidebar navigation pattern and workspace switching.
+```
+
+---
+
+### Shot 3: Approach - File System Utilities
+**Semantic Clamping**: Medium-High (Specific utility functions)
+
+**Prompt**:
+```
+Create file system utility functions (app/utils/filesystem.ts) for artifact directory operations:
+- findArtifactDirectory(artifactId: string): Promise<string | null> - Locates artifact directory by ID
+- readArtifactFile(path: string, filename: string): Promise<string | null> - Reads files from artifact directories
+- writeArtifactFile(path: string, filename: string, content: string): Promise<void> - Writes files with backup
+- listArtifactDirectories(): Promise<string[]> - Lists all artifact directories
+- validateArtifactPath(path: string): boolean - Prevents directory traversal attacks
+- createBackup(filePath: string): Promise<void> - Creates backup before writes
+
+All functions must handle errors gracefully, validate paths to prevent security issues, and work with the _dev/artifacts/ directory structure.
+```
+
+---
+
+### Shot 4: Putt - Development Environment
+**Semantic Clamping**: High (Precise configuration)
+
+**Prompt**:
+```
+Complete the development environment setup:
+- Create .env.local.example with all required environment variables (ARTIFACTS_DIR, API keys placeholders)
+- Configure Biome (biome.json) with TypeScript and React rules, format on save
+- Add npm scripts: dev, build, start, lint, format, type-check
+- Create tsconfig.json with strict TypeScript settings, path aliases (@/ for app directory)
+- Set up .gitignore for Next.js, node_modules, .env files, .next directory
+- Verify hot reload works, verify TypeScript compilation, verify Tailwind CSS processing
+
+Test that the development server starts without errors and all configuration files are properly set up.
+```
+
+---
+
+## Hole 2: Artifact Listing & Navigation
+**Par**: 4  
+**Difficulty**: Easy  
+**Yardage**: Core navigation system
+
+### Objective
+Implement the artifact listing system with sidebar navigation and overview panel.
+
+### Acceptance Criteria
+- ✅ Sidebar displays all 15 artifacts
+- ✅ Artifact metadata loaded from file system
+- ✅ Overview panel shows grid of artifacts
+- ✅ Click navigation works
+- ✅ Status indicators display correctly
+
+---
+
+### Shot 1: Drive - Artifact API Route
+**Semantic Clamping**: Low (Broad API design)
+
+**Prompt**:
+```
+Create the main artifacts API route (app/api/artifacts/route.ts) that:
+- Lists all artifacts from _dev/artifacts/ directory
+- Reads artifact metadata (definition.md, parameters.json existence)
+- Returns artifact list with: id, name, path, phase, status, type, hasDefinition, hasParameters, lastModified
+- Handles errors gracefully with appropriate HTTP status codes
+- Uses the file system utilities from Hole 1
+
+The route should scan the artifacts directory, extract artifact IDs and names from directory names (format: XX_artifact_name), and return a JSON response with all artifact metadata.
+```
+
+---
+
+### Shot 2: Approach - Artifact Sidebar Component
+**Semantic Clamping**: Medium (Specific component behavior)
+
+**Prompt**:
+```
+Create ArtifactSidebar component (app/components/ArtifactSidebar.tsx) that:
+- Fetches artifacts from /api/artifacts on mount
+- Displays list of 15 artifacts with name, phase, status, and type badge (AI/Mermaid)
+- Highlights selected artifact
+- Shows "All Artifacts Overview" button at top
+- Handles click events to select artifact or show overview
+- Displays loading state while fetching
+- Shows error state if fetch fails
+- Uses Tailwind CSS for styling with dark mode support
+
+The component should be a client component ('use client') and integrate with the parent dashboard's state management.
+```
+
+---
+
+### Shot 3: Approach - Artifact Overview Component
+**Semantic Clamping**: Medium (Specific grid layout)
+
+**Prompt**:
+```
+Create ArtifactOverview component (app/components/ArtifactOverview.tsx) that:
+- Displays artifacts in a responsive grid (3-4 columns on desktop, 2 on tablet, 1 on mobile)
+- Groups artifacts by phase (1-5) with section headers
+- Shows summary statistics: total artifacts, AI count, Mermaid count, completion percentage
+- Each artifact card shows: name, phase, type badge, status indicator, conformality target (if available)
+- Cards are clickable to open artifact workspace
+- Handles empty states and loading states
+- Uses Tailwind CSS grid system with proper spacing and hover effects
+
+The component should receive artifacts array as props and handle artifact selection via callback.
+```
+
+---
+
+### Shot 4: Putt - Integration & State Management
+**Semantic Clamping**: High (Precise integration)
+
+**Prompt**:
+```
+Integrate ArtifactSidebar and ArtifactOverview into the main dashboard page:
+- Update app/page.tsx to use both components
+- Implement state management for selectedArtifact (string | null) and viewMode ('workspace' | 'overview')
+- Handle artifact selection: set selectedArtifact and switch to 'workspace' mode
+- Handle overview click: clear selectedArtifact and switch to 'overview' mode
+- Conditionally render ArtifactWorkspace when artifact selected, ArtifactOverview when in overview mode
+- Add loading states and error boundaries
+- Ensure smooth transitions between views
+
+Test that clicking artifacts in sidebar opens workspace, clicking overview shows grid, and navigation works in both directions.
+```
+
+---
+
+## Hole 3: Definition Management
+**Par**: 4  
+**Difficulty**: Medium  
+**Yardage**: File reading and markdown rendering
+
+### Objective
+Implement definition display and editing with markdown rendering.
+
+### Acceptance Criteria
+- ✅ Definition tab displays markdown correctly
+- ✅ Markdown renders with proper formatting
+- ✅ Edit mode allows saving
+- ✅ File operations work correctly
+- ✅ Error handling robust
+
+---
+
+### Shot 1: Drive - Definition API Route
+**Semantic Clamping**: Low (Broad API design)
+
+**Prompt**:
+```
+Create definition API route (app/api/artifacts/[id]/definition/route.ts) with:
+- GET handler: Reads definition.md from artifact directory, returns { definition: string }
+- PUT handler: Writes definition.md with backup, validates markdown structure, returns { success: boolean }
+- Error handling: 404 if artifact not found, 500 for file system errors, 400 for invalid data
+- Path validation: Uses findArtifactDirectory utility, prevents directory traversal
+- Backup creation: Creates backup before PUT operations
+
+The route should use async/await, handle file system operations safely, and return appropriate JSON responses.
+```
+
+---
+
+### Shot 2: Approach - Markdown Rendering
+**Semantic Clamping**: Medium (Specific library integration)
+
+**Prompt**:
+```
+Install and configure react-markdown for markdown rendering:
+- Install: npm install react-markdown remark-gfm rehype-highlight
+- Create MarkdownRenderer component (app/components/MarkdownRenderer.tsx)
+- Support: headers, lists, code blocks, tables, links, images, blockquotes
+- Syntax highlighting for code blocks using rehype-highlight
+- GitHub Flavored Markdown features (tables, strikethrough, task lists)
+- Custom styling with Tailwind CSS classes
+- Responsive typography and spacing
+
+The component should accept markdown string as prop and render with proper styling that matches the dashboard design system.
+```
+
+---
+
+### Shot 3: Approach - Definition Display Component
+**Semantic Clamping**: Medium (Specific component behavior)
+
+**Prompt**:
+```
+Create ArtifactDefinition component (app/components/workspace/ArtifactDefinition.tsx) that:
+- Fetches definition from /api/artifacts/[id]/definition on mount
+- Displays definition using MarkdownRenderer component
+- Shows loading state while fetching
+- Shows error state if fetch fails or definition missing
+- Displays metadata: last modified timestamp (if available)
+- Has "Edit" button that switches to edit mode
+- Uses Tailwind CSS for layout and styling
+
+The component should be a client component, handle useEffect for data fetching, and manage loading/error states properly.
+```
+
+---
+
+### Shot 4: Putt - Definition Editing
+**Semantic Clamping**: High (Precise edit functionality)
+
+**Prompt**:
+```
+Implement definition editing functionality in ArtifactDefinition component:
+- Add edit mode state (editing: boolean)
+- Textarea editor with: full height, monospace font, markdown syntax, line numbers (optional)
+- Save button: validates content, calls PUT /api/artifacts/[id]/definition, shows success/error
+- Cancel button: discards changes, returns to view mode
+- Auto-save draft to localStorage (optional enhancement)
+- Character count display
+- Validation: prevents empty definitions, shows error for invalid markdown structure
+- Loading state during save operation
+
+Ensure the edit mode provides good UX with proper keyboard shortcuts (Ctrl+S to save, Esc to cancel) and clear visual feedback.
+```
+
+---
+
+## Hole 4: Parameter Management
+**Par**: 4  
+**Difficulty**: Medium  
+**Yardage**: JSON editing and validation
+
+### Objective
+Implement parameter editing with JSON validation and schema support.
+
+### Acceptance Criteria
+- ✅ Parameters display in JSON editor
+- ✅ JSON validation works
+- ✅ Save functionality persists correctly
+- ✅ Syntax highlighting functional
+- ✅ Error handling robust
+
+---
+
+### Shot 1: Drive - Parameters API Route
+**Semantic Clamping**: Low (Broad API design)
+
+**Prompt**:
+```
+Create parameters API route (app/api/artifacts/[id]/parameters/route.ts) with:
+- GET handler: Reads parameters.json, parses JSON, returns { parameters: object }
+- PUT handler: Validates JSON syntax, writes parameters.json with backup, returns { success: boolean }
+- JSON validation: Ensures valid JSON syntax before writing
+- Schema validation: Validates against artifact-specific schema if available (future enhancement)
+- Error handling: 404 if not found, 400 for invalid JSON, 500 for file errors
+- Path validation and backup creation (same as definition route)
+
+The route should handle JSON parsing errors gracefully and provide clear error messages for invalid JSON.
+```
+
+---
+
+### Shot 2: Approach - JSON Editor Component
+**Semantic Clamping**: Medium (Specific editor features)
+
+**Prompt**:
+```
+Install and configure a JSON editor library:
+- Option 1: Use Monaco Editor (VS Code editor) - npm install @monaco-editor/react
+- Option 2: Use CodeMirror - npm install @uiw/react-codemirror
+- Create JSONEditor component (app/components/JSONEditor.tsx)
+- Features: syntax highlighting, bracket matching, auto-indentation, line numbers, error highlighting
+- Dark mode support matching dashboard theme
+- Responsive sizing
+- Read-only and editable modes
+
+Configure the editor with JSON language support, proper theming, and integration with Tailwind CSS.
+```
+
+---
+
+### Shot 3: Approach - Parameters Editor Component
+**Semantic Clamping**: Medium (Specific component behavior)
+
+**Prompt**:
+```
+Create ParametersEditor component (app/components/workspace/ParametersEditor.tsx) that:
+- Fetches parameters from /api/artifacts/[id]/parameters on mount
+- Displays parameters in JSONEditor component
+- Real-time JSON validation: highlights syntax errors, shows error messages
+- Save button: validates JSON, calls PUT endpoint, shows success/error feedback
+- Load button: reloads from server (discards unsaved changes)
+- Validate button: runs validation and shows results
+- Preset buttons: Loads example parameter sets (2-3 presets per artifact)
+- Handles missing parameters gracefully (shows empty object or default)
+
+The component should manage editor state, validation state, and provide clear user feedback for all operations.
+```
+
+---
+
+### Shot 4: Putt - JSON Validation & Presets
+**Semantic Clamping**: High (Precise validation logic)
+
+**Prompt**:
+```
+Implement comprehensive JSON validation in ParametersEditor:
+- Syntax validation: Catches JSON parse errors, shows line/column of error
+- Type validation: Validates data types (string, number, boolean, array, object)
+- Required fields: Checks for required fields based on artifact schema (if available)
+- Custom validation: Artifact-specific validation rules
+- Error display: Shows validation errors below editor with clear messages
+- Preset system: Load preset parameters from artifact directory (presets.json) or hardcoded examples
+- Validation on save: Prevents saving invalid JSON, shows specific error messages
+
+Create example preset files for at least 3 artifacts (01, 05, 06) with 2-3 preset configurations each. Ensure validation provides actionable error messages.
+```
+
+---
+
+## Hole 5: Template Engine
+**Par**: 5  
+**Difficulty**: Hard  
+**Yardage**: Template processing and style injection
+
+### Objective
+Implement Handlebars template processing with style language injection.
+
+### Acceptance Criteria
+- ✅ Templates load correctly
+- ✅ Handlebars processing works
+- ✅ Style language injection functional
+- ✅ Error handling robust
+- ✅ Supports both AI and Mermaid templates
+
+---
+
+### Shot 1: Drive - Template Service Architecture
+**Semantic Clamping**: Low (Broad service design)
+
+**Prompt**:
+```
+Create template engine service architecture (app/services/templateEngine.ts):
+- Install Handlebars: npm install handlebars @types/handlebars
+- Create TemplateEngine class with methods:
+  - loadTemplate(artifactId: string, type: 'ai' | 'mermaid'): Promise<string>
+  - processTemplate(template: string, context: TemplateContext): Promise<string>
+  - injectStyleLanguage(prompt: string, styleLanguage: StyleLanguage): string
+- Define TypeScript interfaces: TemplateContext, StyleLanguage, ProcessedTemplate
+- Error handling: TemplateNotFoundError, ProcessingError, ValidationError
+
+Structure the service to be testable, with clear separation between template loading, processing, and style injection.
+```
+
+---
+
+### Shot 2: Approach - Handlebars Processing
+**Semantic Clamping**: Medium (Specific template features)
+
+**Prompt**:
+```
+Implement Handlebars template processing:
+- Register Handlebars helpers: {{#each}}, {{#if}}, {{#unless}}, {{#with}}
+- Custom helpers: {{colorPalette}}, {{typography}}, {{materialTextures}}
+- Process templates with context: parameters, definition metadata, artifact info
+- Support nested object access: {{parameters.system_name}}
+- Support array iteration: {{#each parameters.components}}
+- Support conditionals: {{#if parameters.include_lighting}}
+- Error handling: Catches Handlebars compilation errors, provides line numbers
+
+Create example template with various Handlebars features and test processing with sample parameters.
+```
+
+---
+
+### Shot 3: Approach - Style Language Parser
+**Semantic Clamping**: Medium (Specific parsing logic)
+
+**Prompt**:
+```
+Create style language parser (app/services/styleLanguageParser.ts):
+- Read IMAGE_GENERATION_PROMPTS.md from _dev/design-artifacts/
+- Parse sections: Color Palette, Typography, Material Textures, Composition Styles
+- Extract color definitions: primary (deepOceanBlue, midOceanBlue), secondary (earthTones), accent (kelpGreens)
+- Extract typography: headers (Roboto Condensed, bold), body (Helvetica Neue, regular)
+- Extract material textures: kelp, geopolymer, metal, digital descriptions
+- Return structured StyleLanguage object
+- Cache parsed result for performance
+
+The parser should handle markdown structure, extract structured data, and provide fallbacks if sections are missing.
+```
+
+---
+
+### Shot 4: Chip - Style Injection Logic
+**Semantic Clamping**: High (Specific formatting)
+
+**Prompt**:
+```
+Implement style language injection into prompts:
+- Format color palette section: "COLOR PALETTE:\nprimary: deepOceanBlue: #0A4C6A, midOceanBlue: #1B6B93\n..."
+- Format typography section: "TYPOGRAPHY:\nheaders: Roboto Condensed (bold)\nbody: Helvetica Neue (regular)"
+- Format material textures: "MATERIAL TEXTURES:\nkelp: Fibrous, slightly translucent\ngeopolymer: Matte, stone-like"
+- Conditional inclusion: includeColors, includeTypography, includeTextures flags
+- Append to prompt: Add style sections after main prompt with proper spacing
+- Preserve prompt structure: Don't break existing prompt formatting
+
+Test injection with various prompts and verify style sections are correctly formatted and appended.
+```
+
+---
+
+### Shot 5: Putt - Template API Integration
+**Semantic Clamping**: High (Precise API integration)
+
+**Prompt**:
+```
+Create prompt API route (app/api/artifacts/[id]/prompt/route.ts):
+- GET handler: Loads template, loads parameters, loads style language, processes template, returns processed prompt
+- Error handling: Handles missing template, invalid parameters, processing errors
+- Caching: Cache processed prompts for performance (optional)
+- Response format: { prompt: string, template: string, parameters: object, styleInjected: boolean }
+
+Integrate with TemplateEngine service, use file system utilities, and ensure all error cases are handled. Test with multiple artifacts and verify prompt generation works correctly.
+```
+
+---
+
+## Hole 6: Transformation Pipeline
+**Par**: 4  
+**Difficulty**: Medium  
+**Yardage**: Pipeline visualization and execution
+
+### Objective
+Implement transformation pipeline UI and execution flow.
+
+### Acceptance Criteria
+- ✅ Pipeline visualization displays correctly
+- ✅ Step status updates in real-time
+- ✅ Transformation executes successfully
+- ✅ Generated prompt displays
+- ✅ Error handling robust
+
+---
+
+### Shot 1: Drive - Pipeline Visualization Component
+**Semantic Clamping**: Low (Broad UI design)
+
+**Prompt**:
+```
+Create TransformationPanel component (app/components/workspace/TransformationPanel.tsx) with:
+- Three-step pipeline visualization: Definition → Template → Generate
+- Step components: PipelineStep with status indicators (pending/processing/complete/error)
+- Visual flow: Arrows between steps, status icons (checkmark, spinner, error)
+- Status management: Track current step, update status on pipeline execution
+- Responsive layout: Horizontal on desktop, vertical on mobile
+- Tailwind CSS styling with proper spacing and visual hierarchy
+
+Design the pipeline UI to clearly show progress and current step, with visual feedback for each state.
+```
+
+---
+
+### Shot 2: Approach - Pipeline Execution Logic
+**Semantic Clamping**: Medium (Specific execution flow)
+
+**Prompt**:
+```
+Implement pipeline execution in TransformationPanel:
+- Transform button: Triggers pipeline execution
+- Step 1 (Definition): Load definition, mark as complete
+- Step 2 (Template): Load template, load parameters, process template, inject style, mark as processing then complete
+- Step 3 (Generate): Call generation API (or show prompt), mark as processing
+- Status updates: Update each step status in real-time
+- Error handling: Catch errors at each step, show error state, display error message
+- Loading states: Show spinners during processing
+- Result display: Show generated prompt in preview area
+
+The execution should be async, update UI progressively, and handle errors gracefully at each step.
+```
+
+---
+
+### Shot 3: Approach - Prompt Preview
+**Semantic Clamping**: Medium (Specific display format)
+
+**Prompt**:
+```
+Add prompt preview to TransformationPanel:
+- Display generated prompt in scrollable text area or code block
+- Syntax highlighting for prompt text (optional)
+- Copy to clipboard button
+- Character count display
+- Format: Monospace font, proper line breaks, readable spacing
+- Expandable/collapsible preview area
+- Show template and parameters used (collapsible sections)
+
+The preview should clearly show the final prompt that will be sent to the generation API, with options to copy and review.
+```
+
+---
+
+### Shot 4: Putt - Error Handling & UX
+**Semantic Clamping**: High (Precise error handling)
+
+**Prompt**:
+```
+Implement comprehensive error handling and UX improvements:
+- Error messages: Specific error messages for each failure point (missing definition, invalid parameters, template error, etc.)
+- Retry functionality: Retry button for failed steps
+- Validation: Validate inputs before starting pipeline (check definition exists, parameters valid)
+- Progress indicators: Show percentage complete or step number
+- Success feedback: Clear success message when pipeline completes
+- Disable controls: Disable transform button during execution
+- Cancel functionality: Allow canceling long-running operations (future enhancement)
+
+Test all error scenarios and ensure users receive clear, actionable feedback for every error condition.
+```
+
+---
+
+## Hole 7: Generation Orchestration
+**Par**: 5  
+**Difficulty**: Hard  
+**Yardage**: API integration and model connectors
+
+### Objective
+Implement generation orchestration with multiple AI model support.
+
+### Acceptance Criteria
+- ✅ Generation API route functional
+- ✅ Model selection works
+- ✅ Queue system implemented
+- ✅ Status polling functional
+- ✅ Error handling robust
+
+---
+
+### Shot 1: Drive - Generation Service Architecture
+**Semantic Clamping**: Low (Broad service design)
+
+**Prompt**:
+```
+Create generation service architecture (app/services/generationService.ts):
+- Define GenerationRequest interface: artifactId, prompt, parameters, model, styleLanguage
+- Define GenerationResult interface: success, imageUrl, model, timestamp, error, jobId
+- Create GenerationService class with methods:
+  - generate(request: GenerationRequest): Promise<GenerationResult>
+  - getStatus(jobId: string): Promise<GenerationStatus>
+  - cancel(jobId: string): Promise<void>
+- Model registry: Map model IDs to connector functions
+- Queue system: Manage concurrent generation requests (max 3-4)
+
+Structure for extensibility with multiple model connectors and proper error handling.
+```
+
+---
+
+### Shot 2: Approach - Model Connectors (DALL-E 3)
+**Semantic Clamping**: Medium (Specific API integration)
+
+**Prompt**:
+```
+Implement DALL-E 3 connector in generation service:
+- API endpoint: https://api.openai.com/v1/images/generations
+- Request format: model: 'dall-e-3', prompt, n: 1, quality: 'standard'|'hd', size: '1024x1024'|'1024x1792'|'1792x1024', style: 'natural'|'vivid'
+- Authentication: Bearer token from OPENAI_API_KEY environment variable
+- Response handling: Extract image URL from response.data[0].url
+- Error handling: Handle rate limits, API errors, network errors
+- Timeout: 120 second timeout for requests
+- Retry logic: 3 retries with exponential backoff for transient errors
+
+Test with sample prompts and verify image URLs are returned correctly.
+```
+
+---
+
+### Shot 3: Approach - Model Connectors (Stable Diffusion)
+**Semantic Clamping**: Medium (Specific API integration)
+
+**Prompt**:
+```
+Implement Stable Diffusion connector via Replicate:
+- API endpoint: https://api.replicate.com/v1/predictions
+- Async workflow: Create prediction, poll for completion
+- Request format: version model ID, input: { prompt, ...parameters }
+- Polling: Check status every 2 seconds until 'succeeded' or 'failed'
+- Response handling: Extract output image URL from completed prediction
+- Error handling: Handle prediction failures, API errors, timeout (5 minutes)
+- Job ID tracking: Store prediction ID for status checking
+
+Implement polling logic with proper async/await patterns and status checking.
+```
+
+---
+
+### Shot 4: Chip - Generation API Route
+**Semantic Clamping**: High (Specific route implementation)
+
+**Prompt**:
+```
+Create transform API route (app/api/artifacts/[id]/transform/route.ts):
+- POST handler: Receives { parameters, model } in request body
+- Load definition, load parameters, process template, inject style language
+- Call generation service with processed prompt and model selection
+- Return: { success: boolean, prompt: string, result: GenerationResult, error?: string }
+- Error handling: Handle each step's potential errors, return appropriate status codes
+- Logging: Log generation requests for debugging (without sensitive data)
+
+Integrate with template engine, generation service, and ensure proper error handling throughout the pipeline.
+```
+
+---
+
+### Shot 5: Putt - Status Polling & UI Integration
+**Semantic Clamping**: High (Precise polling logic)
+
+**Prompt**:
+```
+Implement status polling in TransformationPanel for async models:
+- After generation request, if jobId returned, start polling
+- Poll every 2-3 seconds: Call getStatus(jobId)
+- Update UI: Show "Processing..." with spinner, update progress if available
+- Handle completion: Display image when status is 'succeeded'
+- Handle failure: Show error message when status is 'failed'
+- Timeout: Stop polling after 5 minutes, show timeout message
+- Cancel: Allow canceling polling (future: cancel generation)
+
+Integrate polling with React useEffect and cleanup, ensure proper state management, and provide clear user feedback.
+```
+
+---
+
+## Hole 8: Iteration Tracking
+**Par**: 4  
+**Difficulty**: Medium  
+**Yardage**: File system operations and versioning
+
+### Objective
+Implement iteration tracking with file system storage and history display.
+
+### Acceptance Criteria
+- ✅ Iterations API routes functional
+- ✅ Iteration creation works
+- ✅ History display correct
+- ✅ File storage organized
+- ✅ Metadata tracking complete
+
+---
+
+### Shot 1: Drive - Iterations API Routes
+**Semantic Clamping**: Low (Broad API design)
+
+**Prompt**:
+```
+Create iterations API routes (app/api/artifacts/[id]/iterations/route.ts):
+- GET handler: Lists all iterations from iterations/ directory, reads metadata.json from each, returns sorted list
+- POST handler: Creates new iteration directory (v{N}), saves metadata.json, downloads image, saves to output.png
+- Directory structure: iterations/v1/, iterations/v2/, etc.
+- Metadata format: { version, timestamp, prompt, model, parameters, imageUrl, conformalityScore? }
+- Version numbering: Auto-increment from existing iterations
+- Error handling: Handle missing directories, file errors, download failures
+
+The routes should create proper directory structure and handle all file operations safely.
+```
+
+---
+
+### Shot 2: Approach - Iteration Creation
+**Semantic Clamping**: Medium (Specific creation logic)
+
+**Prompt**:
+```
+Implement iteration creation in POST handler:
+- Get next version number: Scan existing iterations, find max version, increment
+- Create directory: iterations/v{N}/ with proper permissions
+- Download image: Fetch imageUrl, save as output.png in iteration directory
+- Save metadata: Write metadata.json with all iteration data
+- Save prompt: Write prompt.txt with generation prompt (optional)
+- Error handling: Rollback on failure (delete created directory), provide clear error messages
+- Return: { success: boolean, iteration: { version, ...metadata } }
+
+Ensure atomic operations where possible and proper cleanup on errors.
+```
+
+---
+
+### Shot 3: Approach - Iterations Display Component
+**Semantic Clamping**: Medium (Specific component behavior)
+
+**Prompt**:
+```
+Create IterationsPanel component (app/components/workspace/IterationsPanel.tsx):
+- Fetch iterations from /api/artifacts/[id]/iterations on mount
+- Display list: Version number, timestamp, model, conformality score, thumbnail
+- Sort: Newest first (default), allow sorting by version, date, conformality
+- Filter: By date range, by model, by conformality threshold
+- Click iteration: Show full details (image, prompt, parameters, metadata)
+- Loading and error states
+- Empty state: Message when no iterations exist
+
+The component should provide a clear history view with easy navigation and filtering options.
+```
+
+---
+
+### Shot 4: Putt - Iteration Details & Comparison
+**Semantic Clamping**: High (Precise detail display)
+
+**Prompt**:
+```
+Implement iteration details and comparison:
+- Detail view: Modal or expandable section showing full image, prompt, parameters, conformality breakdown
+- Comparison view: Side-by-side comparison of two iterations (select two iterations)
+- Comparison features: Image comparison, conformality score comparison, prompt diff, parameter diff
+- Export comparison: Generate comparison report (text or image)
+- Image viewer: Full-size image viewing with zoom (optional)
+- Metadata display: All iteration metadata in organized format
+
+Create comparison UI that clearly highlights differences between iterations and provides actionable insights.
+```
+
+---
+
+## Hole 9: Basic Conformality Analysis
+**Par**: 4  
+**Difficulty**: Hard  
+**Yardage**: Python integration and color analysis
+
+### Objective
+Integrate color conformality analysis with Python script.
+
+### Acceptance Criteria
+- ✅ Python script integration works
+- ✅ Color analysis executes
+- ✅ Conformality scores calculated
+- ✅ Results stored correctly
+- ✅ Display in iterations panel
+
+---
+
+### Shot 1: Drive - Python Script Integration
+**Semantic Clamping**: Low (Broad integration approach)
+
+**Prompt**:
+```
+Set up Python script integration for color analysis:
+- Locate color_analysis.py script (assumed in _dev/tools/ or similar)
+- Create API route (app/api/analyze-conformality/route.ts) that:
+  - Receives image path or image data
+  - Executes Python script via child_process.exec or spawn
+  - Passes image path and target distribution as arguments
+  - Reads stdout JSON result
+  - Returns conformality analysis result
+- Error handling: Handle Python errors, script not found, execution failures
+- Security: Validate image paths, sanitize inputs
+
+Structure the integration to be secure and handle Python environment requirements.
+```
+
+---
+
+### Shot 2: Approach - Conformality Calculation
+**Semantic Clamping**: Medium (Specific calculation logic)
+
+**Prompt**:
+```
+Implement conformality calculation:
+- Load target distribution from color_conformality.json in artifact directory
+- Target format: { primary: { percentage: 40, tolerance: 5 }, secondary: { percentage: 30, tolerance: 5 }, ... }
+- Call Python script with image path and target distribution
+- Parse result: { primary: number, secondary: number, accent: number, neutral: number }
+- Calculate deviations: |actual - target| for each category
+- Calculate score: 100 - (totalDeviation / maxPossibleDeviation * 100)
+- Return: { score: number, distribution: object, target: object, deviations: object }
+
+Ensure calculations are accurate and handle edge cases (missing categories, invalid percentages).
+```
+
+---
+
+### Shot 3: Approach - Conformality Integration
+**Semantic Clamping**: Medium (Specific integration points)
+
+**Prompt**:
+```
+Integrate conformality analysis into iteration creation:
+- After image download in iteration creation, call conformality analysis
+- Pass image path and artifact's target distribution to analysis API
+- Store results in conformality.json in iteration directory
+- Include conformality score in iteration metadata
+- Handle analysis failures gracefully (don't fail iteration creation if analysis fails)
+- Show analysis status during iteration creation (optional: progress indicator)
+
+Update iterations API POST handler to call conformality analysis and store results.
+```
+
+---
+
+### Shot 4: Putt - Conformality Display
+**Semantic Clamping**: High (Precise UI display)
+
+**Prompt**:
+```
+Display conformality results in IterationsPanel:
+- Show conformality score: Numeric display (0-100%) with color coding (green: >90%, yellow: 80-90%, red: <80%)
+- Show distribution breakdown: Primary, secondary, accent, neutral percentages
+- Show target vs. actual: Visual comparison (bars or numbers)
+- Show deviations: Highlight categories with high deviation
+- Tooltip or expandable section: Detailed conformality data
+- Sort by conformality: Allow sorting iterations by conformality score
+
+Ensure conformality data is clearly visible and actionable, helping users understand color compliance.
+```
+
+---
+
+## 🎯 TURN: Front Nine Complete
+
+**Status Check**: After Hole 9, you should have a **releasable MVP** with:
+- ✅ Complete artifact management
+- ✅ Definition and parameter editing
+- ✅ Template processing
+- ✅ Generation orchestration
+- ✅ Iteration tracking
+- ✅ Basic conformality analysis
+
+**Quality Gate**: All P0 (Critical) requirements from requirements document should be met.
+
+---
+
+## Back Nine: Advanced Features (Holes 10-18)
+
+**Target**: Polish, optimization, and extended capabilities
+
+---
+
+## Hole 10: Advanced UI/UX
+**Par**: 4  
+**Difficulty**: Medium  
+**Yardage**: Enhanced user experience
+
+### Objective
+Enhance UI/UX with advanced features and polish.
+
+### Acceptance Criteria
+- ✅ Keyboard shortcuts implemented
+- ✅ Loading states improved
+- ✅ Animations and transitions
+- ✅ Accessibility improvements
+- ✅ Responsive design refined
+
+---
+
+### Shot 1: Drive - Keyboard Shortcuts
+**Semantic Clamping**: Low (Broad shortcut system)
+
+**Prompt**:
+```
+Implement keyboard shortcut system:
+- Install: npm install react-hotkeys-hook or use native keyboard events
+- Shortcuts: Ctrl/Cmd+S (save), Ctrl/Cmd+E (export), Esc (close/cancel), Tab (next field), Ctrl/Cmd+/ (show shortcuts)
+- Context-aware: Different shortcuts in different views (workspace vs overview)
+- Shortcut display: Help modal showing all available shortcuts
+- Prevent conflicts: Don't trigger shortcuts in input fields (unless intended)
+
+Create a keyboard shortcut handler that works across all components and provides clear user feedback.
+```
+
+---
+
+### Shot 2: Approach - Loading States & Skeletons
+**Semantic Clamping**: Medium (Specific loading patterns)
+
+**Prompt**:

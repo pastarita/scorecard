@@ -4,3 +4,4 @@ export default function GolfPhilosophySlidesPage() {
   return <GolfPhilosophySlideViewer initialSlide={0} />;
 }
 
+
