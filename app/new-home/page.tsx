@@ -38,33 +38,52 @@ export default function NewHomePage() {
   return (
     <div className="min-h-screen bg-[#f5f0e8] text-[#1f2a10]">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-[#eae3d3] min-h-[700px] md:min-h-[800px] lg:min-h-[900px] xl:min-h-[1000px]">
+      <div className="relative overflow-hidden bg-[#eae3d3] min-h-[600px] md:min-h-[650px] lg:min-h-[750px] xl:min-h-[850px]">
+        <style>{`
+          .asymmetric-mask {
+            background: #eae3d3;
+            mask-image: radial-gradient(
+              ellipse 70% 90% at 30% 50%,
+              black 0%,
+              black 20%,
+              rgba(0, 0, 0, 0.6) 35%,
+              rgba(0, 0, 0, 0.3) 50%,
+              transparent 70%
+            );
+            -webkit-mask-image: radial-gradient(
+              ellipse 70% 90% at 30% 50%,
+              black 0%,
+              black 20%,
+              rgba(0, 0, 0, 0.6) 35%,
+              rgba(0, 0, 0, 0.3) 50%,
+              transparent 70%
+            );
+          }
+        `}</style>
+        
         {/* Background Image - Composed.png */}
         <div className="absolute inset-0">
           <Image
             src="/composed.png"
             alt="Golfer in mid-swing aiming towards a cosmic vortex, representing navigation through semantic space"
             fill
-            className="object-cover object-left md:object-center lg:object-right"
+            className="object-cover object-top-left md:object-top lg:object-top-right"
             priority
           />
-          {/* Intentional gradient overlays respecting image structure */}
-          {/* Left side: Strong overlay for text area (where golfer is) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#eae3d3]/98 via-[#eae3d3]/85 to-[#eae3d3]/60" />
-          {/* Right side: Lighter overlay to preserve vortex visibility */}
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#eae3d3]/30" />
-          {/* Top: Subtle gradient to preserve sky */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#eae3d3]/40" />
-          {/* Bottom: Gradient to ground the composition */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#eae3d3]/50 via-transparent to-transparent" />
+          {/* Asymmetric sparse mask overlay - preserves golfer and vortex */}
+          <div className="absolute inset-0 asymmetric-mask" />
+        </div>
+        
+        {/* Header Text - Upper Right Corner */}
+        <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 xl:top-10 xl:right-10 z-20">
+          <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base 2xl:text-lg uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] text-gray-800 font-bold scorecard-font-mono drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] backdrop-blur-md bg-white/40 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded border border-gray-300/50">
+            Hyperdimensional Vector Space Golf
+          </p>
         </div>
         
         {/* Content - Positioned to work with image structure */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-20 lg:py-24 xl:py-28">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-12 md:py-16 lg:py-20 xl:py-24">
           <div className="max-w-2xl md:max-w-3xl lg:max-w-4xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a4a] scorecard-font-mono mb-4 drop-shadow-sm">
-              Hyperdimensional Vector Space Golf
-            </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold scorecard-title text-[#2d3b16] leading-tight mb-6 drop-shadow-lg">
               An Ontological Framework for
               <br />
@@ -94,7 +113,7 @@ export default function NewHomePage() {
         </div>
       </div>
 
-      <main className="max-w-6xl mx-auto px-6 py-16 lg:py-24 space-y-24">
+      <main className="max-w-6xl mx-auto px-6 pt-8 pb-16 lg:pt-12 lg:pb-24 space-y-24">
         {/* The Paradox */}
         <section className="bg-white border-2 border-[#556b2f] rounded-3xl p-10 lg:p-12 shadow-xl">
           <div className="max-w-4xl mx-auto text-center">
@@ -246,31 +265,6 @@ export default function NewHomePage() {
                     </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Connection Visualization */}
-          <div className="mt-12 bg-[#faf8f3] border-2 border-[#c5bfa8] rounded-2xl p-8 max-w-6xl mx-auto px-6">
-            <h3 className="text-xl font-semibold text-[#2d3b16] mb-6 text-center scorecard-font-serif">
-              How They Connect
-            </h3>
-            <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-              <div className="bg-white border border-[#d4ccb4] rounded-lg p-5">
-                <h4 className="font-semibold text-[#2d3b16] mb-3">Intensity Translation</h4>
-                <p className="text-sm text-[#4b5b28] leading-relaxed">
-                  Golf club length maps to LLM constraint profile strictness, with convergent
-                  checks against epsilon-ball radii. A driver (long club) = broad exploration. A
-                  putter (short club) = precise refinement.
-                </p>
-              </div>
-              <div className="bg-white border border-[#d4ccb4] rounded-lg p-5">
-                <h4 className="font-semibold text-[#2d3b16] mb-3">Precision Binding</h4>
-                <p className="text-sm text-[#4b5b28] leading-relaxed">
-                  Terrain micro-topography ties to mathematical gradient flow stability, signaling
-                  when LLM prompts must clamp variance. Rough terrain = high curvature = need for
-                  cautious navigation.
-                </p>
               </div>
             </div>
           </div>
