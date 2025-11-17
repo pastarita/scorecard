@@ -1,370 +1,658 @@
-import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
-const entryPoints = [
-  {
-    title: "Scorecard Dashboard",
-    description:
-      "Tour the hyperdimensional scorecard with insights, trajectories, and manifold visualizations derived from live project data.",
-    href: "/scorecard-dashboard",
-    icon: "📊",
-  },
-  {
-    title: "Prototype Gallery",
-    description:
-      "Inspect interactive experiments and motif explorations inside the prototypes workspace.",
-    href: "/prototypes",
-    icon: "🧪",
-  },
-  {
-    title: "IDE Extension",
-    description:
-      "Review the integrated development assistant surface that instruments agents, prompts, and IDE affordances.",
-    href: "/ide-ext",
-    icon: "💻",
-  },
-  {
-    title: "Diagram Presenter",
-    description:
-      "Navigate ontology-first diagrams, including the semantic manifolds and the four archetype terrains.",
-    href: "/diagrams",
-    icon: "📐",
-  },
-  {
-    title: "Introductory Film",
-    description:
-      "Watch the narrative framing of Hyperdimensional Vector Space Golf and its builder rituals.",
-    href: "/intro",
-    icon: "🎥",
-  },
-  {
-    title: "Motif Contemplations",
-    description:
-      "Trace the evolving semantic motifs and architectural contemplations that seed new prototypes.",
-    href: "/contemplations/semantic-motifs",
-    icon: "🌀",
-  },
-  {
-    title: "LLM Instructions",
-    description:
-      "Comprehensive guide for LLMs and humans on using the Hyperdimensional Vector Space Golf framework to structure implementation plans.",
-    href: "/llm-instructions",
-    icon: "📋",
-  },
-];
+export const metadata: Metadata = {
+  title: "Hyperdimensional Vector Space Golf - Ontological Framework for AI Development",
+  description:
+    "An ontological framework connecting golf practices, mathematical structures, and LLM development. Discover how meditative golf strategies transfer to AI-assisted coding through semantic navigation and convergence.",
+  keywords: [
+    "golf metaphor",
+    "LLM development",
+    "mathematical ontology",
+    "semantic navigation",
+    "vector space",
+    "category theory",
+    "AI development",
+    "prompt engineering",
+    "meditative practice",
+    "convergence",
+  ],
+  authors: [{ name: "Patrick Astarita" }],
+};
 
-const semanticModes = [
-  {
-    name: "Convergent",
-    summary:
-      "Aim at a clearly scoped deliverable with tight guardrails; momentum drives toward a shared semantic pin.",
-    signal:
-      "Use when requirements are crisply bounded and the team needs to land refinement without drifting scope.",
-  },
-  {
-    name: "Precision",
-    summary:
-      "Operate inside a narrow solution band; every variation is measured and instrumented for fidelity.",
-    signal:
-      "Invoke when verifying pipelines or tightening specifications, where the cost of variance outweighs speed.",
-  },
-  {
-    name: "Explorer",
-    summary:
-      "Traverse ambiguous terrain to map possibilities, logging gradients, counterfactuals, and unforeseen hazards.",
-    signal:
-      "Adopt when a domain is under-specified and the goal is discovering viable semantic footholds before converging.",
-  },
-  {
-    name: "Creative",
-    summary:
-      "Hold space for emergent interpretation, weaving narrative, aesthetic, and subjective resonance into the build.",
-    signal:
-      "Deploy when the output must evoke new intuition—ritual design, storytelling, or motif invention.",
-  },
-];
-
-const ontologyStrands = [
-  {
-    title: "Ontology",
-    description:
-      "The scorecard encodes a layered golf metaphor that maps project vectors onto terrains, blades, and gradients.",
-    highlights: [
-      "Map semantic blades to knowledge pillars for explainable references.",
-      "Use hyperdimensional fairways to show how contexts narrow toward the green.",
-    ],
-  },
-  {
-    title: "Methodology",
-    description:
-      "Builder rituals emphasize gradient preservation, analogy handoffs, and the avoidance of LLM flattening.",
-    highlights: [
-      "Run gradient audits when automated ideation compresses option space.",
-      "Document analogy transitions to keep metaphoric framing inspectable.",
-    ],
-  },
-  {
-    title: "Application",
-    description:
-      "Each prototype instantiates motifs in a tangible interface, linking ontological insight to executable workflows.",
-    highlights: [
-      "Motif-driven UI gestures reinforce the semantic grounding of features.",
-      "Dashboards surface archetype signals for faster state assessment.",
-    ],
-  },
-];
-
-const motifSignals = [
-  {
-    title: "Shot Fatness Gauge",
-    detail:
-      "Track how aggressively a swing rewrites the semantic base; thick arcs highlight ontology rewrites needing review.",
-  },
-  {
-    title: "Analogy Ledger",
-    detail:
-      "Layer toggles across prototypes so observers can switch between golf, performance, or narrative perspectives.",
-  },
-  {
-    title: "Knowledge Blades",
-    detail:
-      "Annotate fairway blades with citations and domain pillars, creating a navigable lattice of supporting references.",
-  },
-  {
-    title: "Flattening Countermeasures",
-    detail:
-      "Surface risk zones where LLM contributions collapse gradients, prompting humans to reintroduce contour.",
-  },
-];
-
-export default function LandingPage() {
+/**
+ * Home Page
+ *
+ * Route: /
+ *
+ * Purpose: Primary entry point that communicates the ontological framework
+ * connecting Golf ↔ Mathematics ↔ LLM Development. This page proposes a
+ * meditative strategy for how golf practices transfer to AI-Development and
+ * provides didactic means for understanding the framework through audience-specific
+ * paths and resources.
+ *
+ * Key Message: This has nothing and everything to do with actual golf.
+ */
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#f5f0e8] text-[#1f2a10]">
-      <div className="relative overflow-hidden bg-[#eae3d3]">
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-[#d8cfb8] via-transparent to-[#8b956d]/40" />
-        <div className="relative max-w-6xl mx-auto px-6 py-16 lg:py-24 flex flex-col gap-10 lg:flex-row lg:items-center">
-          <div className="lg:w-3/5">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a4a] scorecard-font-mono">
-              Hyperdimensional Vector Space Golf
-            </p>
-            <h1 className="mt-4 text-4xl lg:text-5xl font-bold scorecard-title text-[#2d3b16]">
-              A semantic landing manifold for builders, analysts, and ontology stewards
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-[#eae3d3] min-h-[600px] md:min-h-[650px] lg:min-h-[750px] xl:min-h-[850px]">
+        <style>{`
+          .asymmetric-mask {
+            background: #eae3d3;
+            mask-image: radial-gradient(
+              ellipse 70% 90% at 30% 50%,
+              black 0%,
+              black 20%,
+              rgba(0, 0, 0, 0.6) 35%,
+              rgba(0, 0, 0, 0.3) 50%,
+              transparent 70%
+            );
+            -webkit-mask-image: radial-gradient(
+              ellipse 70% 90% at 30% 50%,
+              black 0%,
+              black 20%,
+              rgba(0, 0, 0, 0.6) 35%,
+              rgba(0, 0, 0, 0.3) 50%,
+              transparent 70%
+            );
+          }
+        `}</style>
+        
+        {/* Background Image - Composed.png */}
+        <div className="absolute inset-0">
+          <Image
+            src="/composed.png"
+            alt="Golfer in mid-swing aiming towards a cosmic vortex, representing navigation through semantic space"
+            fill
+            className="object-cover object-top-left md:object-top lg:object-top-right"
+            priority
+          />
+          {/* Asymmetric sparse mask overlay - preserves golfer and vortex */}
+          <div className="absolute inset-0 asymmetric-mask" />
+        </div>
+        
+        {/* Header Text - Upper Right Corner */}
+        <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 xl:top-10 xl:right-10 z-20">
+          <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base 2xl:text-lg uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] text-gray-800 font-bold scorecard-font-mono drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] backdrop-blur-md bg-white/40 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded border border-gray-300/50">
+            Hyperdimensional Vector Space Golf
+          </p>
+        </div>
+        
+        {/* Content - Positioned to work with image structure */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-12 md:py-16 lg:py-20 xl:py-24">
+          <div className="max-w-2xl md:max-w-3xl lg:max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold scorecard-title text-[#2d3b16] leading-tight mb-6 drop-shadow-lg">
+              An Ontological Framework for
+              <br />
+              <span className="text-[#556b2f]">AI Development</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-[#4b5b28] scorecard-font-serif">
-              This site is the primary onboarding surface—stitching ontology, methodology, and application artifacts into a navigable
-              topology. Start here to align on vocabulary, uncover prototypes, and dive into the scorecard dashboard.
+            <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-[#4b5b28] scorecard-font-serif mb-8 drop-shadow-md max-w-2xl">
+              Where golf practices, mathematical structures, and LLM development converge
+              through semantic navigation and meditative strategy.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4">
               <Link
-                href="/scorecard-dashboard"
-                className="inline-flex items-center gap-2 rounded-full bg-[#556b2f] px-5 py-2.5 text-white text-sm font-medium hover:bg-[#3d4a21] transition-colors"
+                href="/base-comms"
+                className="inline-flex items-center gap-2 rounded-full bg-[#556b2f] px-6 py-3 text-white text-base font-medium hover:bg-[#3d4a21] transition-colors shadow-lg backdrop-blur-sm bg-opacity-95"
               >
-                <span>📊</span>
-                <span>Open the Scorecard Dashboard</span>
+                <span>📡</span>
+                <span>Start Your Journey</span>
               </Link>
               <Link
-                href="/prototypes"
-                className="inline-flex items-center gap-2 rounded-full border border-[#556b2f] px-5 py-2.5 text-sm font-medium text-[#2d3b16] hover:bg-[#556b2f] hover:text-white transition-colors"
+                href="/llm-instructions"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[#556b2f] px-6 py-3 text-base font-medium text-[#2d3b16] hover:bg-[#556b2f] hover:text-white transition-colors backdrop-blur-sm bg-white/90 shadow-md"
               >
-                <span>🧪</span>
-                <span>Review Prototypes</span>
-              </Link>
-            </div>
-          </div>
-          <div className="lg:w-2/5 flex justify-center">
-            <div className="relative w-full max-w-sm rounded-3xl bg-[#f9f5eb] p-6 shadow-[0_35px_120px_-40px_rgba(85,107,47,0.55)] ring-1 ring-[#c5bfa8]">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a4a] scorecard-font-mono">
-                Archetype Terrain
-              </p>
-              <h2 className="mt-2 text-xl font-semibold text-[#2d3b16] scorecard-font-serif">
-                Semantic Quadrants
-              </h2>
-              <p className="mt-3 text-sm text-[#4b5b28]">
-                Each archetype carves a playable line between ambiguity and precision. Study the manifolds to align on campaign posture.
-              </p>
-              <div className="mt-6 rounded-2xl overflow-hidden border border-[#c5bfa8] bg-white">
-                <Image
-                  src="/diagrams/devolopment-as-golf_dev/files/golf-four-archetypes.svg"
-                  alt="Semantic archetype terrains illustrating Convergent, Explorer, Precision, and Creative modes."
-                  width={640}
-                  height={520}
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-              <Link
-                href="/diagrams"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#556b2f] hover:text-[#3d4a21]"
-              >
-                <span>📐</span>
-                <span>Open Diagram Presenter</span>
+                <span>📋</span>
+                <span>LLM Instructions</span>
               </Link>
             </div>
           </div>
         </div>
       </div>
 
-      <main className="max-w-6xl mx-auto px-6 py-16 lg:py-24 space-y-24">
-        <section>
-          <div className="flex items-baseline justify-between gap-6 flex-wrap">
-            <div>
-              <h2 className="text-3xl font-semibold text-[#2d3b16] scorecard-title">
-                Entry Points Across the Manifold
-              </h2>
-              <p className="mt-2 text-base text-[#4b5b28] scorecard-font-serif">
-                Move through documentation, prototypes, and dashboards with a shared semantic compass. Each surface is tuned to a distinct
-                builder intention.
-              </p>
+      <main className="max-w-6xl mx-auto px-6 pt-8 pb-16 lg:pt-12 lg:pb-24 space-y-24">
+        {/* The Paradox */}
+        <section className="bg-white border-2 border-[#556b2f] rounded-3xl p-10 lg:p-12 shadow-xl">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#2d3b16] mb-6 scorecard-title">
+              The Paradox
+            </h2>
+            <p className="text-xl lg:text-2xl leading-relaxed text-[#4b5b28] scorecard-font-serif mb-8 italic">
+              This framework has{" "}
+              <strong className="text-[#2d3b16] not-italic">nothing</strong> and{" "}
+              <strong className="text-[#2d3b16] not-italic">everything</strong> to do with actual
+              golf.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2 mt-10 text-left">
+              <div className="bg-[#faf8f3] border border-[#c5bfa8] rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-[#2d3b16] mb-3 scorecard-font-serif">
+                  Nothing
+                </h3>
+                <p className="text-sm text-[#4b5b28] leading-relaxed">
+                  You don't need to know golf. You don't need to play golf. The framework doesn't
+                  require understanding of course layouts, club selection, or scoring rules. The
+                  golf terminology is a scaffold—a familiar structure to hang complex ideas upon.
+                </p>
+              </div>
+              <div className="bg-[#faf8f3] border border-[#c5bfa8] rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-[#2d3b16] mb-3 scorecard-font-serif">
+                  Everything
+                </h3>
+                <p className="text-sm text-[#4b5b28] leading-relaxed">
+                  Golf embodies practices that transfer directly to AI development: reading terrain,
+                  choosing strategy by context, managing variance, converging through iteration,
+                  maintaining patience and precision. The meditative aspects of golf—its ritual,
+                  its pacing, its acceptance of imperfection—map perfectly to working with LLMs.
+                </p>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Three-Domain Ontology */}
+        <section className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+          <div className="text-center mb-12 px-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#2d3b16] mb-4 scorecard-title">
+              The Three-Domain Ontology
+            </h2>
+            <p className="text-lg text-[#4b5b28] scorecard-font-serif max-w-3xl mx-auto">
+              Three domains—Golf, Mathematics, and LLM Development—intertwine to form a coherent
+              framework for understanding and navigating semantic space.
+            </p>
+          </div>
+
+          {/* Background Image Container - Edge to Edge, Taller */}
+          <div className="relative overflow-hidden shadow-2xl" style={{ minHeight: "900px" }}>
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <Image
+                src="/wide_cones_of_distance_metric_convergence.png"
+                alt="Three converging cones representing Golf, Mathematics, and LLM Development domains"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Dark overlay for better text readability */}
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+
+            {/* Content Overlay - Compacted by additional 35% (now ~23% of original) */}
+            <div className="relative z-10 p-3 lg:p-4" style={{ minHeight: "900px" }}>
+              <div className="grid gap-3 lg:grid-cols-3 max-w-4xl mx-auto pt-80 lg:pt-80">
+                {/* Golf Domain */}
+                <div className="bg-white/60 backdrop-blur-md border-2 border-white/40 rounded-lg p-2 shadow-xl hover:bg-white/75 transition-all">
+                  <div className="text-center mb-2">
+                    <span className="text-2xl mb-1 block">⛳</span>
+                    <h3 className="text-base font-semibold text-[#2d3b16] scorecard-font-serif">
+                      Golf
+                    </h3>
+                    <p className="text-[9px] uppercase tracking-wide text-[#6b7a4a] scorecard-font-mono mt-0.5">
+                      Intuitive Metaphor
+                    </p>
+                  </div>
+                  <p className="text-[11px] text-[#4b5b28] mb-2 leading-tight">
+                    Provides spatial narrative, pacing, and meditative practices. Golf offers an
+                    accessible vocabulary for complex concepts: terrain types, shot selection, course
+                    management, convergence toward goals.
+                  </p>
+                  <div className="bg-white/60 backdrop-blur-sm border border-[#c5bfa8]/40 rounded p-1.5">
+                    <p className="text-[9px] uppercase tracking-wide text-[#6b7a4a] scorecard-font-mono mb-0.5">
+                      Core Units
+                    </p>
+                    <ul className="text-[9px] text-[#4b5b28] space-y-0 leading-tight">
+                      <li>• Course · Hole · Shot</li>
+                      <li>• Club · Terrain Zone</li>
+                      <li>• Par · Scorecard</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Mathematics Domain - Translated Up */}
+                <div className="bg-white/60 backdrop-blur-md border-2 border-white/40 rounded-lg p-2 shadow-xl hover:bg-white/75 transition-all -translate-y-4">
+                  <div className="text-center mb-2">
+                    <span className="text-2xl mb-1 block">📐</span>
+                    <h3 className="text-base font-semibold text-[#2d3b16] scorecard-font-serif">
+                      Mathematics
+                    </h3>
+                    <p className="text-[9px] uppercase tracking-wide text-[#6b7a4a] scorecard-font-mono mt-0.5">
+                      Formal Structure
+                    </p>
+                  </div>
+                  <p className="text-[11px] text-[#4b5b28] mb-2 leading-tight">
+                    Captures formal structure and transformation logic. Manifolds, metrics, gradients,
+                    and category theory provide the mathematical substrate that makes the framework
+                    rigorous and composable.
+                  </p>
+                  <div className="bg-white/60 backdrop-blur-sm border border-[#c5bfa8]/40 rounded p-1.5">
+                    <p className="text-[9px] uppercase tracking-wide text-[#6b7a4a] scorecard-font-mono mb-0.5">
+                      Core Units
+                    </p>
+                    <ul className="text-[9px] text-[#4b5b28] space-y-0 leading-tight">
+                      <li>• Manifold · Epsilon Ball</li>
+                      <li>• Gradient Flow · Metric</li>
+                      <li>• Category Morphism</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* LLM Development Domain */}
+                <div className="bg-white/60 backdrop-blur-md border-2 border-white/40 rounded-lg p-2 shadow-xl hover:bg-white/75 transition-all">
+                  <div className="text-center mb-2">
+                    <span className="text-2xl mb-1 block">💻</span>
+                    <h3 className="text-base font-semibold text-[#2d3b16] scorecard-font-serif">
+                      LLM Development
+                    </h3>
+                    <p className="text-[9px] uppercase tracking-wide text-[#6b7a4a] scorecard-font-mono mt-0.5">
+                      Implementation Practice
+                    </p>
+                  </div>
+                  <p className="text-[11px] text-[#4b5b28] mb-2 leading-tight">
+                    Grounds implementation tactics and agent behavior. Prompt patterns, constraint
+                    profiles, iteration cadence, and review rituals operationalize the framework in
+                    real development workflows.
+                  </p>
+                  <div className="bg-white/60 backdrop-blur-sm border border-[#c5bfa8]/40 rounded p-1.5">
+                    <p className="text-[9px] uppercase tracking-wide text-[#6b7a4a] scorecard-font-mono mb-0.5">
+                      Core Units
+                    </p>
+                    <ul className="text-[9px] text-[#4b5b28] space-y-0 leading-tight">
+                      <li>• Prompt Pattern</li>
+                      <li>• Constraint Profile</li>
+                      <li>• Iteration Cadence</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Meditative Strategy */}
+        <section className="bg-gradient-to-br from-[#faf8f3] via-white to-[#f1eddf] border-2 border-[#c5bfa8] rounded-3xl p-10 lg:p-12 shadow-xl">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#2d3b16] mb-6 scorecard-title text-center">
+              Meditative Strategy: How Golf Practices Transfer to AI Development
+            </h2>
+            <p className="text-lg text-[#4b5b28] scorecard-font-serif mb-10 text-center leading-relaxed">
+              Golf is not just a sport—it's a meditative practice. These practices transfer directly
+              to working with AI assistants, providing structure, patience, and wisdom for
+              navigating semantic space.
+            </p>
+
+            <div className="space-y-8">
+              {/* Practice 1 */}
+              <div className="bg-white border border-[#c5bfa8] rounded-2xl p-6 shadow-md">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl shrink-0">🧘</span>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#2d3b16] mb-3 scorecard-font-serif">
+                      Reading Terrain
+                    </h3>
+                    <p className="text-sm text-[#4b5b28] mb-4 leading-relaxed">
+                      <strong className="text-[#2d3b16]">In Golf:</strong> Before each shot, a
+                      golfer reads the terrain—wind, slope, hazards, green conditions. This
+                      assessment determines strategy.
+                    </p>
+                    <p className="text-sm text-[#4b5b28] leading-relaxed">
+                      <strong className="text-[#2d3b16]">In AI Development:</strong> Before each
+                      prompt, assess the semantic terrain. Is the goal clear (green)? Are
+                      requirements vague (rough)? Is the solution space well-mapped (fairway)?
+                      This assessment determines prompt strategy—exploratory (driver) or precise
+                      (putter).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Practice 2 */}
+              <div className="bg-white border border-[#c5bfa8] rounded-2xl p-6 shadow-md">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl shrink-0">🎯</span>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#2d3b16] mb-3 scorecard-font-serif">
+                      Club Selection by Context
+                    </h3>
+                    <p className="text-sm text-[#4b5b28] mb-4 leading-relaxed">
+                      <strong className="text-[#2d3b16]">In Golf:</strong> You don't use a driver
+                      on the green. You don't use a putter from the tee. Each club serves a
+                      purpose based on distance, terrain, and precision needs.
+                    </p>
+                    <p className="text-sm text-[#4b5b28] leading-relaxed">
+                      <strong className="text-[#2d3b16]">In AI Development:</strong> Match prompt
+                      precision to semantic distance. Broad exploratory prompts (drivers) for
+                      early exploration. Narrow, constrained prompts (putters) when close to
+                      solution. The wrong "club" wastes iterations and creates frustration.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Practice 3 */}
+              <div className="bg-white border border-[#c5bfa8] rounded-2xl p-6 shadow-md">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl shrink-0">⏳</span>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#2d3b16] mb-3 scorecard-font-serif">
+                      Patience and Acceptance
+                    </h3>
+                    <p className="text-sm text-[#4b5b28] mb-4 leading-relaxed">
+                      <strong className="text-[#2d3b16]">In Golf:</strong> Golf teaches patience.
+                      Not every shot is perfect. You accept bad shots, learn from them, and move
+                      forward. The game rewards persistence over perfectionism.
+                    </p>
+                    <p className="text-sm text-[#4b5b28] leading-relaxed">
+                      <strong className="text-[#2d3b16]">In AI Development:</strong> LLM outputs
+                      aren't always perfect. Accept imperfect responses, refine through iteration,
+                      and maintain patience. The framework rewards persistence and iterative
+                      refinement over expecting perfect first attempts.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Practice 4 */}
+              <div className="bg-white border border-[#c5bfa8] rounded-2xl p-6 shadow-md">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl shrink-0">📊</span>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#2d3b16] mb-3 scorecard-font-serif">
+                      Course Management
+                    </h3>
+                    <p className="text-sm text-[#4b5b28] mb-4 leading-relaxed">
+                      <strong className="text-[#2d3b16]">In Golf:</strong> Smart golfers manage the
+                      course strategically. They don't always go for the pin. Sometimes they play
+                      safe, position for the next shot, and think multiple shots ahead.
+                    </p>
+                    <p className="text-sm text-[#4b5b28] leading-relaxed">
+                      <strong className="text-[#2d3b16]">In AI Development:</strong> Manage the
+                      development trajectory strategically. Don't always optimize for immediate
+                      perfection. Sometimes accept "good enough" to maintain momentum, position
+                      for the next iteration, and think about the overall trajectory toward the
+                      goal.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Practice 5 */}
+              <div className="bg-white border border-[#c5bfa8] rounded-2xl p-6 shadow-md">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl shrink-0">🔄</span>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#2d3b16] mb-3 scorecard-font-serif">
+                      Convergence Through Iteration
+                    </h3>
+                    <p className="text-sm text-[#4b5b28] mb-4 leading-relaxed">
+                      <strong className="text-[#2d3b16]">In Golf:</strong> You don't reach the
+                      hole in one shot. You converge through a sequence: drive, approach, chip,
+                      putt. Each shot narrows the distance and increases precision.
+                    </p>
+                    <p className="text-sm text-[#4b5b28] leading-relaxed">
+                      <strong className="text-[#2d3b16]">In AI Development:</strong> You don't
+                      solve complex problems in one prompt. You converge through a sequence:
+                      exploratory prompt (drive), directional refinement (approach), specific
+                      implementation (chip), final polish (putt). Each iteration narrows semantic
+                      distance and increases precision.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Audience-Specific Paths */}
+        <section>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#2d3b16] mb-4 scorecard-title">
+              Find Your Path
+            </h2>
+            <p className="text-lg text-[#4b5b28] scorecard-font-serif max-w-3xl mx-auto">
+              The framework adapts to your level. Start where you're comfortable, and progress as
+              understanding deepens.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Link
-              href="/docs"
-              className="text-sm font-medium text-[#556b2f] hover:text-[#3d4a21] flex items-center gap-2"
+              href="/base-comms"
+              className="group bg-white border-2 border-[#8b956d] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-xl"
             >
-              <span>📚</span>
-              <span>Documentation Index</span>
+              <div className="text-center mb-4">
+                <span className="text-4xl block mb-2">🌱</span>
+                <h3 className="text-lg font-semibold text-[#2d3b16] scorecard-font-serif">
+                  Beginner
+                </h3>
+                <p className="text-xs text-[#6b7a4a] scorecard-font-mono mt-1">
+                  Visual Metaphor
+                </p>
+              </div>
+              <p className="text-sm text-[#4b5b28] leading-relaxed mb-4">
+                Start with intuitive golf metaphors. Learn through familiar analogies without
+                mathematical complexity.
+              </p>
+              <span className="text-xs font-medium text-[#556b2f] group-hover:text-[#3d4a21]">
+                Start here →
+              </span>
+            </Link>
+
+            <Link
+              href="/base-comms"
+              className="group bg-white border-2 border-[#8b956d] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-xl"
+            >
+              <div className="text-center mb-4">
+                <span className="text-4xl block mb-2">💻</span>
+                <h3 className="text-lg font-semibold text-[#2d3b16] scorecard-font-serif">
+                  Intermediate
+                </h3>
+                <p className="text-xs text-[#6b7a4a] scorecard-font-mono mt-1">
+                  Developer-Focused
+                </p>
+              </div>
+              <p className="text-sm text-[#4b5b28] leading-relaxed mb-4">
+                See how this applies to LLM-assisted coding. Understand semantic space navigation
+                and prompt strategy.
+              </p>
+              <span className="text-xs font-medium text-[#556b2f] group-hover:text-[#3d4a21]">
+                Learn more →
+              </span>
+            </Link>
+
+            <Link
+              href="/base-comms"
+              className="group bg-white border-2 border-[#8b956d] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-xl"
+            >
+              <div className="text-center mb-4">
+                <span className="text-4xl block mb-2">📊</span>
+                <h3 className="text-lg font-semibold text-[#2d3b16] scorecard-font-serif">
+                  Advanced
+                </h3>
+                <p className="text-xs text-[#6b7a4a] scorecard-font-mono mt-1">
+                  Mathematical Foundations
+                </p>
+              </div>
+              <p className="text-sm text-[#4b5b28] leading-relaxed mb-4">
+                Explore manifolds, metrics, geodesics, and convergence. Understand the formal
+                mathematical structure.
+              </p>
+              <span className="text-xs font-medium text-[#556b2f] group-hover:text-[#3d4a21]">
+                Dive deeper →
+              </span>
+            </Link>
+
+            <Link
+              href="/base-comms"
+              className="group bg-white border-2 border-[#8b956d] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-xl"
+            >
+              <div className="text-center mb-4">
+                <span className="text-4xl block mb-2">🔬</span>
+                <h3 className="text-lg font-semibold text-[#2d3b16] scorecard-font-serif">
+                  Expert
+                </h3>
+                <p className="text-xs text-[#6b7a4a] scorecard-font-mono mt-1">
+                  Category Theory
+                </p>
+              </div>
+              <p className="text-sm text-[#4b5b28] leading-relaxed mb-4">
+                Explore categorical formalization, functors, natural transformations, and
+                compositional semantics.
+              </p>
+              <span className="text-xs font-medium text-[#556b2f] group-hover:text-[#3d4a21]">
+                Explore →
+              </span>
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {entryPoints.map((entry) => (
-              <Link
-                key={entry.title}
-                href={entry.href}
-                className="group rounded-3xl border border-[#c5bfa8] bg-[#faf8f3] p-6 shadow-[0_20px_60px_-40px_rgba(85,107,47,0.6)] transition-all hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-45px_rgba(61,74,33,0.55)]"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <span className="text-2xl">{entry.icon}</span>
-                  <span className="text-sm text-[#8b956d] scorecard-font-mono">enter</span>
-                </div>
-                <h3 className="mt-4 text-xl font-semibold text-[#2d3b16]">{entry.title}</h3>
-                <p className="mt-3 text-sm text-[#4b5b28] leading-relaxed">{entry.description}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#556b2f] group-hover:text-[#3d4a21]">
-                  <span>→</span>
-                  <span>Navigate</span>
-                </span>
-              </Link>
-            ))}
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/base-comms"
+              className="inline-flex items-center gap-2 rounded-full bg-[#556b2f] px-6 py-3 text-white font-medium hover:bg-[#3d4a21] transition-colors shadow-lg"
+            >
+              <span>📡</span>
+              <span>Explore Base Communications</span>
+            </Link>
           </div>
         </section>
 
-        <section className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] items-start">
-          <div>
-            <h2 className="text-3xl font-semibold text-[#2d3b16] scorecard-title">
-              Semantic Language Topology
-            </h2>
-            <p className="mt-3 text-base text-[#4b5b28] scorecard-font-serif">
-              The four archetypes define the posture we assume when shaping prompts, code, or rituals. Each mode provides a shared verb set
-              and evaluation lens so builders can align on intent as they traverse the manifold.
-            </p>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              {semanticModes.map((mode) => (
-                <div
-                  key={mode.name}
-                  className="rounded-3xl border border-[#c5bfa8] bg-gradient-to-br from-white via-[#faf8f3] to-[#f1eddf] p-6 shadow-[0_16px_45px_-30px_rgba(85,107,47,0.65)]"
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-[#2d3b16]">{mode.name}</h3>
-                    <span className="text-xs uppercase tracking-[0.2em] text-[#8b956d] scorecard-font-mono">
-                      archetype
-                    </span>
-                  </div>
-                  <p className="mt-3 text-sm text-[#4b5b28] leading-relaxed">{mode.summary}</p>
-                  <div className="mt-4 rounded-2xl bg-white/70 p-4 border border-[#d4ccb4]">
-                    <p className="text-xs uppercase tracking-[0.25em] text-[#6b7a4a] scorecard-font-mono">
-                      When to deploy
-                    </p>
-                    <p className="mt-2 text-sm text-[#2f3d18]">{mode.signal}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-[30px] border border-[#c5bfa8] bg-[#faf8f3] p-7 shadow-[0_28px_90px_-40px_rgba(45,59,22,0.55)]">
-            <h3 className="text-xl font-semibold text-[#2d3b16] scorecard-font-serif">
-              Converging Ontology, Methodology, Application
-            </h3>
-            <p className="mt-2 text-sm text-[#4b5b28]">
-              Orient every initiative through three braided strands. The dashboard visualizes where we are, the methodology prescribes how
-              we move, and the ontology reminds us why the terrain matters.
-            </p>
-            <ul className="mt-6 space-y-5">
-              {ontologyStrands.map((strand) => (
-                <li key={strand.title} className="rounded-2xl border border-[#d4ccb4] bg-white/80 p-5">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-lg font-semibold text-[#2d3b16]">{strand.title}</h4>
-                    <span className="text-xs uppercase tracking-[0.25em] text-[#8b956d] scorecard-font-mono">
-                      strand
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-[#4b5b28]">{strand.description}</p>
-                  <ul className="mt-3 space-y-2">
-                    {strand.highlights.map((highlight) => (
-                      <li key={highlight} className="flex items-start gap-2 text-sm text-[#2f3d18]">
-                        <span className="mt-1 text-[#556b2f]">•</span>
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
+        {/* Key Resources */}
         <section>
-          <div className="flex items-center justify-between flex-wrap gap-6">
-            <div>
-              <h2 className="text-3xl font-semibold text-[#2d3b16] scorecard-title">
-                Motif Signals to Reuse in Dashboards
-              </h2>
-              <p className="mt-2 text-base text-[#4b5b28] scorecard-font-serif">
-                The legacy scorecard remains available as a motif library. Surface these signals inside future dashboards to keep
-                continuity between analytics and narrative framing.
+          <h2 className="text-3xl font-bold text-[#2d3b16] mb-8 scorecard-title text-center">
+            Key Resources
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Link
+              href="/base-comms"
+              className="group bg-white border-2 border-[#c5bfa8] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-lg"
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <span className="text-3xl">📡</span>
+                <span className="text-xs text-[#8b956d] scorecard-font-mono">resource</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#2d3b16] mb-2 scorecard-font-serif">
+                Base Communications
+              </h3>
+              <p className="text-sm text-[#4b5b28] leading-relaxed">
+                Multi-audience presentation system. Choose your level (Beginner to Expert) and learn
+                the framework through audience-specific explanations.
               </p>
-            </div>
+            </Link>
+
+            <Link
+              href="/llm-instructions"
+              className="group bg-white border-2 border-[#c5bfa8] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-lg"
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <span className="text-3xl">📋</span>
+                <span className="text-xs text-[#8b956d] scorecard-font-mono">resource</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#2d3b16] mb-2 scorecard-font-serif">
+                LLM Instructions
+              </h3>
+              <p className="text-sm text-[#4b5b28] leading-relaxed">
+                Comprehensive guide for LLMs and humans on using the framework to structure
+                implementation plans. Learn about 18-hole cycles and shot types.
+              </p>
+            </Link>
+
             <Link
               href="/scorecard-dashboard"
-              className="inline-flex items-center gap-2 rounded-full border border-[#556b2f] px-5 py-2.5 text-sm font-medium text-[#2d3b16] hover:bg-[#556b2f] hover:text-white transition-colors"
+              className="group bg-white border-2 border-[#c5bfa8] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-lg"
             >
-              <span>⛳</span>
-              <span>Visit Motif Library</span>
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {motifSignals.map((signal) => (
-              <div
-                key={signal.title}
-                className="rounded-3xl border border-[#c5bfa8] bg-[#faf8f3] p-6 shadow-[0_22px_70px_-45px_rgba(61,74,33,0.5)]"
-              >
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-[#2d3b16]">{signal.title}</h3>
-                  <span className="text-xs uppercase tracking-[0.25em] text-[#8b956d] scorecard-font-mono">
-                    motif
-                  </span>
-                </div>
-                <p className="mt-3 text-sm text-[#4b5b28] leading-relaxed">{signal.detail}</p>
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <span className="text-3xl">📊</span>
+                <span className="text-xs text-[#8b956d] scorecard-font-mono">resource</span>
               </div>
-            ))}
+              <h3 className="text-lg font-semibold text-[#2d3b16] mb-2 scorecard-font-serif">
+                Scorecard Dashboard
+              </h3>
+              <p className="text-sm text-[#4b5b28] leading-relaxed">
+                Tour the hyperdimensional scorecard with insights, trajectories, and manifold
+                visualizations derived from live project data.
+              </p>
+            </Link>
+
+            <Link
+              href="/golf-philosophy-slides"
+              className="group bg-white border-2 border-[#c5bfa8] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-lg"
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <span className="text-3xl">⛳</span>
+                <span className="text-xs text-[#8b956d] scorecard-font-mono">resource</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#2d3b16] mb-2 scorecard-font-serif">
+                Golf Philosophy Slides
+              </h3>
+              <p className="text-sm text-[#4b5b28] leading-relaxed">
+                Explore the 10 shot archetypes with detailed visualizations, prompt examples, and
+                heuristic definitions.
+              </p>
+            </Link>
+
+            <Link
+              href="/diagrams"
+              className="group bg-white border-2 border-[#c5bfa8] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-lg"
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <span className="text-3xl">📐</span>
+                <span className="text-xs text-[#8b956d] scorecard-font-mono">resource</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#2d3b16] mb-2 scorecard-font-serif">
+                Diagrams
+              </h3>
+              <p className="text-sm text-[#4b5b28] leading-relaxed">
+                Navigate ontology-first diagrams, including semantic manifolds and the four
+                archetype terrains.
+              </p>
+            </Link>
+
+            <Link
+              href="/prototypes"
+              className="group bg-white border-2 border-[#c5bfa8] rounded-2xl p-6 hover:border-[#556b2f] transition-all hover:shadow-lg"
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <span className="text-3xl">🧪</span>
+                <span className="text-xs text-[#8b956d] scorecard-font-mono">resource</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#2d3b16] mb-2 scorecard-font-serif">
+                Prototypes
+              </h3>
+              <p className="text-sm text-[#4b5b28] leading-relaxed">
+                Inspect interactive experiments and motif explorations inside the prototypes
+                workspace.
+              </p>
+            </Link>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-[#d4ccb4] bg-[#eae3d3]">
-        <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a4a] scorecard-font-mono">
+      {/* Footer */}
+      <footer className="border-t border-[#d4ccb4] bg-[#eae3d3] mt-24">
+        <div className="max-w-6xl mx-auto px-6 py-12">
+          <div className="text-center">
+            <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a4a] scorecard-font-mono mb-4">
               Hyperdimensional Vector Space Golf
             </p>
-            <p className="mt-2 text-base text-[#2d3b16] scorecard-font-serif">
-              Navigate development through ℝⁿ using golf metaphors, semantic motifs, and category theory.
+            <p className="text-base text-[#2d3b16] scorecard-font-serif mb-6">
+              An ontological framework connecting golf practices, mathematical structures, and LLM
+              development through semantic navigation and meditative strategy.
             </p>
-          </div>
-          <div className="flex flex-wrap gap-4 text-sm text-[#4b5b28]">
-            <Link href="/docs" className="hover:text-[#2d3b16]">
-              Documentation
-            </Link>
-            <Link href="/contact" className="hover:text-[#2d3b16]">
-              Contact Builder
-            </Link>
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-[#4b5b28]">
+              <Link href="/base-comms" className="hover:text-[#2d3b16]">
+                Base Communications
+              </Link>
+              <Link href="/llm-instructions" className="hover:text-[#2d3b16]">
+                LLM Instructions
+              </Link>
+              <Link href="/scorecard-dashboard" className="hover:text-[#2d3b16]">
+                Dashboard
+              </Link>
+              <Link href="/prototypes" className="hover:text-[#2d3b16]">
+                Prototypes
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
