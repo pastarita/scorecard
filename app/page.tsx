@@ -44,6 +44,13 @@ const entryPoints = [
     href: "/contemplations/semantic-motifs",
     icon: "🌀",
   },
+  {
+    title: "LLM Instructions",
+    description:
+      "Comprehensive guide for LLMs and humans on using the Hyperdimensional Vector Space Golf framework to structure implementation plans.",
+    href: "/llm-instructions",
+    icon: "📋",
+  },
 ];
 
 const semanticModes = [
