@@ -38,47 +38,53 @@ export default function NewHomePage() {
   return (
     <div className="min-h-screen bg-[#f5f0e8] text-[#1f2a10]">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-[#eae3d3] min-h-[600px] lg:min-h-[700px]">
+      <div className="relative overflow-hidden bg-[#eae3d3] min-h-[700px] md:min-h-[800px] lg:min-h-[900px] xl:min-h-[1000px]">
         {/* Background Image - Composed.png */}
         <div className="absolute inset-0">
           <Image
             src="/composed.png"
             alt="Golfer in mid-swing aiming towards a cosmic vortex, representing navigation through semantic space"
             fill
-            className="object-cover object-top-left"
+            className="object-cover object-left md:object-center lg:object-right"
             priority
           />
-          {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#eae3d3]/95 via-[#eae3d3]/85 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#eae3d3]/60" />
+          {/* Intentional gradient overlays respecting image structure */}
+          {/* Left side: Strong overlay for text area (where golfer is) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#eae3d3]/98 via-[#eae3d3]/85 to-[#eae3d3]/60" />
+          {/* Right side: Lighter overlay to preserve vortex visibility */}
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#eae3d3]/30" />
+          {/* Top: Subtle gradient to preserve sky */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#eae3d3]/40" />
+          {/* Bottom: Gradient to ground the composition */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#eae3d3]/50 via-transparent to-transparent" />
         </div>
         
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 lg:py-28">
-          <div className="max-w-4xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a4a] scorecard-font-mono mb-4">
+        {/* Content - Positioned to work with image structure */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-20 lg:py-24 xl:py-28">
+          <div className="max-w-2xl md:max-w-3xl lg:max-w-4xl">
+            <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a4a] scorecard-font-mono mb-4 drop-shadow-sm">
               Hyperdimensional Vector Space Golf
             </p>
-            <h1 className="text-5xl lg:text-6xl font-bold scorecard-title text-[#2d3b16] leading-tight mb-6 drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold scorecard-title text-[#2d3b16] leading-tight mb-6 drop-shadow-lg">
               An Ontological Framework for
               <br />
               <span className="text-[#556b2f]">AI Development</span>
             </h1>
-            <p className="text-xl lg:text-2xl leading-relaxed text-[#4b5b28] scorecard-font-serif mb-8 drop-shadow-md">
+            <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-[#4b5b28] scorecard-font-serif mb-8 drop-shadow-md max-w-2xl">
               Where golf practices, mathematical structures, and LLM development converge
               through semantic navigation and meditative strategy.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/base-comms"
-                className="inline-flex items-center gap-2 rounded-full bg-[#556b2f] px-6 py-3 text-white text-base font-medium hover:bg-[#3d4a21] transition-colors shadow-lg backdrop-blur-sm bg-opacity-90"
+                className="inline-flex items-center gap-2 rounded-full bg-[#556b2f] px-6 py-3 text-white text-base font-medium hover:bg-[#3d4a21] transition-colors shadow-lg backdrop-blur-sm bg-opacity-95"
               >
                 <span>📡</span>
                 <span>Start Your Journey</span>
               </Link>
               <Link
                 href="/llm-instructions"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[#556b2f] px-6 py-3 text-base font-medium text-[#2d3b16] hover:bg-[#556b2f] hover:text-white transition-colors backdrop-blur-sm bg-white/80"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[#556b2f] px-6 py-3 text-base font-medium text-[#2d3b16] hover:bg-[#556b2f] hover:text-white transition-colors backdrop-blur-sm bg-white/90 shadow-md"
               >
                 <span>📋</span>
                 <span>LLM Instructions</span>
