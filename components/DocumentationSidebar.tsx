@@ -25,7 +25,7 @@ export function DocumentationSidebar({
   error = null,
 }: DocumentationSidebarProps) {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
-    new Set(["getting-started", "concepts"])
+    new Set(["getting-started", "concepts", "contemplations"])
   );
 
   const toggleSection = (id: string) => {

@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2025-11-11T13:50:14.206791+00:00",
+  "sourceImage": "scorecard_dev_screenshots/club-selection.png",
+  "clubs": [
+    {
+      "id": "driver",
+      "name": "Driver",
+      "bounds": {
+        "x0": 320,
+        "y0": 160,
+        "x1": 660,
+        "y1": 390
+      },
+      "background_color": "#8e939a",
+      "accent_color": "#5b6936",
+      "text_color": "#181e28",
+      "accent": {
+        "center_x": 508.0209734637599,
+        "center_y": 321.6296579778905,
+        "radius": 111.15518748808611,
+        "start_angle_deg": -32.170249115377615,
+        "end_angle_deg": 212.15919723992266,
+        "stroke_width": 15.993962485528428
+      }
+    },
+    {
+      "id": "iron",
+      "name": "4 Iron",
+      "bounds": {
+        "x0": 660,
+        "y0": 160,
+        "x1": 1000,
+        "y1": 390
+      },
+      "background_color": "#8a9097",
+      "accent_color": "#924e20",
+      "text_color": "#171c25",
+      "accent": {
+        "center_x": 825.0364945050303,
+        "center_y": 322.16658267080453,
+        "radius": 38.169420082024054,
+        "start_angle_deg": 40.8592977887956,
+        "end_angle_deg": 350.19097073849383,
+        "stroke_width": 26.0
+      }
+    },
+    {
+      "id": "wedge",
+      "name": "Sand Wedge",
+      "bounds": {
+        "x0": 320,
+        "y0": 440,
+        "x1": 660,
+        "y1": 770
+      },
+      "background_color": "#83985d",
+      "accent_color": "#1a2d2a",
+      "text_color": "#191f29",
+      "accent": {
+        "center_x": 400.8055725348622,
+        "center_y": 580.0766030543726,
+        "radius": 58.664548489660845,
+        "start_angle_deg": -85.16633333681537,
+        "end_angle_deg": 268.78419971663897,
+        "stroke_width": 26.0
+      }
+    },
+    {
+      "id": "putter",
+      "name": "Putter",
+      "bounds": {
+        "x0": 660,
+        "y0": 440,
+        "x1": 1000,
+        "y1": 770
+      },
+      "background_color": "#d8884b",
+      "accent_color": "#64423b",
+      "text_color": "#1d222c",
+      "accent": {
+        "center_x": 851.8764564694354,
+        "center_y": 622.2070306546566,
+        "radius": 90.58141585179665,
+        "start_angle_deg": 85.63076033192768,
+        "end_angle_deg": 443.3504335242689,
+        "stroke_width": 26.0
+      }
+    }
+  ]
+}
